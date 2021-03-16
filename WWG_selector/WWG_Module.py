@@ -203,53 +203,53 @@ class WWG_Producer(Module):
         #    return False
         #mixed HLT
         # check HLT
-        hlt_a = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-        hlt_a1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
-        hlt_a_add1 = event.HLT_Ele35_WPTight_Gsf
-        hlt_a_add2 = event.HLT_Ele32_WPTight_Gsf_L1DoubleEG
+        pass_Ele23Ele12 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
+        pass_Ele23Ele12_DZ = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
+        pass_Ele35 = event.HLT_Ele35_WPTight_Gsf
+        pass_Ele32 = event.HLT_Ele32_WPTight_Gsf_L1DoubleEG
 
-        hlt_b = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-        hlt_b1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8
-        hlt_b_add = event.HLT_IsoMu27
+        pass_Mu17Mu8_3p8 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
+        pass_Mu17Mu8 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8
+        pass_Mu27 = event.HLT_IsoMu27
 
-        hlt_c = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL
-        hlt_c1 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL
-        hlt_c_add1 = event.HLT_Ele35_WPTight_Gsf
-        hlt_c_add2 = event.HLT_Ele32_WPTight_Gsf_L1DoubleEG
+        pass_Mu12Ele23 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL
+        pass_Mu23Ele12 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL
+        pass_Ele35 = event.HLT_Ele35_WPTight_Gsf
+        pass_Ele32 = event.HLT_Ele32_WPTight_Gsf_L1DoubleEG
 
         if (isdata):
             if (kind == 'EGamma'):
-                if hlt_a or hlt_a1:
+                if pass_Ele23Ele12 or pass_Ele23Ele12_DZ:
                     pass_HLT_ee = 1
-                elif (not (hlt_a or hlt_a1)) and (hlt_a_add1 or hlt_a_add2):
+                elif (not (pass_Ele23Ele12 or pass_Ele23Ele12_DZ)) and (pass_Ele35 or pass_Ele32):
                     pass_HLT_ee = 1
-                elif (not (hlt_c or hlt_c1) and (hlt_c_add1 or hlt_c_add2)):
+                elif (not (pass_Mu12Ele23 or pass_Mu23Ele12) and (pass_Ele35 or pass_Ele32)):
                     pass_HLT_emu = 1
             elif (kind == 'DoubleMuon'):
-                if (hlt_b or hlt_b1):
+                if (pass_Mu17Mu8_3p8 or pass_Mu17Mu8):
                     pass_HLT_mumu = 1
             elif (kind == 'SingleMuon'):
-                if (not (hlt_b or hlt_b1)) and (hlt_b_add):
+                if (not (pass_Mu17Mu8_3p8 or pass_Mu17Mu8)) and (pass_Mu27):
                     pass_HLT_mumu = 1
-                elif (not (hlt_c or hlt_c1) and (hlt_c_add1 and hlt_c_add2)):
+                elif (not (pass_Mu12Ele23 or pass_Mu23Ele12) and (pass_Ele35 and pass_Ele32)):
                     pass_HLT_emu = 1
             elif (kind == 'MuonEG'):
-                if (hlt_c or hlt_c1):
+                if (pass_Mu12Ele23 or pass_Mu23Ele12):
                     pass_HLT_emu = 1
             else:
-                print 'unkown dataset name for data or no proper channel'
+                #print 'unkown dataset name for data or no proper channel'
                 return False
 
         if (not isdata):
             if (kind == 'MC'):
-                if (hlt_a or hlt_a1 or hlt_a_add1 or hlt_a_add2):
+                if (pass_Ele23Ele12 or pass_Ele23Ele12_DZ or pass_Ele35 or pass_Ele32):
                     pass_HLT_ee = 1
-                elif (hlt_b or hlt_b1 or hlt_b_add):
+                elif (pass_Mu17Mu8_3p8 or pass_Mu17Mu8 or pass_Mu27):
                     pass_HLT_mumu = 1
-                elif (hlt_c or hlt_c1 or hlt_c_add2 or hlt_c_add1):
+                elif (pass_Mu12Ele23 or pass_Mu23Ele12 or pass_Ele35 or pass_Ele32):
                     pass_HLT_emu = 1
                 else:
-                    print 'unkown dataset name for data or no proper channel'
+                #    print 'unkown dataset name for data or no proper channel'
                     return False
 
         if  event.MET_pt>20:
@@ -307,7 +307,7 @@ class WWG_Producer(Module):
                     pass_lepton_dr_cut = False
             if not pass_lepton_dr_cut:
                 continue
-            #if photons[i].cutBasedBitmap >=1: #1==medium
+#            if photons[i].cutBasedBitmap >=1: #1==medium
             if photons[i].cutBased >=2:
                 photons_select.append(i)
                 photon_pass += 1
@@ -628,7 +628,7 @@ class WWG_Producer(Module):
         self.out.fillBranch("channel_mark",channel)
         return True
 
-WWG_Producer_EGamma = lambda: WWG_Producer(isdata=True,kind='EGmama')
+WWG_Producer_EGamma = lambda: WWG_Producer(isdata=True,kind='EGamma')
 WWG_Producer_DoubleMuon = lambda: WWG_Producer(isdata=True,kind='DoubleMuon')
 WWG_Producer_MuonEG = lambda: WWG_Producer(isdata=True,kind='MuonEG')
 WWG_Producer_SingleMuon = lambda: WWG_Producer(isdata=True,kind='SingleMuon')
