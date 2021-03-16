@@ -6,6 +6,7 @@ __init__.py
 *~
 *.root
 *tar*
+*zip*
 *tgz*
 __nfs*
 build
