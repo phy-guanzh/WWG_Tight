@@ -8,10 +8,6 @@ from PhysicsTools.NanoAODTools.postprocessing.modules.common.countHistogramsModu
 from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetHelperRun2 import createJMECorrector
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.puWeightProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.muonScaleResProducer import *
-#from PhysicsTools.NanoAODTools.postprocessing.modules.common.collectionMerger import *
-#from PhysicsTools.NanoAODTools.postprocessing.framework.crabhelper import inputFiles,runsAndLumis
-# from WWG_Module import * 
-#import WWG_Module as WWG
 from WWG_Module import *
 
 import argparse
