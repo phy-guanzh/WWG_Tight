@@ -15,7 +15,8 @@ from PhysicsTools.NanoAODTools.postprocessing.framework.eventloop import Module
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.countHistogramsModule import countHistogramsProducer
 
 class WWG_Producer(Module):
-    def __init__(self,):
+    def __init__(self):
+        pass
     def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 
         self.out = wrappedOutputTree
@@ -24,14 +25,7 @@ class WWG_Producer(Module):
         self.out.branch("run",  "i")
         self.out.branch("lumi",  "i")
 	self.out.branch("pass_selection",  "B");
-
-        self.out.branch("MET",  "F")
-
-        self.out.branch("photonet",  "F")
-
-        self.out.branch("photoneta",  "F")
-
-        self.out.branch("photonphi",  "F")
+	self.out.branch("channel",  "I");
 
         self.out.branch("lep1_pid",  "I")
         self.out.branch("lep2_pid",  "I")
@@ -41,18 +35,19 @@ class WWG_Producer(Module):
         self.out.branch("lep2eta",  "F")
         self.out.branch("lep1phi",  "F")
         self.out.branch("lep2phi",  "F")
-
-        self.out.branch("Njets",  "i")
-        
+        self.out.branch("lepton1_isprompt", "I")
+        self.out.branch("lepton2_isprompt", "I")
+        self.out.branch("photonet",  "F")
+        self.out.branch("photoneta",  "F")
+        self.out.branch("photonphi",  "F")
+        self.out.branch("photon_ispromt", "I")
         self.out.branch("mll",  "F")
         self.out.branch("mllg",  "F")
         self.out.branch("ptll",  "F")
-
- 
+        self.out.branch("met",  "F")
         self.out.branch("gen_weight","F")
-        self.out.branch("photon_ispromt", "I")
-        self.out.branch("lepton1_isprompt", "I")
-        self.out.branch("lepton2_isprompt", "I")
+        self.out.branch("npu",  "I");
+        self.out.branch("ntruepu",  "F");
         self.out.branch("n_pos", "I")
         self.out.branch("n_minus", "I")
         self.out.branch("n_num", "I")
@@ -60,7 +55,13 @@ class WWG_Producer(Module):
         self.out.branch("ee_pass", "I")
         self.out.branch("mumu_pass", "I")
         self.out.branch("MET_pass","I")
-        self.out.branch("channel_mark","I")
+        self.out.branch("npvs","I")
+        self.out.branch("njets","I")
+        self.out.branch("njets50","I")
+        self.out.branch("njets40","I")
+        self.out.branch("njets30","I")
+        self.out.branch("njets20","I")
+        self.out.branch("njets15","I")
         self.out.branch("pass_Ele23Ele12","I")
         self.out.branch("pass_Ele23Ele12_DZ","I")
         self.out.branch("pass_Ele35","I")
@@ -108,18 +109,18 @@ class WWG_Producer(Module):
         pass_Mu12Ele23 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL
         pass_Mu23Ele12 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL
 
-        if not (pass_Ele23Ele12 or pass_Ele23Ele12_D or pass_Ele35 or pass_Ele32 or pass_Mu17Mu8_3p8 or pass_Mu17Mu8 or pass_Mu27 or pass_Mu12Ele23 or pass_Mu23Ele12):
+        if not (pass_Ele23Ele12 or pass_Ele23Ele12_DZ or pass_Ele35 or pass_Ele32 or pass_Mu17Mu8_3p8 or pass_Mu17Mu8 or pass_Mu27 or pass_Mu12Ele23 or pass_Mu23Ele12):
            self.out.fillBranch("pass_selection",0)
            return True
-        self.out.fillbranch("pass_Ele23Ele12",pass_Ele23Ele12)
-        self.out.fillbranch("pass_Ele23Ele12_DZ",pass_Ele23Ele12_DZ)
-        self.out.fillbranch("pass_Ele35",pass_Ele35)
-        self.out.fillbranch("pass_Ele32",pass_Ele32)
-        self.out.fillbranch("pass_Mu17Mu8_3p8",pass_Mu17Mu8_3p8)
-        self.out.fillbranch("pass_Mu17Mu8",pass_Mu17Mu8)
-        self.out.fillbranch("pass_Mu27",pass_Mu27)
-        self.out.fillbranch("pass_Mu12Ele23",pass_Mu12Ele23)
-        self.out.fillbranch("pass_Mu23Ele12",pass_Mu23Ele12)
+        self.out.fillBranch("pass_Ele23Ele12",pass_Ele23Ele12)
+        self.out.fillBranch("pass_Ele23Ele12_DZ",pass_Ele23Ele12_DZ)
+        self.out.fillBranch("pass_Ele35",pass_Ele35)
+        self.out.fillBranch("pass_Ele32",pass_Ele32)
+        self.out.fillBranch("pass_Mu17Mu8_3p8",pass_Mu17Mu8_3p8)
+        self.out.fillBranch("pass_Mu17Mu8",pass_Mu17Mu8)
+        self.out.fillBranch("pass_Mu27",pass_Mu27)
+        self.out.fillBranch("pass_Mu12Ele23",pass_Mu12Ele23)
+        self.out.fillBranch("pass_Mu23Ele12",pass_Mu23Ele12)
 
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
@@ -199,6 +200,11 @@ class WWG_Producer(Module):
         print len(jets)
         pass_lepton_dr_cut = True
         njets = 0
+        njets50 = 0
+        njets40 = 0
+        njets30 = 0
+        njets20 = 0
+        njets15 = 0
         for i in range(0,len(jets)):
             if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
                self.out.fillBranch("pass_selection",0)
@@ -213,17 +219,28 @@ class WWG_Producer(Module):
                 if deltaR(jets[i].eta,jets[i].phi,electrons[electrons_select[j]].eta,electrons[electrons_select[j]].phi) < 0.5:
                    pass_lepton_dr_cut = False
             for j in range(0,len(muons_select)):
-                if deltaR(jets[i].eta,jets[i].phi,muon[muon_select[j]].eta,muon[muon_select[j]].phi) < 0.5:
+                if deltaR(jets[i].eta,jets[i].phi,muons[muons_select[j]].eta,muons[muons_select[j]].phi) < 0.5:
                    pass_lepton_dr_cut = False
 
-            if  pass_lepton_dr_cut == True:
-                if jets[i].jetId >> 1 & 1:
-                    jets_select.append(i)
-                    njets += 1
+            if  not pass_lepton_dr_cut == True:
+	        continue
+            if jets[i].jetId >> 1 & 1:
+               jets_select.append(i)
+               njets += 1
+            if jets[i].pt > 50:
+                njets50+=1
+            if jets[i].pt > 40:
+                njets40+=1
+            if jets[i].pt > 30:
+                njets30+=1
+            if jets[i].pt > 20:
+                njets20+=1
+            if jets[i].pt > 15:
+                njets15+=1
         print ("njets",njets)
-        if njets >=2 :
-            self.out.fillBranch("pass_selection",0)
-            return True
+#        if njets >=2 :
+#            self.out.fillBranch("pass_selection",0)
+#            return True
 
 
         isprompt_mask = (1 << 0) #isPrompt
@@ -265,8 +282,8 @@ class WWG_Producer(Module):
                        break
                 for j, genpart in enumerate(genparts):
                     if genpart.pt>5 and abs(genpart.pdgId)==11 and deltaR(electrons[electrons_select[0]].eta, electrons[electrons_select[0]].phi, genpart.eta, genpart.phi) < 0.3 and ((genparts[electrons[electrons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[electrons[electrons_select[0]].genPartIdx].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)):
-                    lepton2_isprompt=1 
-                    break 
+                       lepton2_isprompt=1 
+                       break 
             except:
                 pass
             channel = 1
@@ -358,8 +375,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("channel",channel)
 	    self.out.fillBranch("lepton1_isprompt",lepton1_ispromt)
 	    self.out.fillBranch("lepton2_isprompt",lepton1_ispromt)
-            self.out.fillBranch("lep1_pid",11)
-            self.out.fillBranch("lep1_pid",11)
+            self.out.fillBranch("lep1_pid",13)
+            self.out.fillBranch("lep1_pid",13)
             self.out.fillBranch("lep1pt",muons[muons_select[0]].pt)
             self.out.fillBranch("lep1eta",muons[muons_select[0]].eta)
             self.out.fillBranch("lep1phi",muons[muons_select[0]].phi)
@@ -401,15 +418,37 @@ class WWG_Producer(Module):
                 photon_gen_matching = 0
             for j, genpart in enumerate(genparts):
                 if genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,genpart.eta,genpart.phi) < 0.3:
-                   photons_isprompt =1
+                   photon_isprompt =1
                    break
 
         self.out.fillBranch("photon_gen_matching",photon_gen_matching)
         self.out.fillBranch("photon_ispromt",photon_ispromt)
 
-WWG_Producer_EGamma = lambda: WWG_Producer(isdata=True,kind='EGamma')
-WWG_Producer_DoubleMuon = lambda: WWG_Producer(isdata=True,kind='DoubleMuon')
-WWG_Producer_MuonEG = lambda: WWG_Producer(isdata=True,kind='MuonEG')
-WWG_Producer_SingleMuon = lambda: WWG_Producer(isdata=True,kind='SingleMuon')
-WWG_Producer_MC = lambda: WWG_Producer(isdata=False,kind='MC')
+        if hasattr(event,'Pileup_nPU'):    
+            self.out.fillBranch("npu",event.Pileup_nPU)
+        else:
+            self.out.fillBranch("npu",0)
+    
+        if hasattr(event,'Pileup_nTrueInt'):    
+            self.out.fillBranch("ntruepu",event.Pileup_nTrueInt)
+        else:
+            self.out.fillBranch("ntruepu",0)
+
+        self.out.fillBranch("njets50",njets50)
+        self.out.fillBranch("njets40",njets40)
+        self.out.fillBranch("njets30",njets30)
+        self.out.fillBranch("njets20",njets20)
+        self.out.fillBranch("njets15",njets15)
+        self.out.fillBranch("npvs",event.PV_npvs)
+        self.out.fillBranch("met",event.MET_pt)
+        self.out.fillBranch("metup",sqrt(pow(event.MET_pt*cos(event.MET_phi) + event.MET_MetUnclustEnUpDeltaX,2) + pow(event.MET_pt*sin(event.MET_phi) + event.MET_MetUnclustEnUpDeltaY,2)))
+        self.out.fillBranch("puppimet",event.PuppiMET_pt)
+        self.out.fillBranch("puppimetphi",event.PuppiMET_phi)
+        self.out.fillBranch("rawmet",event.RawMET_pt)
+        self.out.fillBranch("rawmetphi",event.RawMET_phi)
+        self.out.fillBranch("metphi",event.MET_phi)
+        self.out.fillBranch("pass_selection",1)
+        return True
+
+WWG_Module = lambda: WWG_Producer()
 

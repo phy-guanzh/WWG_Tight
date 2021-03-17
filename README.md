@@ -29,9 +29,7 @@ cd CMSSW_10_6_20/src
 cmsenv
 git clone https://github.com/cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
 cd PhysicsTools/NanoAODTools
-git clone https://github.com/phy-guanzh/WWG.git
-mv WWG/* .
-mv WWG/crab/* crab/
+git clone https://github.com/AnYpku/WWG.git
 scram b
 ```
 <br>
@@ -53,7 +51,8 @@ condor_submit submit_*.jdl
 In WWG_seletor, `WWG_Module.py` is designed for selections. Use `WWG_postproc.py` to test.
 
 ```bash
-python WWG_postproc.py -f *.root -k MC -y 2018
+python WWG_postproc.py -f *.root -y 2018 -d (for data)
+python WWG_postproc.py -f *.root -y 2018 (for MC)
 ```
 
 <br>
