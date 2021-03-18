@@ -255,9 +255,6 @@ class WWG_Producer(Module):
         isprompttaudecayproduct = (1 << 3) #isPromptTauDecayProduct
         isfromhardprocess_mask = (1 << 8) #isPrompt
 
-        if hasattr(event, 'nGenPart'):
-           genparts = Collection(event, "GenPart")
-
         channel = 0 
         # emu:     1
         # ee:      2
@@ -400,7 +397,6 @@ class WWG_Producer(Module):
         else:
             self.out.fillBranch("pass_selection",0)
             return True
-        print channel,'mu_pass:',muon_pass,' ele_pass:',electron_pass,' photon_pass:',photon_pass
         photon_gen_matching=-10
         photon_isprompt =-10
         if hasattr(photons[photons_select[0]],'genPartIdx'):
@@ -440,6 +436,9 @@ class WWG_Producer(Module):
             self.out.fillBranch("ntruepu",event.Pileup_nTrueInt)
         else:
             self.out.fillBranch("ntruepu",0)
+
+        print channel,'mu_pass:',muon_pass,' ele_pass:',electron_pass,' photon_pass:',photon_pass
+        print 'is lepton1 real ',lepton1_isprompt,' is lepton2 real ',lepton2_isprompt,' is photon real ',photon_isprompt,' or ',photon_gen_matching
 
         self.out.fillBranch("njets50",njets50)
         self.out.fillBranch("njets40",njets40)
