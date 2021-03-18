@@ -140,9 +140,10 @@ class WWG_Producer(Module):
         jets_select = []
         leptons_select=[]
 
-#        if hasattr(event,'nGenPart'):
-#            genparts = Collection(event, "GenPart")
-
+        if hasattr(event,'GenPart'):
+            genparts = Collection(event, "GenPart")
+	    print len(genparts)
+        
         #selection on muons
         muon_pass =0
         for i in range(0,len(muons)):
@@ -278,8 +279,8 @@ class WWG_Producer(Module):
             if muons[muons_select[0]].charge * (electrons[electrons_select[0]].charge) >= 0:
                 self.out.fillBranch("pass_selection",0)
                 return True
-            if hasattr(event, 'nGenPart'):
-		genparts = Collection(event, "GenPart")
+#            print 'test emu channel',len(genparts)
+            if hasattr(event, 'GenPart'):
                 print 'calculate the lepton flag in channel emu'
                 for i in range(0,len(genparts)):
 		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
@@ -321,8 +322,8 @@ class WWG_Producer(Module):
             if electrons[electrons_select[0]].charge * electrons[electrons_select[1]].charge >=0:
 	        self.out.fillBranch("pass_selection",0)
                 return True 
-	    if hasattr(event, 'nGenPart'):
-		genparts = Collection(event, "GenPart")
+#            print 'test',len(genparts)
+	    if hasattr(event, 'GenPart'):
                 print 'calculate the lepton flag in channel ee'
                 for i in range(0,len(genparts)):
 		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 11 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
@@ -365,8 +366,7 @@ class WWG_Producer(Module):
             if muons[muons_select[0]].charge * muons[muons_select[1]].charge >= 0:
 	       self.out.fillBranch("pass_selection",0)
                return True 
-	    if hasattr(event, 'nGenPart'):
-		genparts = Collection(event, "GenPart")
+	    if hasattr(event, 'GenPart'):
                 print 'calculate the lepton flag in channel mumu'
                 for i in range(0,len(genparts)):
 		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
@@ -400,8 +400,7 @@ class WWG_Producer(Module):
         photon_gen_matching=-10
         photon_isprompt =-10
 #       if hasattr(photons[photons_select[0]],'genPartIdx') :
-        if hasattr(photons[photons_select[0]],'genPartIdx') or hasattr(event, 'nGenPart') :
-            genparts = Collection(event, "GenPart")
+        if hasattr(photons[photons_select[0]],'genPartIdx') or hasattr(event, 'GenPart') :
             print 'calculate the photon flag'
             if photons[photons_select[0]].genPartIdx >= 0 and genparts[photons[photons_select[0]].genPartIdx].pdgId  == 22: 
                 if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
@@ -440,7 +439,7 @@ class WWG_Producer(Module):
         else:
             self.out.fillBranch("ntruepu",0)
 
-        print 'channel', channel,'mu_pass:',muon_pass,' ele_pass:',electron_pass,' photon_pass:',photon_pass,' is lepton1 real ',lepton1_isprompt,' is lepton2 real ',lepton2_isprompt,' is photon real ',photon_isprompt,' or ',photon_gen_matching
+#        print 'channel', channel,'mu_pass:',muon_pass,' ele_pass:',electron_pass,' photon_pass:',photon_pass,' is lepton1 real ',lepton1_isprompt,' is lepton2 real ',lepton2_isprompt,' is photon real ',photon_isprompt,' or ',photon_gen_matching
 
         self.out.fillBranch("njets50",njets50)
         self.out.fillBranch("njets40",njets40)
