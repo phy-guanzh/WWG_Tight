@@ -4,6 +4,18 @@ keep run
 keep luminosityBlock
 keep event
 keep Generator_weight
+keep GenJet_eta
+keep GenJet_phi
+keep GenJet_mass
+keep GenJet_pt
+keep GenPart_eta
+keep GenPart_phi
+keep GenPart_mass
+keep GenPart_pt
+keep GenPart_pdgId
+keep GenPart_statusFlags
+keep GenPart_status
+keep GenPart_genPartIdxMother
 keep MET_pt
 keep MET_phi
 keep RawMET_pt
@@ -51,6 +63,7 @@ keep Photon_eCorr
 keep Photon_electronIdx
 keep Photon_vidNestedWPBitmap
 keep Photon_genPartFlav
+keep Photon_genPartIdx
 keep Photon_isScEtaEE
 keep Photon_isScEtaEB
 keep Jet_pt
@@ -62,14 +75,6 @@ keep Jet_jetId
 keep Jet_rawFactor
 keep Jet_btagDeepB
 keep Jet_btagCSVV2
-# keep HLT_Ele27_WPTight_Gsf
-# keep HLT_Ele32_WPTight_Gsf
-# keep HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-# keep HLT_Ele12_CaloIdL_TrackIdL_IsoVL_PFJet30 
-# keep HLT_IsoMu24
-# keep HLT_IsoTkMu24
-# keep HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-# keep HLT_Mu17_TrkIsoVVL
 keep HLT*
 keep Pileup_nPU
 keep Pileup_nTrueInt
