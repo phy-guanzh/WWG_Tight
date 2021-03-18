@@ -6,6 +6,8 @@ keep event
 keep Generator_weight
 keep MET_pt
 keep MET_phi
+keep RawMET_pt
+keep RawMET_phi
 keep PuppiMET_pt
 keep PuppiMET_phi
 keep Electron_pt
@@ -19,6 +21,8 @@ keep Electron_eCorr
 keep Electron_dz
 keep Electron_dxy
 keep Electron_deltaEtaSC
+keep Electron_jetIdx
+keep Electron_photonIdx
 keep Electron_genPartFlav
 keep Electron_genPartIdx
 keep Muon_pt
@@ -34,6 +38,7 @@ keep Muon_genPartFlav
 keep Muon_genPartIdx
 keep Photon_pt
 keep Photon_eta
+keep Photon_jetIdx
 keep Photon_sieie
 keep Photon_pfRelIso03_chg
 keep Photon_hoe
@@ -43,6 +48,7 @@ keep Photon_cutBased
 keep Photon_electronVeto
 keep Photon_pixelSeed
 keep Photon_eCorr
+keep Photon_electronIdx
 keep Photon_vidNestedWPBitmap
 keep Photon_genPartFlav
 keep Photon_isScEtaEE
@@ -67,3 +73,5 @@ keep Jet_btagCSVV2
 keep HLT*
 keep Pileup_nPU
 keep Pileup_nTrueInt
+keep PV_npvs*
+keep MET_MetUnclustEnUpDelta*

@@ -1,12 +1,19 @@
 # this is a comment
 drop * # start with all
-keep z_lepton*
-keep w_lepton*
-keep *photon*
-keep dilepton*
+keep event
+keep lumi
+keep run
 keep *channel*
+keep *pass*
+keep lep*
+keep *photon*
 keep *weight*
-keep MET*
+keep *MET*
+keep *met*
+keep *njets*
+keep n*
+keep *ll*
+
 # keep max*
 
 
