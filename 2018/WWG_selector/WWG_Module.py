@@ -105,8 +105,8 @@ class WWG_Producer(Module):
         HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
         HLT_Mu2 = event.HLT_IsoMu24
 
-        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL
-        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL
+        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
+        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
 
         if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
            self.out.fillBranch("pass_selection",0)
