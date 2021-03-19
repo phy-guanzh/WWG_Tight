@@ -67,15 +67,12 @@ class WWG_Producer(Module):
         self.out.branch("njets30","I")
         self.out.branch("njets20","I")
         self.out.branch("njets15","I")
-        self.out.branch("pass_Ele23Ele12","I")
-        self.out.branch("pass_Ele23Ele12_DZ","I")
-        self.out.branch("pass_Ele35","I")
-        self.out.branch("pass_Ele32","I")
-        self.out.branch("pass_Mu17Mu8_3p8","I")
-        self.out.branch("pass_Mu17Mu8","I")
-        self.out.branch("pass_Mu27","I")
-        self.out.branch("pass_Mu12Ele23","I")
-        self.out.branch("pass_Mu23Ele12","I")
+        self.out.branch("HLT_Ele1","I")
+        self.out.branch("HLT_Ele2","I")
+        self.out.branch("HLT_Mu1","I")
+        self.out.branch("HLT_Mu2","I")
+        self.out.branch("HLT_emu1","I")
+        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -102,30 +99,24 @@ class WWG_Producer(Module):
             self.out.fillBranch("n_pos",0)
             self.out.fillBranch("n_minus",0)
 
-        pass_Ele23Ele12 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-        pass_Ele23Ele12_DZ = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
-        pass_Ele35 = event.HLT_Ele35_WPTight_Gsf
-        pass_Ele32 = event.HLT_Ele32_WPTight_Gsf_L1DoubleEG
+        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
+        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
 
-        pass_Mu17Mu8_3p8 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-        pass_Mu17Mu8 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8
-        pass_Mu27 = event.HLT_IsoMu27
+        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
+        HLT_Mu2 = event.HLT_IsoMu24
 
-        pass_Mu12Ele23 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL
-        pass_Mu23Ele12 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL
+        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL
+        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL
 
-        if not (pass_Ele23Ele12 or pass_Ele23Ele12_DZ or pass_Ele35 or pass_Ele32 or pass_Mu17Mu8_3p8 or pass_Mu17Mu8 or pass_Mu27 or pass_Mu12Ele23 or pass_Mu23Ele12):
+        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
            self.out.fillBranch("pass_selection",0)
            return True
-        self.out.fillBranch("pass_Ele23Ele12",pass_Ele23Ele12)
-        self.out.fillBranch("pass_Ele23Ele12_DZ",pass_Ele23Ele12_DZ)
-        self.out.fillBranch("pass_Ele35",pass_Ele35)
-        self.out.fillBranch("pass_Ele32",pass_Ele32)
-        self.out.fillBranch("pass_Mu17Mu8_3p8",pass_Mu17Mu8_3p8)
-        self.out.fillBranch("pass_Mu17Mu8",pass_Mu17Mu8)
-        self.out.fillBranch("pass_Mu27",pass_Mu27)
-        self.out.fillBranch("pass_Mu12Ele23",pass_Mu12Ele23)
-        self.out.fillBranch("pass_Mu23Ele12",pass_Mu23Ele12)
+        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
+        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
+        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
+        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
+        self.out.fillBranch("HLT_emu1",HLT_emu1)
+        self.out.fillBranch("HLT_emu2",HLT_emu2)
 
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
