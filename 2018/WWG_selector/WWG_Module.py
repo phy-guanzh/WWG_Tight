@@ -38,6 +38,8 @@ class WWG_Producer(Module):
         self.out.branch("lep2phi",  "F")
         self.out.branch("lepton1_isprompt", "I")
         self.out.branch("lepton2_isprompt", "I")
+        self.out.branch("n_loose_mu", "I")
+        self.out.branch("n_loose_ele", "I")
         self.out.branch("photonet",  "F")
         self.out.branch("photoneta",  "F")
         self.out.branch("photonphi",  "F")
@@ -135,6 +137,7 @@ class WWG_Producer(Module):
 
         #selection on muons
         muon_pass =0
+	loose_muon_pass=0
         for i in range(0,len(muons)):
             if muons[i].pt < 20:
                 continue
@@ -146,9 +149,12 @@ class WWG_Producer(Module):
                 muons_select.append(i)
                 muon_pass += 1
                 leptons_select.append(i)
+            if muons[i].looseId == True:
+                loose_muon_pass += 1
 
         # selection on electrons
         electron_pass=0
+        loose_electron_pass=0
         for i in range(0,len(electrons)):
             if electrons[i].pt < 20:
                 continue
@@ -160,10 +166,15 @@ class WWG_Producer(Module):
                     electron_pass += 1
                     leptons_select.append(i)
 
-#        print 'the number of leptons: ',len(electrons_select)+len(muons_select)
+                if electrons[i].cutBased >= 1:
+                    loose_electron_pass += 1
+
+#       print 'the number of leptons: ',len(electrons_select)+len(muons_select)
         if len(electrons_select)+len(muons_select) != 2:      #reject event if there are not exactly two leptons
 	   self.out.fillBranch("pass_selection",0)
 	   return True
+        self.out.fillBranch("n_loose_ele", "loose_electron_pass")
+        self.out.fillBranch("n_loose_mu", "loose_muon_pass")
 
         # selection on photons
 	photon_pass=0
@@ -223,16 +234,16 @@ class WWG_Producer(Module):
             if jets[i].jetId >> 1 & 1:
                jets_select.append(i)
                njets += 1
-            if jets[i].pt > 50:
-                njets50+=1
-            if jets[i].pt > 40:
-                njets40+=1
-            if jets[i].pt > 30:
-                njets30+=1
-            if jets[i].pt > 20:
-                njets20+=1
-            if jets[i].pt > 15:
-                njets15+=1
+               if jets[i].pt > 50:
+                   njets50+=1
+               if jets[i].pt > 40:
+                   njets40+=1
+               if jets[i].pt > 30:
+                   njets30+=1
+               if jets[i].pt > 20:
+                   njets20+=1
+               if jets[i].pt > 15:
+                   njets15+=1
 #        print len(jets),("njets",njets)
 #        if njets >=2 :
 #            self.out.fillBranch("pass_selection",0)
