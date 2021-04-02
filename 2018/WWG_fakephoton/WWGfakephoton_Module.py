@@ -26,8 +26,12 @@ class WWG_Producer(Module):
         self.out.branch("run",  "i")
         self.out.branch("lumi",  "i")
 	self.out.branch("channel",  "I");
-        self.out.branch("pass_selection1",  "B");
-        self.out.branch("pass_selection2",  "B");
+        self.out.branch("pass_selection1",  "B")
+        self.out.branch("pass_selection2",  "B")
+        self.out.branch("photon_selection",  "I")
+	self.out.branch("photonchiso",  "F")
+        self.out.branch("njets_fake",  "I")
+        self.out.branch("njets_fake_template",  "I")
 
         self.out.branch("lep1_pid",  "I")
         self.out.branch("lep2_pid",  "I")
@@ -45,7 +49,6 @@ class WWG_Producer(Module):
         self.out.branch("photon_isprompt", "I")
         self.out.branch("photon_gen_matching", "I")
         self.out.branch("mll",  "F")
-        self.out.branch("mllg",  "F")
         self.out.branch("ptll",  "F")
         self.out.branch("met",  "F")
         self.out.branch("metup",  "F")
@@ -113,7 +116,6 @@ class WWG_Producer(Module):
         pass_selection2 = False
 
         if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
-           self.out.fillBranch("pass_selection",0)
            return False
 
         self.out.fillBranch("HLT_Ele1",HLT_Ele1)
@@ -183,11 +185,11 @@ class WWG_Producer(Module):
                 continue
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
-            mask1 = '0b10101010101010' # full medium ID
-            mask2 = '0b00101010101010' # remove Isopho
-            mask3 = '0b10001010101010' # remove IsoNeu
-            mask4 = '0b10100010101010' # remove Isoch
-            mask5 = '0b10101000101010' # remove sigma ieie
+            mask1 = 0b10101010101010 # full medium ID
+            mask2 = 0b00101010101010 # remove Isopho
+            mask3 = 0b10001010101010 # remove IsoNeu
+            mask4 = 0b10100010101010 # remove Isoch
+            mask5 = 0b10101000101010 # remove sigma ieie
 
             bitmap = photons[i].vidNestedWPBitmap & mask1
 
@@ -225,11 +227,11 @@ class WWG_Producer(Module):
                 continue
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
-            mask1 = '0b10101010101010' # full medium ID
-            mask2 = '0b00101010101010' # remove Isopho
-            mask3 = '0b10001010101010' # remove IsoNeu
-            mask4 = '0b10100010101010' # remove Isoch
-            mask5 = '0b10101000101010' # remove sigma ieie
+            mask1 = 0b10101010101010 # full medium ID
+            mask2 = 0b00101010101010 # remove Isopho
+            mask3 = 0b10001010101010 # remove IsoNeu
+            mask4 = 0b10100010101010 # remove Isoch
+            mask5 = 0b10101000101010 # remove sigma ieie
 
             bitmap = photons[i].vidNestedWPBitmap & mask1
 
@@ -268,7 +270,7 @@ class WWG_Producer(Module):
                 continue
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
-            mask1 = '0b10100000101010' # remove the Isoch and sigma ieie
+            mask1 = 0b10100000101010 # remove the Isoch and sigma ieie
 
             bitmap = photons[i].vidNestedWPBitmap & mask1
 
@@ -290,7 +292,9 @@ class WWG_Producer(Module):
             fakephoton_pass += 1
             selected_fake_template_photons.append(i) #for fake template from data
 
-        if not (len(selected_medium_or_control_photons) >= 1 or len(selected_fake_template_photons) == 1):#only one jet fake photon 
+        pass_selection1 = len(selected_medium_or_control_photons) >= 1 # select medium and control photons
+        pass_selection2 = len(selected_fake_template_photons) == 1     # select fake photons
+        if not pass_selection1 and not pass_selection2:
             return False
 
         isprompt_mask = (1 << 0) #isPrompt
@@ -312,12 +316,9 @@ class WWG_Producer(Module):
         if len(muons_select)==1 and len(electrons_select)==1:  # emu channel 
             if deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
                return False 
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
-               return False
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
-               return False
             if muons[muons_select[0]].charge * (electrons[electrons_select[0]].charge) >= 0:
                return False
+            # lepton photon dr have requied when append photon
 #           print 'test emu channel',len(genparts)
             if hasattr(event, 'nGenPart'):
                 print 'calculate the lepton flag in channel emu'
@@ -329,7 +330,6 @@ class WWG_Producer(Module):
 		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 11 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
                        lepton2_isprompt=1 
                        break 
-            channel = 1
 
             if len(selected_medium_or_control_photons) >= 1:
                 if abs((electrons[electrons_select[0]].p4() + photons[selected_medium_or_control_photons[0]].p4()).M() - 91.2) >= 10:
@@ -339,6 +339,7 @@ class WWG_Producer(Module):
                 if abs((electrons[tight_electrons[0]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10:
                     pass_selection2 = True
 
+            channel = 1
             self.out.fillBranch("channel",channel)
 	    self.out.fillBranch("lepton1_isprompt",lepton1_isprompt)
 	    self.out.fillBranch("lepton2_isprompt",lepton2_isprompt)
@@ -352,18 +353,10 @@ class WWG_Producer(Module):
             self.out.fillBranch("lep2phi",electrons[electrons_select[0]].phi)
             self.out.fillBranch("mll",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).M())
             self.out.fillBranch("ptll",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt())
-            self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-            self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-            self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-            self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()+photons[photons_select[0]].p4()).M())
         # ee
         elif len(muons_select)==0 and len(electrons_select)==2:
             if deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi)<0.5:
                return False 
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
-               return False
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi) < 0.5:
-               return False
             if electrons[electrons_select[0]].charge * electrons[electrons_select[1]].charge >=0:
                return False 
 #           print 'test',len(genparts)
@@ -377,7 +370,6 @@ class WWG_Producer(Module):
 		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 11 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
                        lepton2_isprompt=1 
                        break 
-            channel = 2
             if len(selected_medium_or_control_photons) >= 1:
                 if (abs((electrons[electrons_select[0]].p4() + photons[selected_medium_or_control_photons[0]].p4()).M() - 91.2) >= 10) and (abs((electrons[electrons_select[1]].p4() + photons[selected_medium_or_control_photons[0]].p4()).M() - 91.2) >= 10):
                     pass_selection1 = True
@@ -386,6 +378,7 @@ class WWG_Producer(Module):
                 if (abs((electrons[tight_electrons[0]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10) and (abs((electrons[electrons_select[1]].p4() + photons[selected_medium_or_control_photons[0]].p4()).M() - 91.2) >= 10):
                     pass_selection2 = True
 
+            channel = 2
             self.out.fillBranch("channel",channel)
 	    self.out.fillBranch("lepton1_isprompt",lepton1_isprompt)
 	    self.out.fillBranch("lepton2_isprompt",lepton2_isprompt)
@@ -399,20 +392,11 @@ class WWG_Producer(Module):
             self.out.fillBranch("lep2phi",electrons[electrons_select[1]].phi)
             self.out.fillBranch("mll",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).M())
             self.out.fillBranch("ptll",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).Pt())
-            self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-            self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-            self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-            self.out.fillBranch("mllg",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()+photons[photons_select[0]].p4()).M())
-
 
         # mumu 
         elif len(electrons_select)==0 and len(muons_select)==2:
             if deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,muons[muons_select[1]].eta,muons[muons_select[1]].phi)<0.5:
                return False 
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
-               return False
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[1]].eta,muons[muons_select[1]].phi) < 0.5:
-               return False
             if muons[muons_select[0]].charge * muons[muons_select[1]].charge >= 0:
                return False 
 	    if hasattr(event, 'nGenPart'):
@@ -426,8 +410,6 @@ class WWG_Producer(Module):
                        lepton2_isprompt=1
                        break 
             channel = 3
-            pass_selection1 = len(selected_medium_or_control_photons) >= 1 # select medium and control photons
-            pass_selection2 = len(selected_fake_template_photons) == 1     # select fake photons
             self.out.fillBranch("channel",channel)
 	    self.out.fillBranch("lepton1_isprompt",lepton1_isprompt)
 	    self.out.fillBranch("lepton2_isprompt",lepton2_isprompt)
@@ -441,15 +423,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("lep2phi",muons[muons_select[1]].phi)
             self.out.fillBranch("mll",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).M())
             self.out.fillBranch("ptll",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).Pt())
-            self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-            self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-            self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-            self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()+photons[photons_select[0]].p4()).M())
 
         else:
-            return False
-
-        if not pass_selection1 and not pass_selection2:
             return False
 
         njets = 0
@@ -468,8 +443,6 @@ class WWG_Producer(Module):
                continue
             if jets[i].pt<30:
                continue
-	    if deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) < 0.5:
-	       continue;
             for j in range(0,len(electrons_select)):
                 if deltaR(jets[i].eta,jets[i].phi,electrons[electrons_select[j]].eta,electrons[electrons_select[j]].phi) < 0.5:
                    pass_lepton_dr_cut = False
@@ -502,11 +475,10 @@ class WWG_Producer(Module):
                     njets_fake_template+=1
 #        print len(jets),("njets",njets)
 #        if njets >=2 :
-#            self.out.fillBranch("pass_selection",0)
 #            return True
         self.out.fillBranch("pass_selection1",pass_selection1) # select medium and control photons
         self.out.fillBranch("pass_selection2",pass_selection2) # select fake photons
-####### from here 
+
         if pass_selection1:
            photon_gen_matching=-10
            photon_isprompt =-10
@@ -536,11 +508,11 @@ class WWG_Producer(Module):
 	           if photons[selected_medium_or_control_photons[0]].genPartIdx >=0 and genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[selected_medium_or_control_photons[0]].eta,photons[selected_medium_or_control_photons[0]].phi,genpart.eta,genpart.phi) < 0.3:
                       photon_isprompt =1
                       break
-           mask1 = '0b10101010101010' # full medium ID
-           mask2 = '0b00101010101010' # remove Isopho
-           mask3 = '0b10001010101010' # remove IsoNeu
-           mask4 = '0b10100010101010' # remove Isoch
-           mask5 = '0b10101000101010' # remove sigma ieie
+           mask1 = 0b10101010101010 # full medium ID
+           mask2 = 0b00101010101010 # remove Isopho
+           mask3 = 0b10001010101010 # remove IsoNeu
+           mask4 = 0b10100010101010 # remove Isoch
+           mask5 = 0b10101000101010 # remove sigma ieie
         
 	   bitmap = photons[selected_medium_or_control_photons[0]].vidNestedWPBitmap & mask1   
            if (bitmap == mask1):
@@ -560,10 +532,11 @@ class WWG_Producer(Module):
            self.out.fillBranch("photonet",photons[selected_medium_or_control_photons[0]].pt)
            self.out.fillBranch("photoneta",photons[selected_medium_or_control_photons[0]].eta)
            self.out.fillBranch("photonphi",photons[selected_medium_or_control_photons[0]].phi)
+           self.out.fillBranch("photonchiso",photons[selected_medium_or_control_photons[0]].pfRelIso03_chg)
            self.out.fillBranch("photon_gen_matching",photon_gen_matching)
            self.out.fillBranch("photon_isprompt",photon_isprompt)
 
-        elif pass_selection2:
+        if pass_selection2: # pass_selection1 and pass_selection1 can appear meantime
            photon_gen_matching=-10
            photon_isprompt =-10
            if hasattr(photons[selected_fake_template_photons[0]],'genPartIdx') :
@@ -595,6 +568,7 @@ class WWG_Producer(Module):
            self.out.fillBranch("photonet",photons[selected_fake_template_photons[0]].pt)
            self.out.fillBranch("photoneta",photons[selected_fake_template_photons[0]].eta)
            self.out.fillBranch("photonphi",photons[selected_fake_template_photons[0]].phi)
+           self.out.fillBranch("photonchiso",photons[selected_fake_template_photons[0]].pfRelIso03_chg)
            self.out.fillBranch("photon_gen_matching",photon_gen_matching)
            self.out.fillBranch("photon_isprompt",photon_isprompt)
            #pass_selection2  -> build fake template from data
@@ -624,8 +598,9 @@ class WWG_Producer(Module):
         self.out.fillBranch("rawmet",event.RawMET_pt)
         self.out.fillBranch("rawmetphi",event.RawMET_phi)
         self.out.fillBranch("metphi",event.MET_phi)
-        self.out.fillBranch("pass_selection",1)
+        self.out.fillBranch("njets_fake", njets_fake)
+        self.out.fillBranch("njets_fake_template", njets_fake)
         return True
 
-WWG_Module = lambda: WWG_Producer()
+WWGfakephoton_Module = lambda: WWG_Producer()
 
