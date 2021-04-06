@@ -336,7 +336,7 @@ class WWG_Producer(Module):
                     pass_selection1 = True
 
             if len(selected_fake_template_photons) == 1:
-                if abs((electrons[tight_electrons[0]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10:
+                if abs((electrons[electrons_select[0]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10:
                     pass_selection2 = True
 
             channel = 1
@@ -375,7 +375,7 @@ class WWG_Producer(Module):
                     pass_selection1 = True
 
             if len(selected_fake_template_photons) == 1:
-                if (abs((electrons[tight_electrons[0]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10) and (abs((electrons[electrons_select[1]].p4() + photons[selected_medium_or_control_photons[0]].p4()).M() - 91.2) >= 10):
+                if (abs((electrons[electrons_select[0]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10) and (abs((electrons[electrons_select[1]].p4() + photons[selected_fake_template_photons[0]].p4()).M() - 91.2) >= 10):
                     pass_selection2 = True
 
             channel = 2
