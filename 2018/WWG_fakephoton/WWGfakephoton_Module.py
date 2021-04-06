@@ -43,6 +43,8 @@ class WWG_Producer(Module):
         self.out.branch("lep2phi",  "F")
         self.out.branch("lepton1_isprompt", "I")
         self.out.branch("lepton2_isprompt", "I")
+        self.out.branch("n_loose_mu", "I")
+        self.out.branch("n_loose_ele", "I")
         self.out.branch("photonet",  "F")
         self.out.branch("photoneta",  "F")
         self.out.branch("photonphi",  "F")
@@ -143,6 +145,7 @@ class WWG_Producer(Module):
 
         #selection on muons
         muon_pass =0
+	loose_muon_pass=0
         for i in range(0,len(muons)):
             if muons[i].pt < 20:
                 continue
@@ -154,9 +157,12 @@ class WWG_Producer(Module):
                 muons_select.append(i)
                 muon_pass += 1
                 leptons_select.append(i)
+            if muons[i].looseId == True:
+                loose_muon_pass += 1
 
         # selection on electrons
         electron_pass=0
+        loose_electron_pass=0
         for i in range(0,len(electrons)):
             if electrons[i].pt < 20:
                 continue
@@ -167,10 +173,15 @@ class WWG_Producer(Module):
                     electrons_select.append(i)
                     electron_pass += 1
                     leptons_select.append(i)
+                if electrons[i].cutBased >= 1:
+                    loose_electron_pass += 1
 
 #        print 'the number of leptons: ',len(electrons_select)+len(muons_select)
         if len(electrons_select)+len(muons_select) != 2:      #reject event if there are not exactly two leptons
 	   return False
+
+        self.out.fillBranch("n_loose_ele", "loose_electron_pass")
+        self.out.fillBranch("n_loose_mu", "loose_muon_pass")
 
         # select medium photons
 	photon_pass=0
@@ -483,7 +494,6 @@ class WWG_Producer(Module):
            photon_gen_matching=-10
            photon_isprompt =-10
            if hasattr(photons[selected_medium_or_control_photons[0]],'genPartIdx') :
-               print 'calculate the photon flag'
                if photons[selected_medium_or_control_photons[0]].genPartIdx >= 0 and genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].pdgId  == 22: 
                    if ((genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[selected_medium_or_control_photons[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
                        photon_gen_matching = 6
@@ -540,7 +550,6 @@ class WWG_Producer(Module):
            photon_gen_matching=-10
            photon_isprompt =-10
            if hasattr(photons[selected_fake_template_photons[0]],'genPartIdx') :
-               print 'calculate the photon flag'
                if photons[selected_fake_template_photons[0]].genPartIdx >= 0 and genparts[photons[selected_fake_template_photons[0]].genPartIdx].pdgId  == 22: 
                    if ((genparts[photons[selected_fake_template_photons[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[selected_fake_template_photons[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[selected_fake_template_photons[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
                        photon_gen_matching = 6
