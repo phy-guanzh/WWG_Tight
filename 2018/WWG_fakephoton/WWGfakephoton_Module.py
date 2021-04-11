@@ -180,8 +180,8 @@ class WWG_Producer(Module):
         if len(electrons_select)+len(muons_select) != 2:      #reject event if there are not exactly two leptons
 	   return False
 
-        self.out.fillBranch("n_loose_ele", "loose_electron_pass")
-        self.out.fillBranch("n_loose_mu", "loose_muon_pass")
+        self.out.fillBranch("n_loose_ele", loose_electron_pass)
+        self.out.fillBranch("n_loose_mu", loose_muon_pass)
 
         # select medium photons
 	photon_pass=0

@@ -10,7 +10,7 @@ config.section_("JobType")
 config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "PSet.py"
 config.JobType.scriptExe = "./WWG_crab_script.sh" 
-config.JobType.inputFiles = ["../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw 
+config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw 
 config.JobType.scriptArgs = ["isdata=data","year=2016"] 
 config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
@@ -24,7 +24,7 @@ config.Data.splitting = "FileBased"
 #config.Data.splitting = "EventAwareLumiBased" 
 #config.Data.splitting = "Automatic" 
 config.Data.unitsPerJob = 1
-config.Data.lumiMask = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt" 
+config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt" 
 
 config.Data.publication = False
 config.Data.ignoreLocality = True

@@ -43,6 +43,7 @@ keep Muon_phi
 keep Muon_mass
 keep Muon_pdgId
 keep Muon_mediumId
+keep Muon_looseId
 keep Muon_charge
 keep Muon_pfRelIso04_all
 keep Muon_tightId
