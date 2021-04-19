@@ -1,0 +1,250 @@
+#!/usr/bin/env python
+# Analyzer for WWG Analysis based on nanoAOD tools
+
+import os, sys
+import math
+import ROOT
+from math import sin, cos, sqrt
+ROOT.PyConfig.IgnoreCommandLineOptions = True
+from importlib import import_module
+from PhysicsTools.NanoAODTools.postprocessing.framework.postprocessor import PostProcessor
+
+from PhysicsTools.NanoAODTools.postprocessing.tools import deltaR
+
+from PhysicsTools.NanoAODTools.postprocessing.framework.datamodel import Collection
+from PhysicsTools.NanoAODTools.postprocessing.framework.eventloop import Module
+from PhysicsTools.NanoAODTools.postprocessing.modules.common.countHistogramsModule import countHistogramsProducer
+
+class WWG_Producer(Module):
+    def __init__(self):
+        pass
+    def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
+
+        self.out = wrappedOutputTree
+
+        self.out.branch("event",  "i")
+        self.out.branch("run",  "i")
+        self.out.branch("lumi",  "i")
+
+        self.out.branch("lepton_pid",  "I")
+        self.out.branch("lepton_pt",  "F")
+        self.out.branch("lepton_eta",  "F")
+        self.out.branch("lepton_phi",  "F")
+        self.out.branch("is_lepton_tight", "I")
+	self.out.branch("lepton_isprompt", "I")
+        self.out.branch("n_loose_mu", "I")
+        self.out.branch("n_loose_ele", "I")
+        self.out.branch("met",  "F")
+        self.out.branch("puppimet","F")
+        self.out.branch("rawmet","F")
+        self.out.branch("gen_weight","F")
+        self.out.branch("n_pos", "I")
+        self.out.branch("n_minus", "I")
+        self.out.branch("n_num", "I")
+        self.out.branch("HLT_Ele1","I")
+        self.out.branch("HLT_Ele2","I")
+        self.out.branch("HLT_Mu1","I")
+        self.out.branch("HLT_Mu2","I")
+        self.out.branch("HLT_emu1","I")
+        self.out.branch("HLT_emu2","I")
+
+    def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
+	pass
+
+    def analyze(self, event):
+        """process event, return True (go to next module) or False (fail, go to next event)"""
+
+        self.out.fillBranch("event",event.event)
+        self.out.fillBranch("lumi",event.luminosityBlock)
+        self.out.fillBranch("run",event.run)
+#        print event.event,event.luminosityBlock,event.run
+        if hasattr(event,'Generator_weight'):
+            if event.Generator_weight > 0 :
+                n_pos=1
+                n_minus=0
+            else:
+                n_minus=1
+                n_pos=0
+            self.out.fillBranch("gen_weight",event.Generator_weight)
+            self.out.fillBranch("n_pos",n_pos)
+            self.out.fillBranch("n_minus",n_minus)
+        else:    
+            self.out.fillBranch("gen_weight",0)
+            self.out.fillBranch("n_pos",0)
+            self.out.fillBranch("n_minus",0)
+
+        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
+        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
+
+        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
+        HLT_Mu2 = event.HLT_IsoMu24
+
+        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
+        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
+
+#        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
+#           return True
+        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
+        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
+        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
+        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
+        self.out.fillBranch("HLT_emu1",HLT_emu1)
+        self.out.fillBranch("HLT_emu2",HLT_emu2)
+
+        electrons = Collection(event, "Electron")
+        muons = Collection(event, "Muon")
+        photons = Collection(event, "Photon")
+
+	isprompt_mask = (1 << 0) #isPrompt
+	isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct
+	isdirecttaudecayproduct_mask = (1 << 4) #isDirectTauDecayProduct
+	isprompttaudecayproduct = (1 << 3) #isPromptTauDecayProduct
+	isfromhardprocess_mask = (1 << 8) #isPrompt
+	   
+        jets = Collection(event, "Jet")
+	if hasattr(event, 'nGenPart'):
+           genparts = Collection(event, "GenPart")
+
+        jet_select = [] 
+        dileptonp4 = ROOT.TLorentzVector()
+        photons_select = []
+        electrons_select = []
+        muons_select = [] 
+        jets_select = []
+        leptons_select=[]
+        loose_but_not_tight_muons = []
+        loose_but_not_tight_electrons = []
+        #selection on muons
+        muon_pass =0
+	loose_muon_pass=0
+        for i in range(0,len(muons)):
+            if muons[i].pt < 20:
+                continue
+            if abs(muons[i].eta) > 2.5:
+                continue
+            if muons[i].mediumId == True and muons[i].pfRelIso04_all < 0.20:
+                muons_select.append(i)
+                muon_pass += 1
+                leptons_select.append(i)
+            elif muons[i].mediumId == True and muons[i].pfRelIso04_all < 0.4:
+                 loose_but_not_tight_muons.append(i)
+            if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.4:
+                loose_muon_pass += 1
+
+        self.out.fillBranch("n_loose_mu", "loose_muon_pass")
+
+        if loose_muon_pass > len(muons_select):
+           return False
+
+        # selection on electrons
+        electron_pass=0
+        loose_electron_pass=0
+        for i in range(0,len(electrons)):
+            if electrons[i].pt < 20:
+                continue
+            if abs(electrons[i].eta + electrons[i].deltaEtaSC) > 2.5:
+                continue
+            if (abs(electrons[i].eta + electrons[i].deltaEtaSC) < 1.479 and abs(electrons[i].dz) < 0.1 and abs(electrons[i].dxy) < 0.05) or (abs(electrons[i].eta + electrons[i].deltaEtaSC) > 1.479 and abs(electrons[i].dz) < 0.2 and abs(electrons[i].dxy) < 0.1):
+                if electrons[i].cutBased >= 3:
+                    electrons_select.append(i)
+                    electron_pass += 1
+                    leptons_select.append(i)
+                elif electrons[i].cutBased >= 1:
+                    loose_but_not_tight_electrons.append(i)
+                if electrons[i].cutBased >= 1:
+                    loose_electron_pass += 1
+
+        self.out.fillBranch("n_loose_ele", "loose_electron_pass")
+
+        if loose_electron_pass > len(electrons_select):
+           return False
+
+	lepton_isprompt=-10
+        if len(muons_select)+ len(loose_but_not_tight_muons) == 1 and len(electrons_select) + len(loose_but_not_tight_electrons) == 0:      #reject event if there are not exactly two leptons
+	    if len(muons_select) == 1:
+                muon_index = muons_select[0]
+                self.out.fillBranch("is_lepton_tight",1)
+            if len(loose_but_not_tight_muons) == 1:
+                muon_index = loose_but_not_tight_muons[0]
+                self.out.fillBranch("is_lepton_tight",0)
+            if hasattr(event, 'nGenPart'):
+	       for i in range(0,len(genparts)):
+		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(muons[muon_index].eta,muons[muon_index].phi,genparts[i].eta,genparts[i].phi) < 0.3:
+                       lepton_isprompt=1
+                       break
+            pass_lepton_dr_cut = True
+            for i in range(0,len(jets)):
+#                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
+#                   continue
+                if abs(jets[i].eta) > 4.7:
+                   continue
+                if jets[i].pt<30:
+                   continue
+		if deltaR(jets[i].eta,jets[i].phi,muons[muon_index].eta,muons[muon_index].phi) < 0.3:
+                       pass_lepton_dr_cut = False
+
+                if  not pass_lepton_dr_cut == True:
+	            continue
+                if jets[i].jetId >> 1 & 1:
+                   jets_select.append(i)
+                   njets += 1
+            if njets <1 :
+               return False
+            self.out.fillBranch("mt",sqrt(2*muons[muon_index].pt*event.MET_pt*(1 - cos(event.MET_phi - muons[muon_index].phi))))
+            self.out.fillBranch("puppimt",sqrt(2*muons[muon_index].pt*event.PuppiMET_pt*(1 - cos(event.PuppiMET_phi - muons[muon_index].phi))))
+
+            self.out.fillBranch("lepton_pt",muons[muon_index].pt)
+            self.out.fillBranch("lepton_eta",muons[muon_index].eta)
+            self.out.fillBranch("lepton_pid",muons[muon_index].pdgId)
+            self.out.fillBranch("lepton_isprompt",lepton_isprompt)
+
+	lepton_isprompt=-10
+	elif len(electrons_select) + len(loose_but_not_tight_electrons) == 1 and len(muons_select)+ len(loose_but_not_tight_muons) == 0:
+
+            if len(electrons_select) == 1:
+                electron_index = electrons_select[0]
+                self.out.fillBranch("is_lepton_tight",1)
+
+            if len(loose_but_not_tight_electrons) == 1:
+                electron_index = loose_but_not_tight_electrons[0]
+                self.out.fillBranch("is_lepton_tight",0)
+
+            if hasattr(event, 'nGenPart'):
+	       for i in range(0,len(genparts)):
+		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electron_index].eta,electrons[electron_index].phi,genparts[i].eta,genparts[i].phi) < 0.3:
+                       lepton_isprompt=1
+                       break
+
+            pass_lepton_dr_cut = True
+            for i in range(0,len(jets)):
+#                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
+#                   continue
+                if abs(jets[i].eta) > 4.7:
+                   continue
+                if jets[i].pt<30:
+                   continue
+		if deltaR(jets[i].eta,jets[i].phi,electrons[electron_index].eta,electrons[electron_index].phi) < 0.3:
+                       pass_lepton_dr_cut = False
+
+                if  not pass_lepton_dr_cut == True:
+	            continue
+                if jets[i].jetId >> 1 & 1:
+                   jets_select.append(i)
+                   njets += 1
+            if njets <1 :
+               return False
+            self.out.fillBranch("mt",sqrt(2*electrons[electron_index].pt*event.MET_pt*(1 - cos(event.MET_phi - electrons[electron_index].phi))))
+            self.out.fillBranch("puppimt",sqrt(2*electrons[electron_index].pt*event.PuppiMET_pt*(1 - cos(event.PuppiMET_phi - electrons[electron_index].phi))))
+
+            self.out.fillBranch("lepton_pt",electrons[electron_index].pt)
+            self.out.fillBranch("lepton_eta",electrons[electron_index].eta)
+            self.out.fillBranch("lepton_pid",electrons[electron_index].pdgId)
+            self.out.fillBranch("lepton_isprompt",lepton_isprompt)
+	else:
+	    return False
+
+        self.out.fillBranch("met",event.MET_pt)
+        self.out.fillBranch("puppimet",event.PuppiMET_pt)
+
+WWG_Module = lambda: WWG_Producer()
+

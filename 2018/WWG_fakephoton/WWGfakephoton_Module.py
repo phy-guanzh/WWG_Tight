@@ -151,7 +151,7 @@ class WWG_Producer(Module):
                 continue
             if abs(muons[i].eta) > 2.5:
                 continue
-            if muons[i].pfRelIso04_all > 0.25:
+            if muons[i].pfRelIso04_all > 0.20:
                 continue   
             if muons[i].mediumId == True:
                 muons_select.append(i)
