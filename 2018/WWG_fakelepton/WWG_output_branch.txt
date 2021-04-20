@@ -3,16 +3,17 @@ drop * # start with all
 keep event
 keep lumi
 keep run
-keep *channel*
-keep *pass*
-keep lep*
-keep *photon*
+keep n*
+keep *lepton*
 keep *weight*
 keep *MET*
 keep *met*
-keep *njets*
-keep n*
-keep *ll*
+keep *mt*
+keep HLT*
+#keep *njets*
+#keep *ll*
+#keep *channel*
+#keep *photon*
 
 # keep max*
 
@@ -81,6 +82,5 @@ keep Jet_btagCSVV2
 # keep HLT_IsoTkMu24
 # keep HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
 # keep HLT_Mu17_TrkIsoVVL
-keep HLT*
 keep Pileup_nPU
 keep Pileup_nTrueInt

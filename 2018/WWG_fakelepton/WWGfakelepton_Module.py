@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # Analyzer for WWG Analysis based on nanoAOD tools
 
 import os, sys
@@ -34,9 +33,10 @@ class WWG_Producer(Module):
 	self.out.branch("lepton_isprompt", "I")
         self.out.branch("n_loose_mu", "I")
         self.out.branch("n_loose_ele", "I")
+        self.out.branch("mt",  "F")
+        self.out.branch("puppimt",  "F")
         self.out.branch("met",  "F")
         self.out.branch("puppimet","F")
-        self.out.branch("rawmet","F")
         self.out.branch("gen_weight","F")
         self.out.branch("n_pos", "I")
         self.out.branch("n_minus", "I")
@@ -131,8 +131,8 @@ class WWG_Producer(Module):
             if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.4:
                 loose_muon_pass += 1
 
-        self.out.fillBranch("n_loose_mu", "loose_muon_pass")
-
+        self.out.fillBranch("n_loose_mu", loose_muon_pass)
+#        print 'the number of loose muon ', loose_muon_pass,'; the number of muons selected ',len(muons_select)
         if loose_muon_pass > len(muons_select):
            return False
 
@@ -154,13 +154,14 @@ class WWG_Producer(Module):
                 if electrons[i].cutBased >= 1:
                     loose_electron_pass += 1
 
-        self.out.fillBranch("n_loose_ele", "loose_electron_pass")
+        self.out.fillBranch("n_loose_ele", loose_electron_pass)
+#        print 'the number of loose electron ', loose_electron_pass,'; the number of electrons selected ',len(electrons_select)
 
         if loose_electron_pass > len(electrons_select):
            return False
 
 	lepton_isprompt=-10
-        if len(muons_select)+ len(loose_but_not_tight_muons) == 1 and len(electrons_select) + len(loose_but_not_tight_electrons) == 0:      #reject event if there are not exactly two leptons
+        if len(muons_select) + len(loose_but_not_tight_muons) == 1 and len(electrons_select) + len(loose_but_not_tight_electrons) == 0:
 	    if len(muons_select) == 1:
                 muon_index = muons_select[0]
                 self.out.fillBranch("is_lepton_tight",1)
@@ -173,12 +174,13 @@ class WWG_Producer(Module):
                        lepton_isprompt=1
                        break
             pass_lepton_dr_cut = True
+            njets=0
             for i in range(0,len(jets)):
 #                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
 #                   continue
                 if abs(jets[i].eta) > 4.7:
                    continue
-                if jets[i].pt<30:
+                if jets[i].pt<20:
                    continue
 		if deltaR(jets[i].eta,jets[i].phi,muons[muon_index].eta,muons[muon_index].phi) < 0.3:
                        pass_lepton_dr_cut = False
@@ -186,8 +188,10 @@ class WWG_Producer(Module):
                 if  not pass_lepton_dr_cut == True:
 	            continue
                 if jets[i].jetId >> 1 & 1:
+#		if jets[i].jetId & (1 << 0):
                    jets_select.append(i)
                    njets += 1
+#            print 'fake muon, the number of jets ',njets
             if njets <1 :
                return False
             self.out.fillBranch("mt",sqrt(2*muons[muon_index].pt*event.MET_pt*(1 - cos(event.MET_phi - muons[muon_index].phi))))
@@ -198,8 +202,7 @@ class WWG_Producer(Module):
             self.out.fillBranch("lepton_pid",muons[muon_index].pdgId)
             self.out.fillBranch("lepton_isprompt",lepton_isprompt)
 
-	lepton_isprompt=-10
-	elif len(electrons_select) + len(loose_but_not_tight_electrons) == 1 and len(muons_select)+ len(loose_but_not_tight_muons) == 0:
+	elif (len(electrons_select) + len(loose_but_not_tight_electrons) == 1) and (len(muons_select) + len(loose_but_not_tight_muons) == 0):
 
             if len(electrons_select) == 1:
                 electron_index = electrons_select[0]
@@ -211,17 +214,18 @@ class WWG_Producer(Module):
 
             if hasattr(event, 'nGenPart'):
 	       for i in range(0,len(genparts)):
-		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electron_index].eta,electrons[electron_index].phi,genparts[i].eta,genparts[i].phi) < 0.3:
+		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 11 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electron_index].eta,electrons[electron_index].phi,genparts[i].eta,genparts[i].phi) < 0.3:
                        lepton_isprompt=1
                        break
 
             pass_lepton_dr_cut = True
+            njets=0
             for i in range(0,len(jets)):
 #                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
 #                   continue
                 if abs(jets[i].eta) > 4.7:
                    continue
-                if jets[i].pt<30:
+                if jets[i].pt<20:
                    continue
 		if deltaR(jets[i].eta,jets[i].phi,electrons[electron_index].eta,electrons[electron_index].phi) < 0.3:
                        pass_lepton_dr_cut = False
@@ -231,6 +235,7 @@ class WWG_Producer(Module):
                 if jets[i].jetId >> 1 & 1:
                    jets_select.append(i)
                    njets += 1
+#            print 'fake ele, the number of jets ',njets
             if njets <1 :
                return False
             self.out.fillBranch("mt",sqrt(2*electrons[electron_index].pt*event.MET_pt*(1 - cos(event.MET_phi - electrons[electron_index].phi))))
@@ -245,6 +250,6 @@ class WWG_Producer(Module):
 
         self.out.fillBranch("met",event.MET_pt)
         self.out.fillBranch("puppimet",event.PuppiMET_pt)
+        print 'lepton is prompt', lepton_isprompt,' met',event.MET_pt,' the number of jets ',njets,'-> this event is saved'
 
-WWG_Module = lambda: WWG_Producer()
-
+WWGfakelepton_Module = lambda: WWG_Producer()

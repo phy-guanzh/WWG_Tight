@@ -173,8 +173,8 @@ class WWG_Producer(Module):
         if len(electrons_select)+len(muons_select) != 2:      #reject event if there are not exactly two leptons
 	   self.out.fillBranch("pass_selection",0)
 	   return True
-        self.out.fillBranch("n_loose_ele", "loose_electron_pass")
-        self.out.fillBranch("n_loose_mu", "loose_muon_pass")
+        self.out.fillBranch("n_loose_ele", loose_electron_pass)
+        self.out.fillBranch("n_loose_mu", loose_muon_pass)
 
         # selection on photons
 	photon_pass=0
@@ -213,12 +213,10 @@ class WWG_Producer(Module):
         njets20 = 0
         njets15 = 0
         for i in range(0,len(jets)):
-            if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
+            if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM, remove jets from b
                self.out.fillBranch("pass_selection",0)
                return True
             if abs(jets[i].eta) > 4.7:
-               continue
-            if jets[i].pt<30:
                continue
 	    if deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) < 0.5:
 	       continue;
