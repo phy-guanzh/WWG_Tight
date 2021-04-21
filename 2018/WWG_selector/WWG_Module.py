@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# Analyzer for WWG Analysis based on nanoAOD tools
+nalyzer for WWG Analysis based on nanoAOD tools
 
 import os, sys
 import math
@@ -439,6 +438,7 @@ class WWG_Producer(Module):
             self.out.fillBranch("ntruepu",0)
 
         print 'channel', channel,'mu_pass:',muon_pass,' ele_pass:',electron_pass,' photon_pass:',photon_pass,' is lepton1 real ',lepton1_isprompt,' is lepton2 real ',lepton2_isprompt,' is photon real ',photon_isprompt,' or ',photon_gen_matching
+       print '\n'
 
         self.out.fillBranch("njets50",njets50)
         self.out.fillBranch("njets40",njets40)
