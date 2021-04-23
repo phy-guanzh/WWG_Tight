@@ -22,9 +22,9 @@ class WWG_Producer(Module):
 
         self.out = wrappedOutputTree
 
-        self.out.branch("event",  "i")
-        self.out.branch("run",  "i")
-        self.out.branch("lumi",  "i")
+        self.out.branch("event",  "I")
+        self.out.branch("run",  "I")
+        self.out.branch("lumi",  "I")
 	self.out.branch("pass_selection",  "B");
 	self.out.branch("channel",  "I");
 

@@ -16,7 +16,7 @@ config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
 
 config.section_("Data")
-config.Data.inputDataset = "/WZ_TuneCP5_13TeV-pythia8/RunIISummer19UL18NanoAOD-106X_upgrade2018_realistic_v11_L1v1-v2/NANOAODSIM" 
+config.Data.inputDataset = "/WZ_TuneCP5_13TeV-pythia8/RunIISummer19UL16NanoAODv2-106X_mcRun2_asymptotic_v15-v1/NANOAODSIM" 
 #config.Data.inputDBS = "phys03"
 config.Data.inputDBS = "global"
 # config.Data.splitting = "LumiBased"
