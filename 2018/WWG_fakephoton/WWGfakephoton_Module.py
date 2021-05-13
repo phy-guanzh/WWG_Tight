@@ -117,8 +117,8 @@ class WWG_Producer(Module):
         pass_selection1 = False
         pass_selection2 = False
 
-        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
-           return False
+#        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
+#           return False
 
         self.out.fillBranch("HLT_Ele1",HLT_Ele1)
         self.out.fillBranch("HLT_Ele2",HLT_Ele2)
@@ -197,14 +197,14 @@ class WWG_Producer(Module):
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
             mask1 = 0b10101010101010 # full medium ID
-            mask2 = 0b00101010101010 # remove Isopho
-            mask3 = 0b10001010101010 # remove IsoNeu
-            mask4 = 0b10100010101010 # remove Isoch
-            mask5 = 0b10101000101010 # remove sigma ieie
+            mask2 = 0b00101010101010 # fail Isopho
+            mask3 = 0b10001010101010 # fail IsoNeu
+            mask4 = 0b10100010101010 # fail Isoch
+            mask5 = 0b10101000101010 # fail sigma ieie
 
             bitmap = photons[i].vidNestedWPBitmap & mask1
 
-            #after adding the photons that pass the full ID, add the photons that pass the inverted ID
+            #the photon pass the full ID
             if not (bitmap == mask1):
                 continue
 
@@ -224,7 +224,7 @@ class WWG_Producer(Module):
                 continue
 
             photon_pass += 1
-            selected_medium_or_control_photons.append(i)  #append the medium photons
+            selected_medium_or_control_photons.append(i)  #append the medium photons passing full ID
 
         # select control photons
         for i in range(0,len(photons)):
@@ -239,10 +239,10 @@ class WWG_Producer(Module):
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
             mask1 = 0b10101010101010 # full medium ID
-            mask2 = 0b00101010101010 # remove Isopho
-            mask3 = 0b10001010101010 # remove IsoNeu
-            mask4 = 0b10100010101010 # remove Isoch
-            mask5 = 0b10101000101010 # remove sigma ieie
+            mask2 = 0b00101010101010 # fail Isopho
+            mask3 = 0b10001010101010 # fail IsoNeu
+            mask4 = 0b10100010101010 # fail Isoch
+            mask5 = 0b10101000101010 # fail sigma ieie
 
             bitmap = photons[i].vidNestedWPBitmap & mask1
 
@@ -250,7 +250,7 @@ class WWG_Producer(Module):
             if (bitmap == mask1):
                 continue
 
-            #pass ID that one of cut removed, which means this cut is inverted
+            #fail one of varaible in the ID
             if not ((bitmap == mask1) or (bitmap == mask2) or (bitmap == mask3) or (bitmap == mask4) or (bitmap == mask5)):
                 continue
 
@@ -281,14 +281,18 @@ class WWG_Producer(Module):
                 continue
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
-            mask1 = 0b10100000101010 # remove the Isoch and sigma ieie
+            mask4 = 0b10100010101010 # fail Isoch
+            mask6 = 0b10100000101010 # fail the Isoch and sigma ieie
 
-            bitmap = photons[i].vidNestedWPBitmap & mask1
+            bitmap = photons[i].vidNestedWPBitmap & mask4
 
-            #save photons pass the ID without sigma ieie and Isoch
-            if not (bitmap == mask1):
+            #need to pass full ID in which fail chiso and sieie
+            if not (bitmap == mask6):
                 continue
-
+            #need to pass the full ID in which fail chiso but pass the sieie (not pass the if selection)
+            elif not (bitmap == mask4):
+                continue
+             
             pass_lepton_dr_cut = True
             for j in range(0,len(muons_select)):
                 if deltaR(muons[muons_select[j]].eta,muons[muons_select[j]].phi,photons[i].eta,photons[i].phi) < 0.5:
@@ -528,21 +532,22 @@ class WWG_Producer(Module):
            if (bitmap == mask1):
                self.out.fillBranch("photon_selection",1) #all cuts applied
            elif (bitmap == mask2):
-               self.out.fillBranch("photon_selection",2) # remove Isopho
+               self.out.fillBranch("photon_selection",2) # fail Isopho
            elif (bitmap == mask3):
-               self.out.fillBranch("photon_selection",3) # remove IsoNeu
+               self.out.fillBranch("photon_selection",3) # fail IsoNeu
            elif (bitmap == mask4):
-               self.out.fillBranch("photon_selection",4) # remove Isoch
+               self.out.fillBranch("photon_selection",4) # fail Isoch
            elif (bitmap == mask5):
-               self.out.fillBranch("photon_selection",5) # remove sigma ieie
-           #pass_selection1 && photon_selection==5 -> build ture template from MC and data template from data
-           #pass_selection1 && ((photon_selection!=1 && photon_selection==2) || (!1 && ==3) || (!1 && ==4) || (!=1 && ==5)) -> build fake photon enriched sample from data
+               self.out.fillBranch("photon_selection",5) # fail sigma ieie
+           #pass_selection1 && photon_selection==1 && photon_selection==5 -> remove the sieie requirement in the full ID that can build data/true template
+           #pass_selection1 && (photon_selection==2 || photon_selection==3 || photon_selection==4 || photon_selection ==5 )->build fake photon enriched sample
            else:
                assert(0)
            self.out.fillBranch("photonet",photons[selected_medium_or_control_photons[0]].pt)
            self.out.fillBranch("photoneta",photons[selected_medium_or_control_photons[0]].eta)
            self.out.fillBranch("photonphi",photons[selected_medium_or_control_photons[0]].phi)
-           self.out.fillBranch("photonchiso",photons[selected_medium_or_control_photons[0]].pfRelIso03_chg)
+           self.out.fillBranch("photonchiso",photons[selected_medium_or_control_photons[0]].pfRelIso03_chg*photons[selected_medium_or_control_photons[0]].pt)
+           self.out.fillBranch("photonsieie",photons[selected_medium_or_control_photons[0]].sieie)
            self.out.fillBranch("photon_gen_matching",photon_gen_matching)
            self.out.fillBranch("photon_isprompt",photon_isprompt)
 
@@ -577,10 +582,11 @@ class WWG_Producer(Module):
            self.out.fillBranch("photonet",photons[selected_fake_template_photons[0]].pt)
            self.out.fillBranch("photoneta",photons[selected_fake_template_photons[0]].eta)
            self.out.fillBranch("photonphi",photons[selected_fake_template_photons[0]].phi)
-           self.out.fillBranch("photonchiso",photons[selected_fake_template_photons[0]].pfRelIso03_chg)
+           self.out.fillBranch("photonchiso",photons[selected_fake_template_photons[0]].pfRelIso03_chg*photons[selected_fake_template_photons[0]].pt)
+           self.out.fillBranch("photonsieie",photons[selected_fake_template_photons[0]].sieie)
            self.out.fillBranch("photon_gen_matching",photon_gen_matching)
            self.out.fillBranch("photon_isprompt",photon_isprompt)
-           #pass_selection2  -> build fake template from data
+           #pass_selection2  && low<photonchiso<high -> build fake template from data
 
         if hasattr(event,'Pileup_nPU'):    
             self.out.fillBranch("npu",event.Pileup_nPU)
