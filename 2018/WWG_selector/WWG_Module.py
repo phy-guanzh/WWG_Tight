@@ -48,6 +48,7 @@ class WWG_Producer(Module):
         self.out.branch("mll",  "F")
         self.out.branch("mllg",  "F")
         self.out.branch("ptll",  "F")
+        self.out.branch("mt",  "F")
         self.out.branch("met",  "F")
         self.out.branch("metup",  "F")
         self.out.branch("puppimet","F")
@@ -63,6 +64,7 @@ class WWG_Producer(Module):
         self.out.branch("n_num", "I")
         self.out.branch("MET_pass","I")
         self.out.branch("npvs","I")
+        self.out.branch("n_bjets","I")
         self.out.branch("njets","I")
         self.out.branch("njets50","I")
         self.out.branch("njets40","I")
@@ -212,10 +214,12 @@ class WWG_Producer(Module):
         njets30 = 0
         njets20 = 0
         njets15 = 0
+        n_bjets = 0
         for i in range(0,len(jets)):
-            if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM, remove jets from b
-               self.out.fillBranch("pass_selection",0)
-               return True
+            if jets[i].btagDeepB > 0.4184:  # DeepCSVM, remove jets from b
+               n_bjets+=1
+#               self.out.fillBranch("pass_selection",0)
+#               return True
             if abs(jets[i].eta) > 4.7:
                continue
 	    if deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) < 0.5:
@@ -259,10 +263,9 @@ class WWG_Producer(Module):
         # mumu:    3
 
         # emu
-        mll = -10
-        ptll = -10
-        lepton1_isprompt=-10
-        lepton2_isprompt=-10
+        mT = -10
+        lepton1_isprompt = -10
+        lepton2_isprompt = -10
         if len(muons_select)==1 and len(electrons_select)==1:  # emu channel 
             if deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
 	       self.out.fillBranch("pass_selection",0)
@@ -305,6 +308,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
             self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
             self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()+photons[photons_select[0]].p4()).M())
+            mT = sqrt(2*(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt()*event.MET_pt*(1 - cos((muons[muons_select[0]].p4()+electrons[electrons_select[0]].p4()).Phi()-event.MET_phi)))
+            self.out.fillBranch("mt",mT)
         # ee
         elif len(muons_select)==0 and len(electrons_select)==2:
             if deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi)<0.5:
@@ -348,6 +353,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
             self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
             self.out.fillBranch("mllg",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()+photons[photons_select[0]].p4()).M())
+            mT = sqrt(2*(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).Pt()*event.MET_pt*(1 - cos((electrons[electrons_select[0]].p4()+electrons[electrons_select[1]].p4()).Phi()-event.MET_phi)))
+            self.out.fillBranch("mt",mT)
 
 
         # mumu 
@@ -392,6 +399,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
             self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
             self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()+photons[photons_select[0]].p4()).M())
+            mT = sqrt(2*(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).Pt()*event.MET_pt*(1 - cos((muons[muons_select[0]].p4()+muons[muons_select[1]].p4()).Phi()-event.MET_phi)))
+            self.out.fillBranch("mt",mT)
 
         else:
             self.out.fillBranch("pass_selection",0)
@@ -446,6 +455,8 @@ class WWG_Producer(Module):
         self.out.fillBranch("njets30",njets30)
         self.out.fillBranch("njets20",njets20)
         self.out.fillBranch("njets15",njets15)
+        self.out.fillBranch("njets",njets)
+        self.out.fillBranch("n_bjets",n_bjets)
         self.out.fillBranch("npvs",event.PV_npvs)
         self.out.fillBranch("met",event.MET_pt)
         self.out.fillBranch("metup",sqrt(pow(event.MET_pt*cos(event.MET_phi) + event.MET_MetUnclustEnUpDeltaX,2) + pow(event.MET_pt*sin(event.MET_phi) + event.MET_MetUnclustEnUpDeltaY,2)))
