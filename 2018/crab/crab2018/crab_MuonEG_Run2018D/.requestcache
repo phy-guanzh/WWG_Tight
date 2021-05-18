@@ -108,7 +108,7 @@ sg23
 g15
 ((ltRp48
 sg45
-S'WW_TuneCP5_13TeV-pythia8_2018'
+S'MuonEG_Run2018D'
 p49
 sg26
 Nsg44
@@ -127,7 +127,7 @@ NtRp54
 (dp55
 S'inputDataset'
 p56
-S'/WW_TuneCP5_13TeV-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM'
+S'/MuonEG/Run2018D-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD'
 p57
 sS'allowNonValidInputDataset'
 p58
@@ -187,7 +187,7 @@ I00
 sS'scriptArgs'
 p73
 (lp74
-S'isdata=MC'
+S'isdata=data'
 p75
 aS'year=2018'
 p76
@@ -258,7 +258,7 @@ S'prod'
 p101
 sS'RequestName'
 p102
-V210517_152519:yian_crab_WW_TuneCP5_13TeV-pythia8_2018
+V210517_151120:yian_crab_MuonEG_Run2018D
 p103
 sS'voRole'
 p104

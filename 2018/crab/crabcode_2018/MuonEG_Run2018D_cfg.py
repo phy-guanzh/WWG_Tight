@@ -24,7 +24,7 @@ config.Data.splitting = "FileBased"
 #config.Data.splitting = "EventAwareLumiBased" 
 #config.Data.splitting = "Automatic" 
 config.Data.unitsPerJob = 1
-config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt" 
+#config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt" 
 
 config.Data.publication = False
 config.Data.ignoreLocality = True
