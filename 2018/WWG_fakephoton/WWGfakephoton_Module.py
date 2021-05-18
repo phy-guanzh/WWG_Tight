@@ -45,6 +45,7 @@ class WWG_Producer(Module):
         self.out.branch("lepton2_isprompt", "I")
         self.out.branch("n_loose_mu", "I")
         self.out.branch("n_loose_ele", "I")
+        self.out.branch("n_photon", "I")
         self.out.branch("photonet",  "F")
         self.out.branch("photoneta",  "F")
         self.out.branch("photonphi",  "F")
@@ -106,14 +107,14 @@ class WWG_Producer(Module):
             self.out.fillBranch("n_pos",0)
             self.out.fillBranch("n_minus",0)
 
-        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
-
-        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-        HLT_Mu2 = event.HLT_IsoMu24
-
-        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
-        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
+#        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
+#        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
+#
+#        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
+#        HLT_Mu2 = event.HLT_IsoMu24
+#
+#        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
+#        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
 
         pass_selection1 = False
         pass_selection2 = False
@@ -121,12 +122,12 @@ class WWG_Producer(Module):
 #        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
 #           return False
 
-        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
-        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
-        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
-        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
-        self.out.fillBranch("HLT_emu1",HLT_emu1)
-        self.out.fillBranch("HLT_emu2",HLT_emu2)
+#        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
+#        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
+#        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
+#        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
+#        self.out.fillBranch("HLT_emu1",HLT_emu1)
+#        self.out.fillBranch("HLT_emu2",HLT_emu2)
 
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
@@ -224,7 +225,6 @@ class WWG_Producer(Module):
             if not pass_lepton_dr_cut:
                 continue
 
-            photon_pass += 1
             selected_medium_or_control_photons.append(i)  #append the medium photons passing full ID
 
         # select control photons
@@ -268,6 +268,8 @@ class WWG_Producer(Module):
 
             photon_pass += 1
             selected_medium_or_control_photons.append(i)  # append the control photons
+
+        self.out.fillBranch("n_photon",photon_pass)
 
         # select fake photons
 	fakephoton_pass=0
@@ -369,6 +371,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("lep2phi",electrons[electrons_select[0]].phi)
             self.out.fillBranch("mll",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).M())
             self.out.fillBranch("ptll",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt())
+            mT = sqrt(2*(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt()*event.MET_pt*(1 - cos((muons[muons_select[0]].p4()+electrons[electrons_select[0]].p4()).Phi()-event.MET_phi)))
+            self.out.fillBranch("mt",mT)
         # ee
         elif len(muons_select)==0 and len(electrons_select)==2:
             if deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi)<0.5:
@@ -408,6 +412,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("lep2phi",electrons[electrons_select[1]].phi)
             self.out.fillBranch("mll",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).M())
             self.out.fillBranch("ptll",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).Pt())
+            mT = sqrt(2*(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).Pt()*event.MET_pt*(1 - cos((electrons[electrons_select[0]].p4()+electrons[electrons_select[1]].p4()).Phi()-event.MET_phi)))
+            self.out.fillBranch("mt",mT)
 
         # mumu 
         elif len(electrons_select)==0 and len(muons_select)==2:
@@ -439,6 +445,8 @@ class WWG_Producer(Module):
             self.out.fillBranch("lep2phi",muons[muons_select[1]].phi)
             self.out.fillBranch("mll",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).M())
             self.out.fillBranch("ptll",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).Pt())
+            mT = sqrt(2*(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).Pt()*event.MET_pt*(1 - cos((muons[muons_select[0]].p4()+muons[muons_select[1]].p4()).Phi()-event.MET_phi)))
+            self.out.fillBranch("mt",mT)
 
         else:
             return False
