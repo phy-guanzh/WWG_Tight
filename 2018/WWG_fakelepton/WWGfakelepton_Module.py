@@ -41,12 +41,12 @@ class WWG_Producer(Module):
         self.out.branch("n_pos", "I")
         self.out.branch("n_minus", "I")
         self.out.branch("n_num", "I")
-        self.out.branch("HLT_Ele1","I")
-        self.out.branch("HLT_Ele2","I")
-        self.out.branch("HLT_Mu1","I")
-        self.out.branch("HLT_Mu2","I")
-        self.out.branch("HLT_emu1","I")
-        self.out.branch("HLT_emu2","I")
+#        self.out.branch("HLT_Ele1","I")
+#        self.out.branch("HLT_Ele2","I")
+#        self.out.branch("HLT_Mu1","I")
+#        self.out.branch("HLT_Mu2","I")
+#        self.out.branch("HLT_emu1","I")
+#        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -73,23 +73,23 @@ class WWG_Producer(Module):
             self.out.fillBranch("n_pos",0)
             self.out.fillBranch("n_minus",0)
 
-        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
-
-        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-        HLT_Mu2 = event.HLT_IsoMu24
-
-        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
-        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
+#        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
+#        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
+#
+#        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
+#        HLT_Mu2 = event.HLT_IsoMu24
+#
+#        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
+#        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
 
 #        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
 #           return True
-        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
-        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
-        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
-        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
-        self.out.fillBranch("HLT_emu1",HLT_emu1)
-        self.out.fillBranch("HLT_emu2",HLT_emu2)
+#        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
+#        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
+#        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
+#        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
+#        self.out.fillBranch("HLT_emu1",HLT_emu1)
+#        self.out.fillBranch("HLT_emu2",HLT_emu2)
 
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
@@ -118,7 +118,7 @@ class WWG_Producer(Module):
         muon_pass =0
 	loose_muon_pass=0
         for i in range(0,len(muons)):
-            if muons[i].pt < 20:
+            if muons[i].pt < 10:
                 continue
             if abs(muons[i].eta) > 2.5:
                 continue
@@ -140,7 +140,7 @@ class WWG_Producer(Module):
         electron_pass=0
         loose_electron_pass=0
         for i in range(0,len(electrons)):
-            if electrons[i].pt < 20:
+            if electrons[i].pt < 10:
                 continue
             if abs(electrons[i].eta + electrons[i].deltaEtaSC) > 2.5:
                 continue
@@ -199,6 +199,7 @@ class WWG_Producer(Module):
 
             self.out.fillBranch("lepton_pt",muons[muon_index].pt)
             self.out.fillBranch("lepton_eta",muons[muon_index].eta)
+            self.out.fillBranch("lepton_phi",muons[muon_index].phi)
             self.out.fillBranch("lepton_pid",muons[muon_index].pdgId)
             self.out.fillBranch("lepton_isprompt",lepton_isprompt)
 
@@ -243,6 +244,7 @@ class WWG_Producer(Module):
 
             self.out.fillBranch("lepton_pt",electrons[electron_index].pt)
             self.out.fillBranch("lepton_eta",electrons[electron_index].eta)
+            self.out.fillBranch("lepton_phi",electrons[electron_index].phi)
             self.out.fillBranch("lepton_pid",electrons[electron_index].pdgId)
             self.out.fillBranch("lepton_isprompt",lepton_isprompt)
 	else:
