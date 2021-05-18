@@ -67,18 +67,19 @@ class WWG_Producer(Module):
         self.out.branch("n_num", "I")
         self.out.branch("MET_pass","I")
         self.out.branch("npvs","I")
+        self.out.branch("n_bjets","I")
         self.out.branch("njets","I")
         self.out.branch("njets50","I")
         self.out.branch("njets40","I")
         self.out.branch("njets30","I")
         self.out.branch("njets20","I")
         self.out.branch("njets15","I")
-        self.out.branch("HLT_Ele1","I")
-        self.out.branch("HLT_Ele2","I")
-        self.out.branch("HLT_Mu1","I")
-        self.out.branch("HLT_Mu2","I")
-        self.out.branch("HLT_emu1","I")
-        self.out.branch("HLT_emu2","I")
+#        self.out.branch("HLT_Ele1","I")
+#        self.out.branch("HLT_Ele2","I")
+#        self.out.branch("HLT_Mu1","I")
+#        self.out.branch("HLT_Mu2","I")
+#        self.out.branch("HLT_emu1","I")
+#        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -448,12 +449,13 @@ class WWG_Producer(Module):
         njets30 = 0
         njets20 = 0
         njets15 = 0
+        n_bjets = 0
         njets_fake_template = 0
         njets_fake = 0
         pass_lepton_dr_cut = True
         for i in range(0,len(jets)):
             if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
-               return False
+               n_bjets+=1
             if abs(jets[i].eta) > 4.7:
                continue
             if jets[i].pt<30:
@@ -605,6 +607,7 @@ class WWG_Producer(Module):
         self.out.fillBranch("njets30",njets30)
         self.out.fillBranch("njets20",njets20)
         self.out.fillBranch("njets15",njets15)
+        self.out.fillBranch("n_bjets",n_bjets)
         self.out.fillBranch("npvs",event.PV_npvs)
         self.out.fillBranch("met",event.MET_pt)
         self.out.fillBranch("metup",sqrt(pow(event.MET_pt*cos(event.MET_phi) + event.MET_MetUnclustEnUpDeltaX,2) + pow(event.MET_pt*sin(event.MET_phi) + event.MET_MetUnclustEnUpDeltaY,2)))

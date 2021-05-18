@@ -2,7 +2,7 @@ from WMCore.Configuration import Configuration
 
 config = Configuration()
 config.section_("General")
-config.General.requestName = "MuonEG_Run2018C"
+config.General.requestName = "MuonEG_Run2018C_test"
 config.General.transferLogs = False 
 config.General.workArea = "crab2018"
 
@@ -29,7 +29,7 @@ config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Coll
 config.Data.publication = False
 config.Data.ignoreLocality = True
 config.Data.allowNonValidInputDataset = True
-config.Data.outputDatasetTag = "MuonEG_Run2018C" 
+config.Data.outputDatasetTag = "MuonEG_Run2018C_test" 
 
 config.section_("Site")
 config.Site.storageSite = "T3_CH_CERNBOX"

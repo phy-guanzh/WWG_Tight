@@ -9,9 +9,6 @@ keep *weight*
 keep *MET*
 keep *met*
 keep *mt*
-keep HLT*
-
-
 
 # keep NanoAOD initiated variables below for further test
 keep *

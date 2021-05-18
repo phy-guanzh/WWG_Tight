@@ -38,6 +38,8 @@ class WWG_Producer(Module):
         self.out.branch("lep2phi",  "F")
         self.out.branch("lepton1_isprompt", "I")
         self.out.branch("lepton2_isprompt", "I")
+        self.out.branch("lepton1_istight",  "B");
+        self.out.branch("lepton2_istight",  "B");
         self.out.branch("n_loose_mu", "I")
         self.out.branch("n_loose_ele", "I")
         self.out.branch("n_photon", "I")
@@ -137,6 +139,8 @@ class WWG_Producer(Module):
         muons_select = [] 
         jets_select = []
         leptons_select=[]
+        loose_but_not_tight_muons = []
+        loose_but_not_tight_electrons = []
 
         #selection on muons
         muon_pass =0
@@ -146,13 +150,13 @@ class WWG_Producer(Module):
                 continue
             if abs(muons[i].eta) > 2.5:
                 continue
-            if muons[i].pfRelIso04_all > 0.20:
-                continue   
-            if muons[i].mediumId == True:
+            if muons[i].mediumId == True and muons[i].pfRelIso04_all < 0.20 :
                 muons_select.append(i)
                 muon_pass += 1
                 leptons_select.append(i)
-            if muons[i].looseId == True:
+            elif muons[i].looseId == True and muons[i].pfRelIso04_all < 0.4:
+	        loose_but_not_tight_muons.append(i)
+            if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.4:
                 loose_muon_pass += 1
 
         # selection on electrons
@@ -168,12 +172,13 @@ class WWG_Producer(Module):
                     electrons_select.append(i)
                     electron_pass += 1
                     leptons_select.append(i)
-
+                elif electrons[i].cutBased >= 1:
+                    loose_but_not_tight_electrons.append(i)
                 if electrons[i].cutBased >= 1:
                     loose_electron_pass += 1
 
 #       print 'the number of leptons: ',len(electrons_select)+len(muons_select)
-        if len(electrons_select)+len(muons_select) != 2:      #reject event if there are not exactly two leptons
+        if len(electrons_select)+len(loose_but_not_tight_electrons)+len(muons_select)+len(loose_but_not_tight_muons) != 2:      #reject event if there are not exactly two leptons
 	   self.out.fillBranch("pass_selection",0)
 	   return True
         self.out.fillBranch("n_loose_ele", loose_electron_pass)
