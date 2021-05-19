@@ -533,10 +533,10 @@ class WWG_Producer(Module):
                       photon_isprompt =1
                       break
            mask1 = 0b10101010101010 # full medium ID
-           mask2 = 0b00101010101010 # remove Isopho
-           mask3 = 0b10001010101010 # remove IsoNeu
-           mask4 = 0b10100010101010 # remove Isoch
-           mask5 = 0b10101000101010 # remove sigma ieie
+           mask2 = 0b00101010101010 # fail Isopho
+           mask3 = 0b10001010101010 # fail IsoNeu
+           mask4 = 0b10100010101010 # fail Isoch
+           mask5 = 0b10101000101010 # fail sigma ieie
         
 	   bitmap = photons[selected_medium_or_control_photons[0]].vidNestedWPBitmap & mask1   
            if (bitmap == mask1):
@@ -549,7 +549,7 @@ class WWG_Producer(Module):
                self.out.fillBranch("photon_selection",4) # fail Isoch
            elif (bitmap == mask5):
                self.out.fillBranch("photon_selection",5) # fail sigma ieie
-           #pass_selection1 && photon_selection==1 && photon_selection==5 -> remove the sieie requirement in the full ID that can build data/true template
+           #pass_selection1 && (photon_selection==1 || photon_selection==5) -> remove the sieie requirement in the full ID that can build data/true template
            #pass_selection1 && (photon_selection==2 || photon_selection==3 || photon_selection==4 || photon_selection ==5 )->build fake photon enriched sample
            else:
                assert(0)
