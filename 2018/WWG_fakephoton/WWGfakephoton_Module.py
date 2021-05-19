@@ -30,6 +30,7 @@ class WWG_Producer(Module):
         self.out.branch("pass_selection2",  "B")
         self.out.branch("photon_selection",  "I")
 	self.out.branch("photonchiso",  "F")
+	self.out.branch("photonsieie",  "F")
         self.out.branch("njets_fake",  "I")
         self.out.branch("njets_fake_template",  "I")
 
@@ -53,6 +54,7 @@ class WWG_Producer(Module):
         self.out.branch("photon_gen_matching", "I")
         self.out.branch("mll",  "F")
         self.out.branch("ptll",  "F")
+        self.out.branch("mt",  "F")
         self.out.branch("met",  "F")
         self.out.branch("metup",  "F")
         self.out.branch("puppimet","F")
@@ -284,16 +286,14 @@ class WWG_Producer(Module):
                 continue
 
             #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
-            mask4 = 0b10100010101010 # fail Isoch
-            mask6 = 0b10100000101010 # fail the Isoch and sigma ieie
+            mask1 = 0b10101010101010 # full medium ID
+            mask4 = 0b10100010101010 # fail Isoch and pass sigma ieie
+            mask6 = 0b10100000101010 # fail both Isoch and sigma ieie
 
-            bitmap = photons[i].vidNestedWPBitmap & mask4
+            bitmap = photons[i].vidNestedWPBitmap & mask1
 
-            #need to pass full ID in which fail chiso and sieie
-            if not (bitmap == mask6):
-                continue
-            #need to pass the full ID in which fail chiso but pass the sieie (not pass the if selection)
-            elif not (bitmap == mask4):
+            # (Isoch and pass sigma ieie) + (fail both Isoch and sigma ieie) = fail Isoch and float sigma ieie
+            if not ( (bitmap == mask4) or (bitmap == mask6) ):
                 continue
              
             pass_lepton_dr_cut = True
