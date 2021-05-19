@@ -22,15 +22,13 @@ class WWG_Producer(Module):
 
         self.out = wrappedOutputTree
 
-        self.out.branch("event",  "i")
-        self.out.branch("run",  "i")
-        self.out.branch("lumi",  "i")
+        self.out.branch("event",  "F")
+        self.out.branch("run",  "F")
+        self.out.branch("lumi",  "F")
 	self.out.branch("channel",  "I");
         self.out.branch("pass_selection1",  "B")
         self.out.branch("pass_selection2",  "B")
         self.out.branch("photon_selection",  "I")
-	self.out.branch("photonchiso",  "F")
-	self.out.branch("photonsieie",  "F")
         self.out.branch("njets_fake",  "I")
         self.out.branch("njets_fake_template",  "I")
 
@@ -50,8 +48,17 @@ class WWG_Producer(Module):
         self.out.branch("photonet",  "F")
         self.out.branch("photoneta",  "F")
         self.out.branch("photonphi",  "F")
+	self.out.branch("photonchiso",  "F")
+	self.out.branch("photonsieie",  "F")
         self.out.branch("photon_isprompt", "I")
         self.out.branch("photon_gen_matching", "I")
+        self.out.branch("photonet_f",  "F")
+        self.out.branch("photoneta_f",  "F")
+        self.out.branch("photonphi_f",  "F")
+	self.out.branch("photonchiso_f",  "F")
+	self.out.branch("photonsieie_f",  "F")
+        self.out.branch("photon_isprompt_f", "I")
+        self.out.branch("photon_gen_matching_f", "I")
         self.out.branch("mll",  "F")
         self.out.branch("ptll",  "F")
         self.out.branch("mt",  "F")
@@ -589,14 +596,14 @@ class WWG_Producer(Module):
 	           if photons[selected_fake_template_photons[0]].genPartIdx >=0 and genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[selected_fake_template_photons[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[selected_fake_template_photons[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[selected_fake_template_photons[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[selected_fake_template_photons[0]].eta,photons[selected_fake_template_photons[0]].phi,genpart.eta,genpart.phi) < 0.3:
                       photon_isprompt =1
                       break
-           self.out.fillBranch("photonet",photons[selected_fake_template_photons[0]].pt)
-           self.out.fillBranch("photoneta",photons[selected_fake_template_photons[0]].eta)
-           self.out.fillBranch("photonphi",photons[selected_fake_template_photons[0]].phi)
-           self.out.fillBranch("photonchiso",photons[selected_fake_template_photons[0]].pfRelIso03_chg*photons[selected_fake_template_photons[0]].pt)
-           self.out.fillBranch("photonsieie",photons[selected_fake_template_photons[0]].sieie)
-           self.out.fillBranch("photon_gen_matching",photon_gen_matching)
-           self.out.fillBranch("photon_isprompt",photon_isprompt)
-           #pass_selection2  && low<photonchiso<high -> build fake template from data
+           self.out.fillBranch("photonet_f",photons[selected_fake_template_photons[0]].pt)
+           self.out.fillBranch("photoneta_f",photons[selected_fake_template_photons[0]].eta)
+           self.out.fillBranch("photonphi_f",photons[selected_fake_template_photons[0]].phi)
+           self.out.fillBranch("photonchiso_f",photons[selected_fake_template_photons[0]].pfRelIso03_chg*photons[selected_fake_template_photons[0]].pt)
+           self.out.fillBranch("photonsieie_f",photons[selected_fake_template_photons[0]].sieie)
+           self.out.fillBranch("photon_gen_matching_f",photon_gen_matching)
+           self.out.fillBranch("photon_isprompt_f",photon_isprompt)
+           #pass_selection2  && low<photonchiso_f<high -> build fake template from data
 
         if hasattr(event,'Pileup_nPU'):    
             self.out.fillBranch("npu",event.Pileup_nPU)
