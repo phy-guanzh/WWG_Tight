@@ -31,8 +31,7 @@ class WWG_Producer(Module):
         self.out.branch("lepton_phi",  "F")
         self.out.branch("is_lepton_tight", "I")
 	self.out.branch("lepton_isprompt", "I")
-        self.out.branch("n_loose_mu", "I")
-        self.out.branch("n_loose_ele", "I")
+        self.out.branch("n_bjets","I")
         self.out.branch("mt",  "F")
         self.out.branch("puppimt",  "F")
         self.out.branch("met",  "F")
@@ -41,12 +40,6 @@ class WWG_Producer(Module):
         self.out.branch("n_pos", "I")
         self.out.branch("n_minus", "I")
         self.out.branch("n_num", "I")
-#        self.out.branch("HLT_Ele1","I")
-#        self.out.branch("HLT_Ele2","I")
-#        self.out.branch("HLT_Mu1","I")
-#        self.out.branch("HLT_Mu2","I")
-#        self.out.branch("HLT_emu1","I")
-#        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -73,24 +66,6 @@ class WWG_Producer(Module):
             self.out.fillBranch("n_pos",0)
             self.out.fillBranch("n_minus",0)
 
-#        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-#        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
-#
-#        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-#        HLT_Mu2 = event.HLT_IsoMu24
-#
-#        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
-#        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
-
-#        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
-#           return True
-#        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
-#        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
-#        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
-#        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
-#        self.out.fillBranch("HLT_emu1",HLT_emu1)
-#        self.out.fillBranch("HLT_emu2",HLT_emu2)
-
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
         photons = Collection(event, "Photon")
@@ -114,9 +89,9 @@ class WWG_Producer(Module):
         leptons_select=[]
         loose_but_not_tight_muons = []
         loose_but_not_tight_electrons = []
+
         #selection on muons
         muon_pass =0
-	loose_muon_pass=0
         for i in range(0,len(muons)):
             if muons[i].pt < 10:
                 continue
@@ -128,13 +103,7 @@ class WWG_Producer(Module):
                 leptons_select.append(i)
             elif muons[i].mediumId == True and muons[i].pfRelIso04_all < 0.4:
                  loose_but_not_tight_muons.append(i)
-            if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.4:
-                loose_muon_pass += 1
 
-        self.out.fillBranch("n_loose_mu", loose_muon_pass)
-#        print 'the number of loose muon ', loose_muon_pass,'; the number of muons selected ',len(muons_select)
-        if loose_muon_pass > len(muons_select):
-           return False
 
         # selection on electrons
         electron_pass=0
@@ -151,14 +120,6 @@ class WWG_Producer(Module):
                     leptons_select.append(i)
                 elif electrons[i].cutBased >= 1:
                     loose_but_not_tight_electrons.append(i)
-                if electrons[i].cutBased >= 1:
-                    loose_electron_pass += 1
-
-        self.out.fillBranch("n_loose_ele", loose_electron_pass)
-#        print 'the number of loose electron ', loose_electron_pass,'; the number of electrons selected ',len(electrons_select)
-
-        if loose_electron_pass > len(electrons_select):
-           return False
 
 	lepton_isprompt=-10
         if len(muons_select) + len(loose_but_not_tight_muons) == 1 and len(electrons_select) + len(loose_but_not_tight_electrons) == 0:
@@ -173,11 +134,13 @@ class WWG_Producer(Module):
 		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(muons[muon_index].eta,muons[muon_index].phi,genparts[i].eta,genparts[i].phi) < 0.3:
                        lepton_isprompt=1
                        break
-            pass_lepton_dr_cut = True
+
             njets=0
+            n_bjets=0
+            pass_lepton_dr_cut = True
             for i in range(0,len(jets)):
-#                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
-#                   continue
+                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
+                   n_bjets += 1
                 if abs(jets[i].eta) > 4.7:
                    continue
                 if jets[i].pt<20:
@@ -188,15 +151,14 @@ class WWG_Producer(Module):
                 if  not pass_lepton_dr_cut == True:
 	            continue
                 if jets[i].jetId >> 1 & 1:
-#		if jets[i].jetId & (1 << 0):
                    jets_select.append(i)
                    njets += 1
-#            print 'fake muon, the number of jets ',njets
+#           print 'fake muon, the number of jets ',njets
             if njets <1 :
                return False
+            self.out.fillBranch("n_bjets",n_bjets)
             self.out.fillBranch("mt",sqrt(2*muons[muon_index].pt*event.MET_pt*(1 - cos(event.MET_phi - muons[muon_index].phi))))
             self.out.fillBranch("puppimt",sqrt(2*muons[muon_index].pt*event.PuppiMET_pt*(1 - cos(event.PuppiMET_phi - muons[muon_index].phi))))
-
             self.out.fillBranch("lepton_pt",muons[muon_index].pt)
             self.out.fillBranch("lepton_eta",muons[muon_index].eta)
             self.out.fillBranch("lepton_phi",muons[muon_index].phi)
@@ -219,11 +181,12 @@ class WWG_Producer(Module):
                        lepton_isprompt=1
                        break
 
-            pass_lepton_dr_cut = True
             njets=0
+            n_bjets=0
+            pass_lepton_dr_cut = True
             for i in range(0,len(jets)):
-#                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
-#                   continue
+                if jets[i].btagDeepB > 0.4184 and i<=6 :  # DeepCSVM
+                   n_bjets +=1       
                 if abs(jets[i].eta) > 4.7:
                    continue
                 if jets[i].pt<20:
@@ -236,9 +199,10 @@ class WWG_Producer(Module):
                 if jets[i].jetId >> 1 & 1:
                    jets_select.append(i)
                    njets += 1
-#            print 'fake ele, the number of jets ',njets
+#           print 'fake ele, the number of jets ',njets
             if njets <1 :
                return False
+            self.out.fillBranch("n_bjets",n_bjets)
             self.out.fillBranch("mt",sqrt(2*electrons[electron_index].pt*event.MET_pt*(1 - cos(event.MET_phi - electrons[electron_index].phi))))
             self.out.fillBranch("puppimt",sqrt(2*electrons[electron_index].pt*event.PuppiMET_pt*(1 - cos(event.PuppiMET_phi - electrons[electron_index].phi))))
 
