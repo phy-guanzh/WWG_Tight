@@ -19,7 +19,7 @@ config.section_("Data")
 config.Data.inputDataset = "/MuonEG/Run2018A-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD" 
 #config.Data.inputDBS = "phys03"
 config.Data.inputDBS = "global"
-#config.Data.splitting = "LumiBased"
+# config.Data.splitting = "LumiBased"
 config.Data.splitting = "FileBased"
 #config.Data.splitting = "EventAwareLumiBased" 
 #config.Data.splitting = "Automatic" 

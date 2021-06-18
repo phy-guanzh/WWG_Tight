@@ -35,7 +35,7 @@ def prepare_crab(name,sample_type,year):
         f.write('config.JobType.pluginName = "Analysis"\n')
         f.write('config.JobType.psetName = "PSet.py"\n')
         f.write('config.JobType.scriptExe = "./WWG_crab_script.sh" \n')
-        f.write('config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw \n')
+        f.write('config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_fakelepton/WWG_postproc_fakable.py","../WWG_fakelepton/WWG_Module_fakable.py","../WWG_fakelepton/WWG_keep_and_drop.txt","../WWG_fakelepton/WWG_output_branch.txt","../WWG_fakelepton/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw \n')
         f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '"] \n')
         f.write('config.JobType.sendPythonFolder  = True\n')
         f.write('config.JobType.allowUndistributedCMSSW = True \n\n')

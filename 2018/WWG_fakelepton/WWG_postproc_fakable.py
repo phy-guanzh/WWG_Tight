@@ -8,7 +8,7 @@ from PhysicsTools.NanoAODTools.postprocessing.modules.common.countHistogramsModu
 from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetHelperRun2 import createJMECorrector
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.puWeightProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.muonScaleResProducer import *
-from WWG_Module import *
+from WWG_Module_fakable import *
 
 import argparse
 import re
@@ -57,14 +57,14 @@ PrefCorr_2016 = lambda: PrefCorr("L1prefiring_jetpt_2016BtoH.root","L1prefiring_
 PrefCorr_2017 = lambda: PrefCorr("L1prefiring_jetpt_2017BtoF.root","L1prefiring_jetpt_2017BtoF","L1prefiring_photonpt_2017BtoF.root","L1prefiring_photonpt_2017BtoF")
 
 if args.isdata:
-       Modules = [countHistogramsModule(),WWG_Module()]
+       Modules = [countHistogramsModule(),WWG_Module_fakable()]
 else:
        if args.year=='2016':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2016(),PrefCorr_2016()]
+          Modules = [countHistogramsModule(),WWG_Module_fakable(),puWeight_2016(),PrefCorr_2016()]
        if args.year=='2017':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2017(),PrefCorr_2017()]
+          Modules = [countHistogramsModule(),WWG_Module_fakable(),puWeight_2017(),PrefCorr_2017()]
        if args.year=='2018':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2018()]
+          Modules = [countHistogramsModule(),WWG_Module_fakable(),puWeight_2018()]
 
 p=PostProcessor(".",infilelist,
                 branchsel="WWG_keep_and_drop.txt",
