@@ -9,7 +9,7 @@ config.General.workArea = "crab2018"
 config.section_("JobType")
 config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "PSet.py"
-config.JobType.scriptExe = "./WWG_crab_script.sh" 
+config.JobType.scriptExe = "./WWG_crab_script_fakable.sh" 
 config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_fakelepton/WWG_postproc_fakable.py","../WWG_fakelepton/WWG_Module_fakable.py","../WWG_fakelepton/WWG_keep_and_drop.txt","../WWG_fakelepton/WWG_output_branch.txt","../WWG_fakelepton/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw 
 config.JobType.scriptArgs = ["isdata=MC","year=2018"] 
 config.JobType.sendPythonFolder  = True

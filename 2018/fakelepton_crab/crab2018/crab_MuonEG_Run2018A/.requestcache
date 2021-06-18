@@ -218,7 +218,7 @@ atRp86
 sg20
 g37
 sg80
-S'./WWG_crab_script.sh'
+S'./WWG_crab_script_fakable.sh'
 p87
 sg21
 (dp88
@@ -263,7 +263,7 @@ S'prod'
 p103
 sS'RequestName'
 p104
-V210611_092845:yian_crab_MuonEG_Run2018A
+V210618_064826:yian_crab_MuonEG_Run2018A
 p105
 sS'voRole'
 p106
