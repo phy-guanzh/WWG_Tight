@@ -97,11 +97,11 @@ class WWG_Producer(Module):
                 continue
             if abs(muons[i].eta) > 2.5:
                 continue
-            if muons[i].mediumId == True and muons[i].pfRelIso04_all < 0.20:
+            if muons[i].tightId == True and muons[i].pfRelIso04_all < 0.15:
                 muons_select.append(i)
                 muon_pass += 1
                 leptons_select.append(i)
-            elif muons[i].mediumId == True and muons[i].pfRelIso04_all < 0.4:
+            elif muons[i].tightId == True and muons[i].pfRelIso04_all < 0.25:
                  loose_but_not_tight_muons.append(i)
 
 

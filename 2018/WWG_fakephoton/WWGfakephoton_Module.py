@@ -84,12 +84,6 @@ class WWG_Producer(Module):
         self.out.branch("njets30","I")
         self.out.branch("njets20","I")
         self.out.branch("njets15","I")
-#        self.out.branch("HLT_Ele1","I")
-#        self.out.branch("HLT_Ele2","I")
-#        self.out.branch("HLT_Mu1","I")
-#        self.out.branch("HLT_Mu2","I")
-#        self.out.branch("HLT_emu1","I")
-#        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -116,29 +110,9 @@ class WWG_Producer(Module):
             self.out.fillBranch("n_pos",0)
             self.out.fillBranch("n_minus",0)
 
-#        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-#        HLT_Ele2 = event.HLT_Ele35_WPTight_Gsf
-#
-#        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-#        HLT_Mu2 = event.HLT_IsoMu24
-#
-#        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
-#        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
-
         pass_selection1 = False
         pass_selection2 = False
 
-#        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
-#           return False
-
-#        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
-#        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
-#        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
-#        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
-#        self.out.fillBranch("HLT_emu1",HLT_emu1)
-#        self.out.fillBranch("HLT_emu2",HLT_emu2)
-
-        electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
         photons = Collection(event, "Photon")
         jets = Collection(event, "Jet")
@@ -160,15 +134,13 @@ class WWG_Producer(Module):
         for i in range(0,len(muons)):
             if muons[i].pt < 20:
                 continue
-            if abs(muons[i].eta) > 2.5:
+            if abs(muons[i].eta) > 2.4:
                 continue
-            if muons[i].pfRelIso04_all > 0.20:
-                continue   
-            if muons[i].mediumId == True:
+            if muons[i].tightId == True and muons[i].pfRelIso04_all < 0.15:
                 muons_select.append(i)
                 muon_pass += 1
                 leptons_select.append(i)
-            if muons[i].looseId == True:
+            if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.25:
                 loose_muon_pass += 1
 
         # selection on electrons
@@ -324,7 +296,6 @@ class WWG_Producer(Module):
 
         isprompt_mask = (1 << 0) #isPrompt
         isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct
-        isdirecttaudecayproduct_mask = (1 << 4) #isDirectTauDecayProduct
         isprompttaudecayproduct = (1 << 3) #isPromptTauDecayProduct
         isfromhardprocess_mask = (1 << 8) #isPrompt
 
