@@ -19,11 +19,11 @@ config.section_("Data")
 config.Data.inputDataset = "/EGamma/Run2018D-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD" 
 #config.Data.inputDBS = "phys03"
 config.Data.inputDBS = "global"
-# config.Data.splitting = "LumiBased"
-config.Data.splitting = "FileBased"
+config.Data.splitting = "LumiBased"
+#config.Data.splitting = "FileBased"
 #config.Data.splitting = "EventAwareLumiBased" 
 #config.Data.splitting = "Automatic" 
-config.Data.unitsPerJob = 1
+config.Data.unitsPerJob = 40
 config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt" 
 
 config.Data.publication = False
@@ -32,5 +32,5 @@ config.Data.allowNonValidInputDataset = True
 config.Data.outputDatasetTag = "EGamma_Run2018D" 
 
 config.section_("Site")
-config.Site.storageSite = "T3_CH_CERNBOX"
+config.Site.storageSite = "T2_CH_CERN"
 config.Site.whitelist = ["T2_US_MIT","T2_US_Wisconsin","T2_US_Purdue","T2_US_UCSD","T2_US_Caltech","T2_US_Nebraska"] 

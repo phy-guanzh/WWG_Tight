@@ -21,9 +21,9 @@ class WWG_Producer(Module):
 
         self.out = wrappedOutputTree
 
-        self.out.branch("event",  "i")
-        self.out.branch("run",  "i")
-        self.out.branch("lumi",  "i")
+        self.out.branch("event",  "F")
+        self.out.branch("run",  "F")
+        self.out.branch("lumi",  "F")
 
         self.out.branch("lepton_pid",  "I")
         self.out.branch("lepton_pt",  "F")

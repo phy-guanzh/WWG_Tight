@@ -36,6 +36,8 @@ class WWG_Producer(Module):
         self.out.branch("lep2eta",  "F")
         self.out.branch("lep1phi",  "F")
         self.out.branch("lep2phi",  "F")
+        self.out.branch("lep1_is_tight",  "I")
+        self.out.branch("lep2_is_tight",  "I")
         self.out.branch("lepton1_isprompt", "I")
         self.out.branch("lepton2_isprompt", "I")
         self.out.branch("n_loose_mu", "I")
@@ -72,12 +74,6 @@ class WWG_Producer(Module):
         self.out.branch("njets30","I")
         self.out.branch("njets20","I")
         self.out.branch("njets15","I")
-#        self.out.branch("HLT_Ele1","I")
-#        self.out.branch("HLT_Ele2","I")
-#        self.out.branch("HLT_Mu1","I")
-#        self.out.branch("HLT_Mu2","I")
-#        self.out.branch("HLT_emu1","I")
-#        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -191,9 +187,6 @@ class WWG_Producer(Module):
 
 #       print 'the number of photons: ',len(photons_select)
         self.out.fillBranch("n_photon",photon_pass)
-#        if  len(photons_select)<1:
-#            self.out.fillBranch("pass_selection",0)
-#            return True
 
         pass_lepton_dr_cut = True
         njets = 0
@@ -206,8 +199,6 @@ class WWG_Producer(Module):
         for i in range(0,len(jets)):
             if jets[i].btagDeepB > 0.4184:  # DeepCSVM, remove jets from b
                n_bjets+=1
-#               self.out.fillBranch("pass_selection",0)
-#               return True
             if abs(jets[i].eta) > 4.7:
                continue
 	    if len(photons_select)>0 and deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) < 0.5:
@@ -235,9 +226,6 @@ class WWG_Producer(Module):
                if jets[i].pt > 15:
                    njets15+=1
 #        print len(jets),("njets",njets)
-#        if njets >=2 :
-#            self.out.fillBranch("pass_selection",0)
-#            return True
 
         isprompt_mask = (1 << 0) #isPrompt
         isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct
@@ -255,13 +243,22 @@ class WWG_Producer(Module):
         lepton1_isprompt = -10
         lepton2_isprompt = -10
         if len(loose_muons)==1 and len(loose_electrons)==1:  # emu channel 
+
             if deltaR(muons[loose_muons[0]].eta,muons[loose_muons[0]].phi,electrons[loose_electrons[0]].eta,electrons[loose_electrons[0]].phi) < 0.5:
 	       self.out.fillBranch("pass_selection",0)
                return True 
             if muons[loose_muons[0]].charge * (electrons[loose_electrons[0]].charge) >= 0:
                 self.out.fillBranch("pass_selection",0)
                 return True
-#           print 'test emu channel',len(genparts)
+#           print 'test, emu channel',len(genparts)
+            if muons[loose_muons[0]].mediumId == True and muons[loose_muons[0]].pfRelIso04_all < 0.20:
+                self.out.fillBranch("lep1_is_tight",1)
+            else:
+                self.out.fillBranch("lep1_is_tight",0)
+            if electrons[loose_electrons[0]].cutBased >= 3:
+                self.out.fillBranch("lep2_is_tight",1) 
+            else:
+                self.out.fillBranch("lep2_is_tight",0)
             if hasattr(event, 'nGenPart'):
                 print 'calculate the lepton flag in channel emu'
                 for i in range(0,len(genparts)):
@@ -310,6 +307,15 @@ class WWG_Producer(Module):
 	        self.out.fillBranch("pass_selection",0)
                 return True 
 #           print 'test',len(genparts)
+            if electrons[loose_electrons[0]].cutBased >= 3:
+                self.out.fillBranch("lep1_is_tight",1)
+            else:
+                self.out.fillBranch("lep1_is_tight",0)
+            if electrons[loose_electrons[1]].cutBased >= 3:
+                self.out.fillBranch("lep2_is_tight",1)
+            else:
+                self.out.fillBranch("lep2_is_tight",0)
+
 	    if hasattr(event, 'nGenPart'):
                 print 'calculate the lepton flag in channel ee'
                 for i in range(0,len(genparts)):
@@ -359,6 +365,15 @@ class WWG_Producer(Module):
             if muons[loose_muons[0]].charge * muons[loose_muons[1]].charge >= 0:
 	       self.out.fillBranch("pass_selection",0)
                return True 
+            if muons[loose_muons[0]].mediumId == True and muons[loose_muons[0]].pfRelIso04_all < 0.20:
+                self.out.fillBranch("lep1_is_tight",1)
+            else:
+                self.out.fillBranch("lep1_is_tight",0)
+            if muons[loose_muons[1]].mediumId == True and muons[loose_muons[1]].pfRelIso04_all < 0.20:
+                self.out.fillBranch("lep2_is_tight",1)
+            else:
+                self.out.fillBranch("lep2_is_tight",0)
+
 	    if hasattr(event, 'nGenPart'):
                 print 'calculate the lepton flag in channel mumu'
                 for i in range(0,len(genparts)):

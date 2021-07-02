@@ -856,3 +856,70 @@ Traceback (most recent call last):
     raise ConfigurationException("CRAB configuration file %s not found." % (configname))
 ConfigurationException: CRAB configuration file crabcode_2018/EGamma_Run2018C_cfg.py not found.
 INFO 2021-06-04 05:31:55.593 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-06-18 07:04:03.300 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-06-18 07:04:03.300 UTC: 	 Running on: Linux lxplus751.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-18 07:04:03.300 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-18 07:04:03.301 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-06-18 07:04:03.302 UTC: 	 Error: crab2018/crab_EGamma_Run2018G is not a valid CRAB project directory.
+ERROR 2021-06-18 07:04:03.302 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab_EGamma_Run2018G is not a valid CRAB project directory.
+INFO 2021-06-18 07:04:03.310 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-06-19 16:39:25.365 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-06-19 16:39:25.365 UTC: 	 Running on: Linux lxplus7121.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-19 16:39:25.365 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-19 16:39:25.365 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-06-19 16:39:25.367 UTC: 	 Error: crab2018/crab_ST-s is not a valid CRAB project directory.
+ERROR 2021-06-19 16:39:25.367 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab_ST-s is not a valid CRAB project directory.
+INFO 2021-06-19 16:39:25.407 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-06-22 12:20:08.193 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-06-22 12:20:08.193 UTC: 	 Running on: Linux lxplus711.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-22 12:20:08.193 UTC: 	 Executing command: 'submit'
+DEBUG 2021-06-22 12:20:08.195 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+INFO 2021-06-22 12:20:08.207 UTC: 	 Will use CRAB configuration file crabcode_2018/EGamma_Run2018D_cfg.py
+DEBUG 2021-06-22 12:20:08.207 UTC: 	 Loading CRAB configuration file.
+ERROR 2021-06-22 12:20:08.224 UTC: 	 Error while loading CRAB configuration:
+unexpected indent (EGamma_Run2018D_cfg.py, line 22)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2021-06-22 12:20:08.225 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 311, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+unexpected indent (EGamma_Run2018D_cfg.py, line 22)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2021-06-22 12:20:08.389 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log

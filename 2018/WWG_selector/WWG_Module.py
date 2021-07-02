@@ -19,13 +19,11 @@ class WWG_Producer(Module):
 
         self.out = wrappedOutputTree
 
-#        self.out.branch("event",  "i")
-#        self.out.branch("run",  "i")
-#        self.out.branch("lumi",  "i")
         self.out.branch("event",  "F")
         self.out.branch("run",  "F")
         self.out.branch("lumi",  "F")
 	self.out.branch("pass_selection",  "B");
+	self.out.branch("photon_selection",  "I");
 	self.out.branch("channel",  "I");
 
         self.out.branch("lep1_pid",  "I")
@@ -36,20 +34,29 @@ class WWG_Producer(Module):
         self.out.branch("lep2eta",  "F")
         self.out.branch("lep1phi",  "F")
         self.out.branch("lep2phi",  "F")
-        self.out.branch("lepton1_isprompt", "I")
-        self.out.branch("lepton2_isprompt", "I")
+        self.out.branch("drll",  "F")
+        self.out.branch("lep1_charge", "I")
+        self.out.branch("lep2_charge", "I")
+        self.out.branch("lep1_isprompt", "I")
+        self.out.branch("lep2_isprompt", "I")
+        self.out.branch("lep1_is_tight", "I")
+        self.out.branch("lep2_is_tight", "I")
         self.out.branch("n_loose_mu", "I")
         self.out.branch("n_loose_ele", "I")
+        self.out.branch("n_leptons", "I")
         self.out.branch("n_photon", "I")
         self.out.branch("photonet",  "F")
         self.out.branch("photoneta",  "F")
         self.out.branch("photonphi",  "F")
+        self.out.branch("drl1a",  "F")
+        self.out.branch("drl2a",  "F")
         self.out.branch("photon_isprompt", "I")
         self.out.branch("photon_gen_matching", "I")
         self.out.branch("mll",  "F")
         self.out.branch("mllg",  "F")
         self.out.branch("ptll",  "F")
         self.out.branch("mt",  "F")
+        self.out.branch("puppimt",  "F")
         self.out.branch("met",  "F")
         self.out.branch("metup",  "F")
         self.out.branch("puppimet","F")
@@ -72,12 +79,6 @@ class WWG_Producer(Module):
         self.out.branch("njets30","I")
         self.out.branch("njets20","I")
         self.out.branch("njets15","I")
-#        self.out.branch("HLT_Ele1","I")
-#        self.out.branch("HLT_Ele2","I")
-#        self.out.branch("HLT_Mu1","I")
-#        self.out.branch("HLT_Mu2","I")
-#        self.out.branch("HLT_emu1","I")
-#        self.out.branch("HLT_emu2","I")
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -88,7 +89,7 @@ class WWG_Producer(Module):
         self.out.fillBranch("event",event.event)
         self.out.fillBranch("lumi",event.luminosityBlock)
         self.out.fillBranch("run",event.run)
-#        print event.event,event.luminosityBlock,event.run
+#       print event.event,event.luminosityBlock,event.run
         if hasattr(event,'Generator_weight'):
             if event.Generator_weight > 0 :
                 n_pos=1
@@ -104,25 +105,6 @@ class WWG_Producer(Module):
             self.out.fillBranch("n_pos",0)
             self.out.fillBranch("n_minus",0)
 
-#        HLT_Ele1 = event.HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL
-#        HLT_Ele2 = event.HLT_Ele32_WPTight_Gsf
-
-#        HLT_Mu1 = event.HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8
-#        HLT_Mu2 = event.HLT_IsoMu24
-
-#        HLT_emu1 = event.HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ
-#        HLT_emu2 = event.HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ
-
-#        if not (HLT_Ele1 or HLT_Ele2 or HLT_Mu1 or HLT_Mu2 or HLT_emu1 or HLT_emu2):
-#           self.out.fillBranch("pass_selection",0)
-#           return True
-#        self.out.fillBranch("HLT_Ele1",HLT_Ele1)
-#        self.out.fillBranch("HLT_Ele2",HLT_Ele2)
-#        self.out.fillBranch("HLT_Mu1",HLT_Mu1)
-#        self.out.fillBranch("HLT_Mu2",HLT_Mu2)
-#        self.out.fillBranch("HLT_emu1",HLT_emu1)
-#        self.out.fillBranch("HLT_emu2",HLT_emu2)
-
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
         photons = Collection(event, "Photon")
@@ -133,10 +115,13 @@ class WWG_Producer(Module):
         jet_select = [] 
         dileptonp4 = ROOT.TLorentzVector()
         photons_select = []
+        tight_electrons = []
+        tight_muons = [] 
         electrons_select = []
-        muons_select = [] 
+        muons_select = []
+        loose_but_not_tight_electrons = []
+        loose_but_not_tight_muons = [] 
         jets_select = []
-        leptons_select=[]
 
         #selection on muons
         muon_pass =0
@@ -144,15 +129,16 @@ class WWG_Producer(Module):
         for i in range(0,len(muons)):
             if muons[i].pt < 10:
                 continue
-            if abs(muons[i].eta) > 2.5:
+            if abs(muons[i].eta) > 2.4:
                 continue
-            if muons[i].pfRelIso04_all > 0.20:
-                continue   
-            if muons[i].mediumId == True:
+            if muons[i].tightId == True and muons[i].pfRelIso04_all < 0.15:
+                tight_muons.append(i)
                 muons_select.append(i)
                 muon_pass += 1
-                leptons_select.append(i)
-            if muons[i].looseId == True:
+	    elif muons[i].tightId == True and muons[i].pfRelIso04_all < 0.25:
+                 loose_but_not_tight_muons.append(i)
+                 muons_select.append(i)
+            if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.25:
                 loose_muon_pass += 1
 
         # selection on electrons
@@ -165,22 +151,65 @@ class WWG_Producer(Module):
                 continue
             if (abs(electrons[i].eta + electrons[i].deltaEtaSC) < 1.479 and abs(electrons[i].dz) < 0.1 and abs(electrons[i].dxy) < 0.05) or (abs(electrons[i].eta + electrons[i].deltaEtaSC) > 1.479 and abs(electrons[i].dz) < 0.2 and abs(electrons[i].dxy) < 0.1):
                 if electrons[i].cutBased >= 3:
-                    electrons_select.append(i)
+                    tight_electrons.append(i)
+		    electrons_select.append(i)
                     electron_pass += 1
-                    leptons_select.append(i)
+		elif electrons[i].cutBased >= 1:
+                    loose_but_not_tight_electrons.append(i)
+		    electrons_select.append(i)
 
                 if electrons[i].cutBased >= 1:
                     loose_electron_pass += 1
 
-#       print 'the number of leptons: ',len(electrons_select)+len(muons_select)
-        if len(electrons_select)+len(muons_select) != 2:      #reject event if there are not exactly two leptons
-	   self.out.fillBranch("pass_selection",0)
-	   return True
+#       print 'the number of leptons: ',len(tight_electrons)+len(tight_muons)
+#       if len(tight_electrons)+len(tight_muons)+len(loose_but_not_tight_electrons)+len(loose_but_not_tight_muons) != 2:#reject event if there are not exactly two leptons
+#	   self.out.fillBranch("pass_selection",0)
+#	   return True
+        self.out.fillBranch("n_leptons",len(tight_electrons)+len(tight_muons)+len(loose_but_not_tight_electrons)+len(loose_but_not_tight_muons))
         self.out.fillBranch("n_loose_ele", loose_electron_pass)
         self.out.fillBranch("n_loose_mu", loose_muon_pass)
 
-        # selection on photons
+        # selection on photons for medium photon
 	photon_pass=0
+	for i in range(0,len(photons)):
+            if photons[i].pt < 20:
+                continue
+            if abs(photons[i].eta) > 2.5:
+                continue
+            if not (photons[i].isScEtaEE or photons[i].isScEtaEB):
+                continue
+            if photons[i].pixelSeed:
+                continue
+            pass_lepton_dr_cut = True
+            for j in range(0,len(muons_select)):
+                if deltaR(muons[muons_select[j]].eta,muons[muons_select[j]].phi,photons[i].eta,photons[i].phi) < 0.5:
+                    pass_lepton_dr_cut = False
+            for j in range(0,len(electrons_select)):
+                if deltaR(electrons[electrons_select[j]].eta,electrons[electrons_select[j]].phi,photons[i].eta,photons[i].phi) < 0.5:
+                    pass_lepton_dr_cut = False
+            if not pass_lepton_dr_cut:
+                continue
+
+            #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
+            mask1 = 0b10101010101010 # full medium ID
+            mask2 = 0b00101010101010 # fail Isopho
+            mask3 = 0b10001010101010 # fail IsoNeu
+            mask4 = 0b10100010101010 # fail Isoch
+            mask5 = 0b10101000101010 # fail sigma ieie
+
+            bitmap = photons[i].vidNestedWPBitmap & mask1
+
+            #the photon pass the full ID
+            if not (bitmap == mask1):
+                continue
+
+            #this is redundant after the if statement above
+            if not ((bitmap == mask1) or (bitmap == mask2) or (bitmap == mask3) or (bitmap == mask4) or (bitmap == mask5)):
+                continue
+            photons_select.append(i)
+            photon_pass += 1
+
+        # select control photons
         for i in range(0,len(photons)):
             if photons[i].pt < 20:
                 continue
@@ -199,17 +228,33 @@ class WWG_Producer(Module):
                     pass_lepton_dr_cut = False
             if not pass_lepton_dr_cut:
                 continue
-            if photons[i].cutBased >=2:
-                photons_select.append(i)
-                photon_pass += 1
 
-#       print 'the number of photons: ',len(photons_select)
-        self.out.fillBranch("n_photon",photon_pass)
-#        if  len(photons_select)<1:
+            #| pt | scEta | H over EM | sigma ieie | Isoch | IsoNeu | Isopho |
+            mask1 = 0b10101010101010 # full medium ID
+            mask2 = 0b00101010101010 # fail Isopho
+            mask3 = 0b10001010101010 # fail IsoNeu
+            mask4 = 0b10100010101010 # fail Isoch
+            mask5 = 0b10101000101010 # fail sigma ieie
+
+            bitmap = photons[i].vidNestedWPBitmap & mask1
+
+            #not pass the full ID
+            if (bitmap == mask1):
+                continue
+
+            #fail one of varaible in the ID
+            if not((bitmap == mask1) or (bitmap == mask2) or (bitmap == mask3) or (bitmap == mask4) or (bitmap == mask5)):
+                continue
+            photons_select.append(i)
+            photon_pass += 1
+
+        self.out.fillBranch("n_photon",photon_pass) #the number of medium photons and control photons
+
+#       if  len(photons_select)<1:
 #            self.out.fillBranch("pass_selection",0)
 #            return True
 
-        pass_lepton_dr_cut = True
+        pass_dr_cut = True
         njets = 0
         njets50 = 0
         njets40 = 0
@@ -220,20 +265,18 @@ class WWG_Producer(Module):
         for i in range(0,len(jets)):
             if jets[i].btagDeepB > 0.4184:  # DeepCSVM, remove jets from b
                n_bjets+=1
-#               self.out.fillBranch("pass_selection",0)
-#               return True
             if abs(jets[i].eta) > 4.7:
                continue
-	    if len(photons_select)>0 and deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) < 0.5:
-	       continue;
+            if photon_pass>0:
+	       pass_dr_cut = deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) > 0.5
             for j in range(0,len(electrons_select)):
                 if deltaR(jets[i].eta,jets[i].phi,electrons[electrons_select[j]].eta,electrons[electrons_select[j]].phi) < 0.5:
-                   pass_lepton_dr_cut = False
+                   pass_dr_cut = False
             for j in range(0,len(muons_select)):
                 if deltaR(jets[i].eta,jets[i].phi,muons[muons_select[j]].eta,muons[muons_select[j]].phi) < 0.5:
-                   pass_lepton_dr_cut = False
+                   pass_dr_cut = False
 
-            if  not pass_lepton_dr_cut == True:
+            if  not pass_dr_cut == True:
 	        continue
             if jets[i].jetId >> 1 & 1:
                jets_select.append(i)
@@ -253,28 +296,25 @@ class WWG_Producer(Module):
 #            self.out.fillBranch("pass_selection",0)
 #            return True
 
-        isprompt_mask = (1 << 0) #isPrompt
-        isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct
-        isdirecttaudecayproduct_mask = (1 << 4) #isDirectTauDecayProduct
-        isprompttaudecayproduct = (1 << 3) #isPromptTauDecayProduct
-        isfromhardprocess_mask = (1 << 8) #isPrompt
+        isprompt_mask = (1 << 0) #isPrompt used for lepton
+        isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct used for photon
+        isprompttaudecayproduct = (1 << 3) #isPromptTauDecayProduct used for lepton
+        isfromhardprocess_mask = (1 << 8) #isPrompt  used for photon
 
         channel = 0 
         # emu:     1
-        # ee:      2
-        # mumu:    3
 
         # emu
         mT = -10
         lepton1_isprompt = -10
         lepton2_isprompt = -10
+        lep1_is_tight=-10
+        lep2_is_tight=-10
         if len(muons_select)==1 and len(electrons_select)==1:  # emu channel 
-            if deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
-	       self.out.fillBranch("pass_selection",0)
-               return True 
-            if muons[muons_select[0]].charge * (electrons[electrons_select[0]].charge) >= 0:
-                self.out.fillBranch("pass_selection",0)
-                return True
+            if muons[muons_select[0]].tightId == True and muons[muons_select[0]].pfRelIso04_all < 0.15:
+               lep1_is_tight=1
+            if electrons[electrons_select[0]].cutBased >= 3:
+	       lep2_is_tight=1
 #           print 'test emu channel',len(genparts)
             if hasattr(event, 'nGenPart'):
                 print 'calculate the lepton flag in channel emu'
@@ -288,10 +328,15 @@ class WWG_Producer(Module):
                        break 
             channel = 1
             self.out.fillBranch("channel",channel)
-	    self.out.fillBranch("lepton1_isprompt",lepton1_isprompt)
-	    self.out.fillBranch("lepton2_isprompt",lepton2_isprompt)
-            self.out.fillBranch("lep1_pid",13)
-            self.out.fillBranch("lep2_pid",11)
+            self.out.fillBranch("lep1_is_tight",lep1_is_tight)
+            self.out.fillBranch("lep2_is_tight",lep2_is_tight)
+	    self.out.fillBranch("drll",deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi))
+	    self.out.fillBranch("lep1_charge",muons[muons_select[0]].charge)
+            self.out.fillBranch("lep2_charge",electrons[electrons_select[0]].charge)
+	    self.out.fillBranch("lep1_isprompt",lepton1_isprompt)
+	    self.out.fillBranch("lep2_isprompt",lepton2_isprompt)
+            self.out.fillBranch("lep1_pid",muons[muons_select[0]].pdgId)
+            self.out.fillBranch("lep2_pid",electrons[electrons_select[0]].pdgId)
             self.out.fillBranch("lep1pt",muons[muons_select[0]].pt)
             self.out.fillBranch("lep1eta",muons[muons_select[0]].eta)
             self.out.fillBranch("lep1phi",muons[muons_select[0]].phi)
@@ -301,150 +346,77 @@ class WWG_Producer(Module):
             self.out.fillBranch("mll",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).M())
             self.out.fillBranch("ptll",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt())
             mT = sqrt(2*(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt()*event.MET_pt*(1 - cos((muons[muons_select[0]].p4()+electrons[electrons_select[0]].p4()).Phi()-event.MET_phi)))
+            puppimT = sqrt(2*(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()).Pt()*event.PuppiMET_pt*(1 - cos((muons[muons_select[0]].p4()+electrons[electrons_select[0]].p4()).Phi()-event.PuppiMET_phi)))
             self.out.fillBranch("mt",mT)
-            if len(photons_select)<1:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-            self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-            self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-            self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()+photons[photons_select[0]].p4()).M())
-        # ee
-        elif len(muons_select)==0 and len(electrons_select)==2:
-            if deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi)<0.5:
-	       self.out.fillBranch("pass_selection",0)
-               return True 
-            if electrons[electrons_select[0]].charge * electrons[electrons_select[1]].charge >=0:
-	        self.out.fillBranch("pass_selection",0)
-                return True 
-#           print 'test',len(genparts)
-	    if hasattr(event, 'nGenPart'):
-                print 'calculate the lepton flag in channel ee'
-                for i in range(0,len(genparts)):
-		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 11 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
-                       lepton1_isprompt=1 
-                       break 
-                for i in range(0,len(genparts)):
-		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 11 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
-                       lepton2_isprompt=1 
-                       break 
-            channel = 2
-            self.out.fillBranch("channel",channel)
-	    self.out.fillBranch("lepton1_isprompt",lepton1_isprompt)
-	    self.out.fillBranch("lepton2_isprompt",lepton2_isprompt)
-            self.out.fillBranch("lep1_pid",11)
-            self.out.fillBranch("lep2_pid",11)
-            self.out.fillBranch("lep1pt",electrons[electrons_select[0]].pt)
-            self.out.fillBranch("lep1eta",electrons[electrons_select[0]].eta)
-            self.out.fillBranch("lep1phi",electrons[electrons_select[0]].phi)
-            self.out.fillBranch("lep2pt",electrons[electrons_select[1]].pt)
-            self.out.fillBranch("lep2eta",electrons[electrons_select[1]].eta)
-            self.out.fillBranch("lep2phi",electrons[electrons_select[1]].phi)
-            self.out.fillBranch("mll",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).M())
-            self.out.fillBranch("ptll",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).Pt())
-            mT = sqrt(2*(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()).Pt()*event.MET_pt*(1 - cos((electrons[electrons_select[0]].p4()+electrons[electrons_select[1]].p4()).Phi()-event.MET_phi)))
-            self.out.fillBranch("mt",mT)
-
-            if len(photons_select)<1:
-	        self.out.fillBranch("pass_selection",0)
-                return True
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[1]].eta,electrons[electrons_select[1]].phi) < 0.5:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-            self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-            self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-            self.out.fillBranch("mllg",(electrons[electrons_select[0]].p4() + electrons[electrons_select[1]].p4()+photons[photons_select[0]].p4()).M())
-
-        # mumu 
-        elif len(electrons_select)==0 and len(muons_select)==2:
-            if deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,muons[muons_select[1]].eta,muons[muons_select[1]].phi)<0.5:
-	       self.out.fillBranch("pass_selection",0)
-               return True 
-            if muons[muons_select[0]].charge * muons[muons_select[1]].charge >= 0:
-	       self.out.fillBranch("pass_selection",0)
-               return True 
-	    if hasattr(event, 'nGenPart'):
-                print 'calculate the lepton flag in channel mumu'
-                for i in range(0,len(genparts)):
-		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(muons[muons_select[0]].eta,muons[muons_select[0]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
-                       lepton1_isprompt=1
-                       break 
-                for i in range(0,len(genparts)):
-		   if genparts[i].pt > 5 and abs(genparts[i].pdgId) == 13 and ((genparts[i].statusFlags & isprompt_mask == isprompt_mask) or (genparts[i].statusFlags & isprompttaudecayproduct == isprompttaudecayproduct)) and deltaR(muons[muons_select[1]].eta,muons[muons_select[1]].phi,genparts[i].eta,genparts[i].phi) < 0.3:
-                       lepton2_isprompt=1
-                       break 
-            channel = 3
-            self.out.fillBranch("channel",channel)
-	    self.out.fillBranch("lepton1_isprompt",lepton1_isprompt)
-	    self.out.fillBranch("lepton2_isprompt",lepton2_isprompt)
-            self.out.fillBranch("lep1_pid",13)
-            self.out.fillBranch("lep2_pid",13)
-            self.out.fillBranch("lep1pt",muons[muons_select[0]].pt)
-            self.out.fillBranch("lep1eta",muons[muons_select[0]].eta)
-            self.out.fillBranch("lep1phi",muons[muons_select[0]].phi)
-            self.out.fillBranch("lep2pt",muons[muons_select[1]].pt)
-            self.out.fillBranch("lep2eta",muons[muons_select[1]].eta)
-            self.out.fillBranch("lep2phi",muons[muons_select[1]].phi)
-            self.out.fillBranch("mll",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).M())
-            self.out.fillBranch("ptll",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).Pt())
-            mT = sqrt(2*(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()).Pt()*event.MET_pt*(1 - cos((muons[muons_select[0]].p4()+muons[muons_select[1]].p4()).Phi()-event.MET_phi)))
-            self.out.fillBranch("mt",mT)
-            if len(photons_select)<1:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            if deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[1]].eta,muons[muons_select[1]].phi) < 0.5:
-                self.out.fillBranch("pass_selection",0)
-                return True
-            self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-            self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-            self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-            self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + muons[muons_select[1]].p4()+photons[photons_select[0]].p4()).M())
+            self.out.fillBranch("puppimt",puppimT)
 
         else:
-            self.out.fillBranch("pass_selection",0)
-            return True
+              self.out.fillBranch("pass_selection",0)
+              return True
         photon_gen_matching=-10
         photon_isprompt =-10
-        if hasattr(photons[photons_select[0]],'genPartIdx') and len(photons_select)>0 :
-            print 'calculate the photon flag'
-            if photons[photons_select[0]].genPartIdx >= 0 and genparts[photons[photons_select[0]].genPartIdx].pdgId  == 22: 
-                if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
-                    photon_gen_matching = 6
-                elif ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):       
-                    if (genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother >= 0 and (abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 11 or abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 13 or abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 15)):
-                        photon_gen_matching = 4
-                    else:    
-                        photon_gen_matching = 5
-                else:
-                    photon_gen_matching = 3
-            elif photons[photons_select[0]].genPartIdx >= 0 and abs(genparts[photons[photons_select[0]].genPartIdx].pdgId) == 11:     
-                if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):  
-                    photon_gen_matching = 1
-                else:
-                    photon_gen_matching = 2
-                    
-            else:
-                assert(photons[photons_select[0]].genPartFlav == 0)
-                photon_gen_matching = 0
-        if hasattr(event, 'nGenPart') and len(photons_select)>0 :
-            for j, genpart in enumerate(genparts):
-	        if photons[photons_select[0]].genPartIdx >=0 and genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,genpart.eta,genpart.phi) < 0.3:
-                   photon_isprompt =1
-                   break
-
+        if photon_pass>0:
+           if hasattr(photons[photons_select[0]],'genPartIdx') :
+               print 'calculate the photon flag'
+               if photons[photons_select[0]].genPartIdx >= 0 and genparts[photons[photons_select[0]].genPartIdx].pdgId  == 22: 
+                   if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
+                       photon_gen_matching = 6
+                   elif ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):       
+                       if (genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother >= 0 and (abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 11 or abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 13 or abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 15)):
+                           photon_gen_matching = 4
+                       else:    
+                           photon_gen_matching = 5
+                   else:
+                       photon_gen_matching = 3
+               elif photons[photons_select[0]].genPartIdx >= 0 and abs(genparts[photons[photons_select[0]].genPartIdx].pdgId) == 11:     
+                   if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):  
+                       photon_gen_matching = 1
+                   else:
+                       photon_gen_matching = 2
+                       
+               else:
+                   assert(photons[photons_select[0]].genPartFlav == 0)
+                   photon_gen_matching = 0
+           if hasattr(event, 'nGenPart') and len(photons_select)>0 :
+               for j, genpart in enumerate(genparts):
+	           if photons[photons_select[0]].genPartIdx >=0 and genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,genpart.eta,genpart.phi) < 0.3:
+                      photon_isprompt =1
+                      break
+           mask1 = 0b10101010101010 # full medium ID
+           mask2 = 0b00101010101010 # fail Isopho
+           mask3 = 0b10001010101010 # fail IsoNeu
+           mask4 = 0b10100010101010 # fail Isoch
+           mask5 = 0b10101000101010 # fail sigma ieie
+        
+	   bitmap = photons[photons_select[0]].vidNestedWPBitmap & mask1   
+           if (bitmap == mask1):
+               self.out.fillBranch("photon_selection",1) #all cuts applied
+           elif (bitmap == mask2):
+               self.out.fillBranch("photon_selection",2) # fail Isopho
+           elif (bitmap == mask3):
+               self.out.fillBranch("photon_selection",3) # fail IsoNeu
+           elif (bitmap == mask4):
+               self.out.fillBranch("photon_selection",4) # fail Isoch
+           elif (bitmap == mask5):
+               self.out.fillBranch("photon_selection",5) # fail sigma ieie
+	   else:
+               assert(0)
+           #(photon_selection==2 || photon_selection==3 || photon_selection==4 || photon_selection ==5 )->build fake photon enriched sample 
+	   self.out.fillBranch("drl1a",deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi))
+	   self.out.fillBranch("drl2a",deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi))
+	   self.out.fillBranch("photonet",photons[photons_select[0]].pt)
+           self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
+           self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
+           self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()+photons[photons_select[0]].p4()).M())
+        else:
+           self.out.fillBranch("photon_selection",0) #if there is no photons selected
+           self.out.fillBranch("drl1a",-10)
+           self.out.fillBranch("drl2a",-10)
+           self.out.fillBranch("photonet",-10)
+           self.out.fillBranch("photoneta",-10)
+           self.out.fillBranch("photonphi",-10)
+           self.out.fillBranch("mllg",-10)
+           
         self.out.fillBranch("photon_gen_matching",photon_gen_matching)
         self.out.fillBranch("photon_isprompt",photon_isprompt)
 

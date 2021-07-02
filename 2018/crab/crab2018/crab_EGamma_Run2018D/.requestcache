@@ -136,11 +136,11 @@ sg12
 I00
 sS'splitting'
 p59
-S'FileBased'
+S'LumiBased'
 p60
 sS'unitsPerJob'
 p61
-I1
+I40
 sg13
 S''
 sg14
@@ -263,7 +263,7 @@ S'prod'
 p103
 sS'RequestName'
 p104
-V210603_193247:yian_crab_EGamma_Run2018D
+V210622_122502:yian_crab_EGamma_Run2018D
 p105
 sS'voRole'
 p106
