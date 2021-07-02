@@ -138,6 +138,7 @@ class WWG_Producer(Module):
 	    elif muons[i].tightId == True and muons[i].pfRelIso04_all < 0.25:
                  loose_but_not_tight_muons.append(i)
                  muons_select.append(i)
+                 muon_pass += 1
             if muons[i].looseId == True and muons[i].pfRelIso04_all < 0.25:
                 loose_muon_pass += 1
 
@@ -157,7 +158,7 @@ class WWG_Producer(Module):
 		elif electrons[i].cutBased >= 1:
                     loose_but_not_tight_electrons.append(i)
 		    electrons_select.append(i)
-
+                    electron_pass += 1
                 if electrons[i].cutBased >= 1:
                     loose_electron_pass += 1
 
@@ -430,7 +431,7 @@ class WWG_Producer(Module):
         else:
             self.out.fillBranch("ntruepu",0)
 
-        print 'channel', channel,'mu_pass:',muon_pass,' ele_pass:',electron_pass,' photon_pass:',photon_pass,' is lepton1 real ',lepton1_isprompt,' is lepton2 real ',lepton2_isprompt,' is photon real ',photon_isprompt,' or ',photon_gen_matching
+        print 'channel',channel,', mu_pass:',muon_pass,', ele_pass:',electron_pass,', photon_pass:',photon_pass,', is lepton1 real ',lepton1_isprompt,', is lepton1 tight ',lep1_is_tight,', is lepton2 real ',lepton2_isprompt,', is lepton2 tight ',lep2_is_tight,', is photon real ',photon_isprompt,' or ',photon_gen_matching
         print '------\n'
 
         self.out.fillBranch("njets50",njets50)
