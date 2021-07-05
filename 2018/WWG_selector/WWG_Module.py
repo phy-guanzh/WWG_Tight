@@ -255,47 +255,6 @@ class WWG_Producer(Module):
 #            self.out.fillBranch("pass_selection",0)
 #            return True
 
-        pass_dr_cut = True
-        njets = 0
-        njets50 = 0
-        njets40 = 0
-        njets30 = 0
-        njets20 = 0
-        njets15 = 0
-        n_bjets = 0
-        for i in range(0,len(jets)):
-            if jets[i].btagDeepB > 0.4184:  # DeepCSVM, remove jets from b
-               n_bjets+=1
-            if abs(jets[i].eta) > 4.7:
-               continue
-            if photon_pass>0:
-	       pass_dr_cut = deltaR(jets[i].eta,jets[i].phi,photons[photons_select[0]].eta,photons[photons_select[0]].phi) > 0.5
-            for j in range(0,len(electrons_select)):
-                if deltaR(jets[i].eta,jets[i].phi,electrons[electrons_select[j]].eta,electrons[electrons_select[j]].phi) < 0.5:
-                   pass_dr_cut = False
-            for j in range(0,len(muons_select)):
-                if deltaR(jets[i].eta,jets[i].phi,muons[muons_select[j]].eta,muons[muons_select[j]].phi) < 0.5:
-                   pass_dr_cut = False
-
-            if  not pass_dr_cut == True:
-	        continue
-            if jets[i].jetId >> 1 & 1:
-               jets_select.append(i)
-               njets += 1
-               if jets[i].pt > 50:
-                   njets50+=1
-               if jets[i].pt > 40:
-                   njets40+=1
-               if jets[i].pt > 30:
-                   njets30+=1
-               if jets[i].pt > 20:
-                   njets20+=1
-               if jets[i].pt > 15:
-                   njets15+=1
-#        print len(jets),("njets",njets)
-#        if njets >=2 :
-#            self.out.fillBranch("pass_selection",0)
-#            return True
 
         isprompt_mask = (1 << 0) #isPrompt used for lepton
         isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct used for photon
@@ -357,30 +316,36 @@ class WWG_Producer(Module):
         photon_gen_matching=-10
         photon_isprompt =-10
         if photon_pass>0:
-           if hasattr(photons[photons_select[0]],'genPartIdx') :
+           for j in range(0,len(photons_select)):
+               if deltaR(photons[photons_select[j]].eta,photons[photons_select[j]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) > 0.5 and deltaR(photons[photons_select[j]].eta,photons[photons_select[j]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) > 0.5:
+                  photon_index=photons_select[j] 
+                  break
+               else:
+                  photon_index=photons_select[0]
+           if hasattr(photons[photon_index],'genPartIdx') :
                print 'calculate the photon flag'
-               if photons[photons_select[0]].genPartIdx >= 0 and genparts[photons[photons_select[0]].genPartIdx].pdgId  == 22: 
-                   if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
+               if photons[photon_index].genPartIdx >= 0 and genparts[photons[photon_index].genPartIdx].pdgId  == 22: 
+                   if ((genparts[photons[photon_index].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photon_index].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)) and (genparts[photons[photon_index].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask):
                        photon_gen_matching = 6
-                   elif ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):       
-                       if (genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother >= 0 and (abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 11 or abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 13 or abs(genparts[genparts[photons[photons_select[0]].genPartIdx].genPartIdxMother].pdgId) == 15)):
+                   elif ((genparts[photons[photon_index].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photon_index].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):       
+                       if (genparts[photons[photon_index].genPartIdx].genPartIdxMother >= 0 and (abs(genparts[genparts[photons[photon_index].genPartIdx].genPartIdxMother].pdgId) == 11 or abs(genparts[genparts[photons[photon_index].genPartIdx].genPartIdxMother].pdgId) == 13 or abs(genparts[genparts[photons[photon_index].genPartIdx].genPartIdxMother].pdgId) == 15)):
                            photon_gen_matching = 4
                        else:    
                            photon_gen_matching = 5
                    else:
                        photon_gen_matching = 3
-               elif photons[photons_select[0]].genPartIdx >= 0 and abs(genparts[photons[photons_select[0]].genPartIdx].pdgId) == 11:     
-                   if ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):  
+               elif photons[photon_index].genPartIdx >= 0 and abs(genparts[photons[photon_index].genPartIdx].pdgId) == 11:     
+                   if ((genparts[photons[photon_index].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photon_index].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask)):  
                        photon_gen_matching = 1
                    else:
                        photon_gen_matching = 2
                        
                else:
-                   assert(photons[photons_select[0]].genPartFlav == 0)
+                   assert(photons[photon_index].genPartFlav == 0)
                    photon_gen_matching = 0
            if hasattr(event, 'nGenPart') and len(photons_select)>0 :
                for j, genpart in enumerate(genparts):
-	           if photons[photons_select[0]].genPartIdx >=0 and genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[photons_select[0]].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[photons_select[0]].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,genpart.eta,genpart.phi) < 0.3:
+	           if photons[photon_index].genPartIdx >=0 and genpart.pt > 5 and abs(genpart.pdgId) == 22 and ((genparts[photons[photon_index].genPartIdx].statusFlags & isprompt_mask == isprompt_mask) or (genparts[photons[photon_index].genPartIdx].statusFlags & isdirectprompttaudecayproduct_mask == isdirectprompttaudecayproduct_mask) or (genparts[photons[photon_index].genPartIdx].statusFlags & isfromhardprocess_mask == isfromhardprocess_mask)) and deltaR(photons[photon_index].eta,photons[photon_index].phi,genpart.eta,genpart.phi) < 0.3:
                       photon_isprompt =1
                       break
            mask1 = 0b10101010101010 # full medium ID
@@ -389,7 +354,7 @@ class WWG_Producer(Module):
            mask4 = 0b10100010101010 # fail Isoch
            mask5 = 0b10101000101010 # fail sigma ieie
         
-	   bitmap = photons[photons_select[0]].vidNestedWPBitmap & mask1   
+	   bitmap = photons[photon_index].vidNestedWPBitmap & mask1   
            if (bitmap == mask1):
                self.out.fillBranch("photon_selection",1) #all cuts applied
            elif (bitmap == mask2):
@@ -403,12 +368,12 @@ class WWG_Producer(Module):
 	   else:
                assert(0)
            #(photon_selection==2 || photon_selection==3 || photon_selection==4 || photon_selection ==5 )->build fake photon enriched sample 
-	   self.out.fillBranch("drl1a",deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi))
-	   self.out.fillBranch("drl2a",deltaR(photons[photons_select[0]].eta,photons[photons_select[0]].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi))
-	   self.out.fillBranch("photonet",photons[photons_select[0]].pt)
-           self.out.fillBranch("photoneta",photons[photons_select[0]].eta)
-           self.out.fillBranch("photonphi",photons[photons_select[0]].phi)
-           self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()+photons[photons_select[0]].p4()).M())
+	   self.out.fillBranch("drl1a",deltaR(photons[photon_index].eta,photons[photon_index].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi))
+	   self.out.fillBranch("drl2a",deltaR(photons[photon_index].eta,photons[photon_index].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi))
+	   self.out.fillBranch("photonet",photons[photon_index].pt)
+           self.out.fillBranch("photoneta",photons[photon_index].eta)
+           self.out.fillBranch("photonphi",photons[photon_index].phi)
+           self.out.fillBranch("mllg",(muons[muons_select[0]].p4() + electrons[electrons_select[0]].p4()+photons[photon_index].p4()).M())
         else:
            self.out.fillBranch("photon_selection",0) #if there is no photons selected
            self.out.fillBranch("drl1a",-10)
@@ -421,6 +386,45 @@ class WWG_Producer(Module):
         self.out.fillBranch("photon_gen_matching",photon_gen_matching)
         self.out.fillBranch("photon_isprompt",photon_isprompt)
 
+        pass_dr_cut = True
+        njets = 0
+        njets50 = 0
+        njets40 = 0
+        njets30 = 0
+        njets20 = 0
+        njets15 = 0
+        n_bjets = 0
+        for i in range(0,len(jets)):
+            if jets[i].btagDeepB > 0.4184:  # DeepCSVM, remove jets from b
+               n_bjets+=1
+            if abs(jets[i].eta) > 4.7:
+               continue
+            if photon_pass>0:
+	       pass_dr_cut = deltaR(jets[i].eta,jets[i].phi,photons[photon_index].eta,photons[photon_index].phi) > 0.5
+            if deltaR(jets[i].eta,jets[i].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
+                   pass_dr_cut = False
+            if deltaR(jets[i].eta,jets[i].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
+                   pass_dr_cut = False
+
+            if  not pass_dr_cut == True:
+	        continue
+            if jets[i].jetId >> 1 & 1:
+               jets_select.append(i)
+               njets += 1
+               if jets[i].pt > 50:
+                   njets50+=1
+               if jets[i].pt > 40:
+                   njets40+=1
+               if jets[i].pt > 30:
+                   njets30+=1
+               if jets[i].pt > 20:
+                   njets20+=1
+               if jets[i].pt > 15:
+                   njets15+=1
+#        print len(jets),("njets",njets)
+#        if njets >=2 :
+#            self.out.fillBranch("pass_selection",0)
+#            return True
         if hasattr(event,'Pileup_nPU'):    
             self.out.fillBranch("npu",event.Pileup_nPU)
         else:
