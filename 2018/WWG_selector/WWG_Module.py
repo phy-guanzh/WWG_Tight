@@ -395,7 +395,7 @@ class WWG_Producer(Module):
         njets15 = 0
         n_bjets = 0
         for i in range(0,len(jets)):
-            if jets[i].btagDeepB > 0.4184:  # DeepCSVM, remove jets from b
+            if jets[i].btagDeepB > 0.4168:  # DeepCSVM, remove jets from b
                n_bjets+=1
             if abs(jets[i].eta) > 4.7:
                continue

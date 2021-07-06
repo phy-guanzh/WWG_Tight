@@ -71,6 +71,7 @@ keep Photon_isScEtaEB
 keep Pileup_nPU
 keep Pileup_nTrueInt
 keep PV_npvs*
+keep Puppi*
 keep *Jet*
 keep *MET*
 keep *jet*

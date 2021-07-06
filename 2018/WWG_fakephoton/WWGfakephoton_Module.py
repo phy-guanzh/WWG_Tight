@@ -445,7 +445,7 @@ class WWG_Producer(Module):
         njets_fake = 0
         pass_lepton_dr_cut = True
         for i in range(0,len(jets)):
-            if jets[i].btagDeepB > 0.4184:  # DeepCSVM
+            if jets[i].btagDeepB > 0.4168:  # DeepCSVM
                n_bjets+=1
             if abs(jets[i].eta) > 4.7:
                continue
