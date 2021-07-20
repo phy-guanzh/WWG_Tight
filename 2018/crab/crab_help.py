@@ -15,7 +15,7 @@ def get_abbre(name,sample_type,year):
     elif sample_type == 'data':
         return name.split('/')[1] + '_' + name.split('/')[2].split('-')[0]
 
-def prepare_crab(name,sample_type,year):
+def prepare_crab(name,sample_type,year,era):
 
     abbre_name = get_abbre(name,sample_type,year) 
     if not os.path.exists('crabcode_' + year):
@@ -36,7 +36,8 @@ def prepare_crab(name,sample_type,year):
         f.write('config.JobType.psetName = "PSet.py"\n')
         f.write('config.JobType.scriptExe = "./WWG_crab_script.sh" \n')
         f.write('config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw \n')
-        f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '"] \n')
+#	f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '","era=' + era + '"] \n')
+        f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '","era=' + era + '"] \n')
         f.write('config.JobType.sendPythonFolder  = True\n')
         f.write('config.JobType.allowUndistributedCMSSW = True \n\n')
 
@@ -175,7 +176,7 @@ if __name__=='__main__':
 
     if args.mode == 'prepare':
         for dataset in jsons:
-            prepare_crab(dataset['name'], dataset['type'], str(dataset['year']))
+            prepare_crab(dataset['name'], dataset['type'], str(dataset['year']), dataset['era'])
     
     if args.mode == 'submit':
         for dataset in jsons:

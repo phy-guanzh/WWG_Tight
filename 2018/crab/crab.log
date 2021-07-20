@@ -923,3 +923,535 @@ Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors
 See the ./crab.log file for more details.
 The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
 INFO 2021-06-22 12:20:08.389 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:15.456 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:15.456 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:15.456 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:15.457 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:15.459 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:15.459 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:15.500 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:16.523 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:16.524 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:16.524 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:16.524 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:16.525 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:16.525 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:16.528 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:16.940 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:16.940 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:16.940 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:16.940 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:16.941 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:16.941 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:16.944 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:17.324 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:17.325 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:17.325 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:17.325 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:17.326 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:17.326 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:17.329 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:17.726 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:17.727 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:17.727 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:17.727 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:17.728 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:17.728 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:17.730 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:18.184 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:18.184 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:18.184 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:18.184 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:18.185 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:18.185 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:18.191 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:18.633 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:18.634 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:18.634 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:18.634 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:18.635 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:18.635 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:18.637 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:19.047 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:19.047 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:19.047 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:19.047 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:19.048 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:19.048 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:19.051 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:19.437 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:19.438 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:19.438 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:19.438 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:19.440 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:19.440 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:19.443 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:19.826 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:19.826 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:19.826 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:19.826 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:19.827 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:19.827 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:19.829 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:20.202 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:20.203 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:20.203 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:20.203 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:20.204 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:20.204 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:20.206 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:20.589 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:20.589 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:20.589 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:20.589 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:20.590 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:20.590 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:20.592 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:20.979 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:20.980 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:20.980 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:20.980 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:20.981 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:20.981 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:20.983 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:21.369 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:21.370 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:21.370 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:21.370 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:21.371 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:21.371 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:21.373 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:21.768 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:21.768 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:21.768 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:21.768 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:21.770 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:21.770 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:21.773 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:22.171 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:22.171 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:22.171 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:22.171 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:22.173 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:22.173 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:22.175 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:22.592 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:22.593 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:22.593 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:22.593 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:22.594 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:22.594 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:22.596 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:22.980 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:22.981 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:22.981 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:22.981 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:22.982 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:22.982 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:22.984 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:23.370 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:23.370 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:23.370 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:23.370 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:23.371 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:23.371 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:23.374 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:23.788 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:23.788 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:23.788 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:23.788 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:23.789 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:23.790 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:23.792 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:24.192 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:24.193 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:24.193 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:24.193 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:24.194 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:24.194 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:24.197 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-07 07:26:24.602 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-07 07:26:24.602 UTC: 	 Running on: Linux lxplus794.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-07 07:26:24.602 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-07 07:26:24.602 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-07 07:26:24.603 UTC: 	 Error: crab2018/crab is not a valid CRAB project directory.
+ERROR 2021-07-07 07:26:24.604 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab is not a valid CRAB project directory.
+INFO 2021-07-07 07:26:24.606 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-09 20:52:57.603 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-09 20:52:57.604 UTC: 	 Running on: Linux lxplus7103.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-09 20:52:57.604 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-09 20:52:57.604 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+INFO 2021-07-09 20:52:57.605 UTC: 	 Will use CRAB configuration file crabcode_2018/WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8.pyc
+DEBUG 2021-07-09 20:52:57.605 UTC: 	 Loading CRAB configuration file.
+ERROR 2021-07-09 20:52:57.653 UTC: 	 Unhandled Exception!
+ERROR 2021-07-09 20:52:57.654 UTC: 	 No module named WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8c
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 311, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/WMCore/Configuration.py", line 589, in loadConfigurationFile
+    modPath = imp.find_module(cfgBaseName, [cfgDirName])
+ImportError: No module named WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8c
+ERROR 2021-07-09 20:52:57.656 UTC: 	 ERROR: ImportError: No module named WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8c
+ERROR 2021-07-09 20:52:57.656 UTC: 	 
+	Please email hn-cms-computing-tools@cern.ch for support with the crab.log file or crab.log URL.
+ERROR 2021-07-09 20:52:57.656 UTC: 	 	Client Version: v3.210610
+ERROR 2021-07-09 20:52:57.656 UTC: 	 	Please use 'crab uploadlog' to upload the log file /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log to the CRAB cache.
+DEBUG 2021-07-09 20:54:34.408 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-09 20:54:34.408 UTC: 	 Running on: Linux lxplus7103.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-09 20:54:34.408 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-09 20:54:34.408 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-07-14 13:46:10.979 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-14 13:46:10.980 UTC: 	 Running on: Linux lxplus758.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-14 13:46:10.980 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-14 13:46:10.980 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-07-14 13:46:16.307 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-14 13:46:16.308 UTC: 	 Running on: Linux lxplus758.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-14 13:46:16.308 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-14 13:46:16.308 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-07-14 14:12:09.431 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-14 14:12:09.432 UTC: 	 Running on: Linux lxplus758.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-14 14:12:09.432 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-14 14:12:09.440 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-07-17 06:13:46.217 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-17 06:13:46.217 UTC: 	 Running on: Linux lxplus7100.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-17 06:13:46.217 UTC: 	 Executing command: 'status'
+DEBUG 2021-07-17 06:13:46.217 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-07-17 06:13:46.219 UTC: 	 Error: crab2018/crab_TT is not a valid CRAB project directory.
+ERROR 2021-07-17 06:13:46.219 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab_TT is not a valid CRAB project directory.
+INFO 2021-07-17 06:13:46.254 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-17 15:50:47.133 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-17 15:50:47.133 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-17 15:50:47.133 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-17 15:50:47.134 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+INFO 2021-07-17 15:50:47.136 UTC: 	 Will use CRAB configuration file crabcode_2018/EGamma_Run2018A_cfg.py
+DEBUG 2021-07-17 15:50:47.137 UTC: 	 Loading CRAB configuration file.
+DEBUG 2021-07-17 15:50:47.155 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2021-07-17 15:50:47.157 UTC: 	 Working area '/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_EGamma_Run2018A' already exists 
+Please change the requestName in the config file
+ERROR 2021-07-17 15:50:47.157 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 315, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/ClientUtilities.py", line 394, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_EGamma_Run2018A' already exists 
+Please change the requestName in the config file
+INFO 2021-07-17 15:50:47.168 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-07-19 09:16:57.702 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-19 09:16:57.703 UTC: 	 Running on: Linux lxplus785.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-19 09:16:57.703 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-19 09:16:57.703 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-07-19 09:17:03.196 UTC: 	 CRAB Client version: v3.210610
+DEBUG 2021-07-19 09:17:03.196 UTC: 	 Running on: Linux lxplus785.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-07-19 09:17:03.196 UTC: 	 Executing command: 'submit'
+DEBUG 2021-07-19 09:17:03.197 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+INFO 2021-07-19 09:17:03.198 UTC: 	 Will use CRAB configuration file crabcode_2018/TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8_2018_cfg.py
+DEBUG 2021-07-19 09:17:03.198 UTC: 	 Loading CRAB configuration file.
+DEBUG 2021-07-19 09:17:03.219 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2021-07-19 09:17:03.220 UTC: 	 Working area '/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8_2018' already exists 
+Please change the requestName in the config file
+ERROR 2021-07-19 09:17:03.220 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/Commands/SubCommand.py", line 315, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210610.01/lib/CRABClient/ClientUtilities.py", line 394, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8_2018' already exists 
+Please change the requestName in the config file
+INFO 2021-07-19 09:17:03.223 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log

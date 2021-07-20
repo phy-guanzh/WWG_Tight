@@ -11,7 +11,7 @@ config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "PSet.py"
 config.JobType.scriptExe = "./WWG_crab_script.sh" 
 config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw 
-config.JobType.scriptArgs = ["isdata=data","year=2018"] 
+config.JobType.scriptArgs = ["isdata=data","year=2018","era=D"] 
 config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
 

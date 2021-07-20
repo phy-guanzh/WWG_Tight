@@ -11,12 +11,12 @@ config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "PSet.py"
 config.JobType.scriptExe = "./WWG_crab_script.sh" 
 config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw 
-config.JobType.scriptArgs = ["isdata=MC","year=2018"] 
+config.JobType.scriptArgs = ["isdata=MC","year=2018","era=A"] 
 config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
 
 config.section_("Data")
-config.Data.inputDataset = "/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL16NanoAODv2-106X_mcRun2_asymptotic_v15-v1/NANOAODSIM" 
+config.Data.inputDataset = "/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM" 
 #config.Data.inputDBS = "phys03"
 config.Data.inputDBS = "global"
 # config.Data.splitting = "LumiBased"

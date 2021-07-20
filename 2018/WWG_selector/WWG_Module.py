@@ -312,7 +312,7 @@ class WWG_Producer(Module):
 
         else:
               self.out.fillBranch("pass_selection",0)
-              return True
+              return False
         photon_gen_matching=-10
         photon_isprompt =-10
         if photon_pass>0:

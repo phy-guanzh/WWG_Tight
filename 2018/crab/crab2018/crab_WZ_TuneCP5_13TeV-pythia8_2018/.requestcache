@@ -127,7 +127,7 @@ NtRp54
 (dp55
 S'inputDataset'
 p56
-S'/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL16NanoAODv2-106X_mcRun2_asymptotic_v15-v1/NANOAODSIM'
+S'/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM'
 p57
 sS'allowNonValidInputDataset'
 p58
@@ -258,7 +258,7 @@ S'prod'
 p101
 sS'RequestName'
 p102
-V210706_073758:yian_crab_WZ_TuneCP5_13TeV-pythia8_2018
+V210709_205231:yian_crab_WZ_TuneCP5_13TeV-pythia8_2018
 p103
 sS'voRole'
 p104

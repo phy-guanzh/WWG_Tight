@@ -29,6 +29,9 @@ jmeCorrections_ak4_2016 = createJMECorrector(True,2016,"A","Total","AK4PFchs",Fa
 jmeCorrections_ak4_2017 = createJMECorrector(True,2017,"A","Total","AK4PFchs",False,"METFixEE2017",True,False,False,False)
 jmeCorrections_ak4_2018_MC = createJMECorrector(True,2018,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,False)
 jmeCorrections_ak4_2018_Data = createJMECorrector(False,2018,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,False)
+#jmeCorrections_ak4_2018_Data = createJMECorrector(False,2018,"B","Total","AK4PFchs",False,"PuppiMET",True,False,True,False)
+#jmeCorrections_ak4_2018_Data = createJMECorrector(False,2018,"C","Total","AK4PFchs",False,"PuppiMET",True,False,True,False)
+#jmeCorrections_ak4_2018_Data = createJMECorrector(False,2018,"D","Total","AK4PFchs",False,"PuppiMET",True,False,True,False)
 
 #from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetUncertainties import *
 #jetmetUncertainties2018_MC = lambda: jetmetUncertaintiesProducer("2018", "Autumn18_V8_MC", ["Total"])

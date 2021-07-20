@@ -76,3 +76,5 @@ keep *Jet*
 keep *MET*
 keep *jet*
 keep HLT*
+#keep LHE*Weight
+#keep nLHE*Weight

@@ -19,26 +19,31 @@ parser.add_argument('-f', dest='infile', default='', help='local file input')
 parser.add_argument('-y', dest='year', default='2016', help='year of dataset')
 parser.add_argument('-m', dest='mode', default='local', help='runmode local/condor')
 parser.add_argument('-d', dest='isdata',action='store_true',default=False)
+parser.add_argument('-e', dest='era',default='A')
 args = parser.parse_args()
 
 print "mode: ", args.mode
 print "year: ", args.year
 print "dataset_name: ", args.infile
+print "data_era", args.era
 
-jmeCorrections_ak4_2016 = createJMECorrector(True,2016,"A","Total","AK4PFchs",False,"MET",True,False,False,False)
-jmeCorrections_ak4_2017 = createJMECorrector(True,2017,"A","Total","AK4PFchs",False,"METFixEE2017",True,False,False,False)
-jmeCorrections_ak4_2018_MC = createJMECorrector(True,2018,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
-jmeCorrections_ak4_2018_Data = createJMECorrector(False,2018,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,False)
-
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetUncertainties import *
-jetmetUncertainties2018_MC = lambda: jetmetUncertaintiesProducer("2018", "Autumn18_V8_MC", ["Total"])
-jetmetUncertainties2018_Data =  lambda: jetmetUncertaintiesProducer("2018", "Autumn18_RunA_V8_DATA", archive="Autumn18_V8_DATA", isData=True)
-
-#btag
 from PhysicsTools.NanoAODTools.postprocessing.modules.btv.btagSFProducer import *
-btagSF_2018 = lambda: btagSFProducer("2018",'deepcsv')
-#btagSF_2017 = lambda: btagSFProducer("2017",'deepcsv')
-#btagSF_2016 = lambda: btagSFProducer("Legacy2016",'deepcsv')
+from PhysicsTools.NanoAODTools.postprocessing.modules.common.PrefireCorr import *
+
+if args.year=='2016':
+   PrefCorr_2016 = lambda: PrefCorr("L1prefiring_jetpt_2016BtoH.root","L1prefiring_jetpt_2016BtoH","L1prefiring_photonpt_2016BtoH.root","L1prefiring_photonpt_2016BtoH")
+   jmeCorrections_ak4_MC = createJMECorrector(True,2016,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   jmeCorrections_ak4_Data = createJMECorrector(False,2016,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   btagSF = lambda: btagSFProducer("2016",'deepcsv')
+if args.year=='2017':
+   PrefCorr_2017 = lambda: PrefCorr("L1prefiring_jetpt_2017BtoF.root","L1prefiring_jetpt_2017BtoF","L1prefiring_photonpt_2017BtoF.root","L1prefiring_photonpt_2017BtoF")
+   jmeCorrections_ak4_MC = createJMECorrector(True,2017,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   jmeCorrections_ak4_Data = createJMECorrector(False,2017,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   btagSF = lambda: btagSFProducer("2017",'deepcsv')
+if args.year=='2018':
+   jmeCorrections_ak4_MC = createJMECorrector(True,2018,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   jmeCorrections_ak4_Data = createJMECorrector(False,2018,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   btagSF = lambda: btagSFProducer("2018",'deepcsv')
 
 # classify input files
 if args.infile:
@@ -56,19 +61,15 @@ else:
     jsoninput = runsAndLumis()
     fwkjobreport = True
 
-from PhysicsTools.NanoAODTools.postprocessing.modules.common.PrefireCorr import *
-PrefCorr_2016 = lambda: PrefCorr("L1prefiring_jetpt_2016BtoH.root","L1prefiring_jetpt_2016BtoH","L1prefiring_photonpt_2016BtoH.root","L1prefiring_photonpt_2016BtoH")
-PrefCorr_2017 = lambda: PrefCorr("L1prefiring_jetpt_2017BtoF.root","L1prefiring_jetpt_2017BtoF","L1prefiring_photonpt_2017BtoF.root","L1prefiring_photonpt_2017BtoF")
-
 if args.isdata:
-       Modules = [countHistogramsModule(),jmeCorrections_ak4_2018_Data(),WWG_Module()]
+       Modules = [countHistogramsModule(),jmeCorrections_ak4_Data(),WWG_Module()]
 else:
        if args.year=='2016':
           Modules = [countHistogramsModule(),WWG_Module(),puWeight_2016(),PrefCorr_2016()]
        if args.year=='2017':
           Modules = [countHistogramsModule(),WWG_Module(),puWeight_2017(),PrefCorr_2017()]
        if args.year=='2018':
-          Modules = [countHistogramsModule(),jmeCorrections_ak4_2018_MC(),btagSF_2018(),WWG_Module(),puWeight_2018()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2018()]
 
 p=PostProcessor(".",infilelist,
                 branchsel="WWG_keep_and_drop.txt",
