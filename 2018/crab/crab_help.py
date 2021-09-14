@@ -43,12 +43,9 @@ def prepare_crab(name,sample_type,year,era):
 
         f.write('config.section_("Data")\n')
         f.write('config.Data.inputDataset = "' + name + '" \n')
-        f.write('#config.Data.inputDBS = "phys03"\n')
         f.write('config.Data.inputDBS = "global"\n')
         f.write('# config.Data.splitting = "LumiBased"\n')
         f.write('config.Data.splitting = "FileBased"\n')
-        f.write('#config.Data.splitting = "EventAwareLumiBased" \n')
-        f.write('#config.Data.splitting = "Automatic" \n')
         f.write('config.Data.unitsPerJob = 1\n')
 
         if sample_type == 'MC':

@@ -1,86 +1,86 @@
-DEBUG 2021-07-17 15:46:23.487 UTC: 	 CRAB Client version: v3.210610
-DEBUG 2021-07-17 15:46:23.488 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
-DEBUG 2021-07-17 15:46:23.488 UTC: 	 Executing command: 'submit'
-DEBUG 2021-07-17 15:46:23.489 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
-INFO 2021-07-17 15:46:23.490 UTC: 	 Will use CRAB configuration file crabcode_2018/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018_cfg.py
-DEBUG 2021-07-17 15:46:23.491 UTC: 	 Loading CRAB configuration file.
-DEBUG 2021-07-17 15:46:23.539 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
-DEBUG 2021-07-17 15:46:23.559 UTC: 	 Checking credentials
-DEBUG 2021-07-17 15:46:23.560 UTC: 	 Found proxy file /tmp/x509up_u110046
-DEBUG 2021-07-17 15:46:23.560 UTC: 	 Getting proxy life time left
-DEBUG 2021-07-17 15:46:24.465 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:17:56.887 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-11 10:17:56.887 UTC: 	 Running on: Linux lxplus718.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-11 10:17:56.887 UTC: 	 Executing command: 'submit'
+DEBUG 2021-09-11 10:17:56.887 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+INFO 2021-09-11 10:17:56.889 UTC: 	 Will use CRAB configuration file crabcode_2018/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018_cfg.py
+DEBUG 2021-09-11 10:17:56.889 UTC: 	 Loading CRAB configuration file.
+DEBUG 2021-09-11 10:17:56.909 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-09-11 10:17:57.014 UTC: 	 Checking credentials
+DEBUG 2021-09-11 10:17:57.014 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-09-11 10:17:57.014 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-11 10:17:57.721 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
- output : 604642
+ output : 604139
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:46:25.071 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:17:58.428 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
- output : 604641
+ output : 604138
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:46:25.072 UTC: 	 Proxy lifetime 604642 secs is different from voms extension lifetime 604641 secs for proxy: /tmp/x509up_u110046
-DEBUG 2021-07-17 15:46:25.072 UTC: 	 Proxy valid for 167:57:21 hours
-DEBUG 2021-07-17 15:46:25.677 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:17:58.428 UTC: 	 Proxy lifetime 604139 secs is different from voms extension lifetime 604138 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-09-11 10:17:58.428 UTC: 	 Proxy valid for 167:48:58 hours
+DEBUG 2021-09-11 10:17:59.034 UTC: 	 Executing : 
  command : env X509_USER_PROXY=/tmp/x509up_u110046 voms-proxy-info -fqan
  output : /cms/Role=NULL/Capability=NULL
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:46:25.808 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-DEBUG 2021-07-17 15:46:26.533 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:17:59.102 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-11 10:17:59.814 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -identity
  output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:46:26.541 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:46:26.542 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
-DEBUG 2021-07-17 15:46:27.047 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:17:59.822 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-11 10:17:59.822 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-09-11 10:18:00.126 UTC: 	 Executing : 
  command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
  output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:54:13  (19.8 days)
+  timeleft: 362:07:12  (15.1 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:46:27.048 UTC: 	 Myproxy is valid: 1709653
-DEBUG 2021-07-17 15:46:27.048 UTC: 	 Retrieving username ...
-DEBUG 2021-07-17 15:46:27.048 UTC: 	 Retrieving username from CRIC...
-DEBUG 2021-07-17 15:46:28.692 UTC: 	 username is yian
-DEBUG 2021-07-17 15:46:28.700 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:46:28.700 UTC: 	 using yian_CRAB as credential login name
-DEBUG 2021-07-17 15:46:29.105 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:18:00.127 UTC: 	 Myproxy is valid: 1303632
+DEBUG 2021-09-11 10:18:00.128 UTC: 	 Retrieving username ...
+DEBUG 2021-09-11 10:18:00.128 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-11 10:18:00.841 UTC: 	 username is yian
+DEBUG 2021-09-11 10:18:00.847 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-11 10:18:00.847 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-09-11 10:18:01.151 UTC: 	 Executing : 
  command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
  output : username: yian_CRAB
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:46:46  (19.8 days)
+  timeleft: 363:07:37  (15.1 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:46:29.105 UTC: 	 Myproxy is valid: 1709206
-DEBUG 2021-07-17 15:46:29.105 UTC: 	 Result of myproxy credential check:
-  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 19 days, 18:54:13
-  Credential exists on myproxy: username: yian_CRAB  - validity: 19 days, 18:46:46
-DEBUG 2021-07-17 15:46:29.105 UTC: 	 Command use: submit
-DEBUG 2021-07-17 15:46:29.105 UTC: 	 Options use: ['-c', 'crabcode_2018/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018_cfg.py']
-DEBUG 2021-07-17 15:46:29.223 UTC: 	 CRABClient version: v3.210610
-DEBUG 2021-07-17 15:46:29.223 UTC: 	 Instance is prod
-DEBUG 2021-07-17 15:46:29.223 UTC: 	 Server base url is cmsweb.cern.ch
-DEBUG 2021-07-17 15:46:29.223 UTC: 	 Command api workflow
-DEBUG 2021-07-17 15:46:29.223 UTC: 	 Started submission
-DEBUG 2021-07-17 15:46:29.223 UTC: 	 Working on /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:46:29.469 UTC: 	 Loading required information from the environment
-DEBUG 2021-07-17 15:46:29.469 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
-DEBUG 2021-07-17 15:46:29.469 UTC: 	 Loading required information from the environment
-DEBUG 2021-07-17 15:46:29.469 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
-DEBUG 2021-07-17 15:46:29.469 UTC: 	 UNIQUE NAME: tarUUID 495258af-0b26-4c7a-a68e-6910f2c5fffa 
-DEBUG 2021-07-17 15:46:29.470 UTC: 	 self.config: from WMCore.Configuration import Configuration
+DEBUG 2021-09-11 10:18:01.151 UTC: 	 Myproxy is valid: 1307257
+DEBUG 2021-09-11 10:18:01.152 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 15 days, 2:07:12
+  Credential exists on myproxy: username: yian_CRAB  - validity: 15 days, 3:07:37
+DEBUG 2021-09-11 10:18:01.152 UTC: 	 Command use: submit
+DEBUG 2021-09-11 10:18:01.152 UTC: 	 Options use: ['-c', 'crabcode_2018/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018_cfg.py']
+DEBUG 2021-09-11 10:18:01.272 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-11 10:18:01.272 UTC: 	 Instance is prod
+DEBUG 2021-09-11 10:18:01.272 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-11 10:18:01.272 UTC: 	 Command api workflow
+DEBUG 2021-09-11 10:18:01.272 UTC: 	 Started submission
+DEBUG 2021-09-11 10:18:01.272 UTC: 	 Working on /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-11 10:18:01.401 UTC: 	 Loading required information from the environment
+DEBUG 2021-09-11 10:18:01.401 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
+DEBUG 2021-09-11 10:18:01.401 UTC: 	 Loading required information from the environment
+DEBUG 2021-09-11 10:18:01.401 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
+DEBUG 2021-09-11 10:18:01.402 UTC: 	 UNIQUE NAME: tarUUID a3e9517f-30fc-432e-a548-48923d42eecd 
+DEBUG 2021-09-11 10:18:01.402 UTC: 	 self.config: from WMCore.Configuration import Configuration
 config = Configuration()
 config.section_('General')
 config.General.workArea = 'crab2018'
@@ -107,45 +107,50 @@ config.section_('Site')
 config.Site.whitelist = ['T2_US_MIT', 'T2_US_Wisconsin', 'T2_US_Purdue', 'T2_US_UCSD', 'T2_US_Caltech', 'T2_US_Nebraska']
 config.Site.storageSite = 'T3_CH_CERNBOX'
 
-DEBUG 2021-07-17 15:46:29.470 UTC: 	 self.config.JobType.psetName: PSet.py
-INFO 2021-07-17 15:46:29.470 UTC: 	 Importing CMSSW configuration PSet.py
-INFO 2021-07-17 15:46:30.317 UTC: 	 Finished importing CMSSW configuration PSet.py
-DEBUG 2021-07-17 15:46:30.317 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/PSet.py
-DEBUG 2021-07-17 15:46:30.328 UTC: 	 The following EDM output files will be collected: ['tree.root']
-DEBUG 2021-07-17 15:46:30.328 UTC: 	 The following TFile output files will be collected: []
-DEBUG 2021-07-17 15:46:30.328 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
-DEBUG 2021-07-17 15:46:30.328 UTC: 	 Loading required information from the environment
-DEBUG 2021-07-17 15:46:30.328 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
-DEBUG 2021-07-17 15:46:30.328 UTC: 	 Making tarball in /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/495258af-0b26-4c7a-a68e-6910f2c5fffadefault.tgz
-DEBUG 2021-07-17 15:46:30.329 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/lib
-DEBUG 2021-07-17 15:46:30.329 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/lib to tarball
-DEBUG 2021-07-17 15:46:30.532 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/biglib
-DEBUG 2021-07-17 15:46:30.532 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/biglib to tarball
-DEBUG 2021-07-17 15:46:30.533 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/module
-DEBUG 2021-07-17 15:46:30.534 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/python
-DEBUG 2021-07-17 15:46:30.534 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/python to tarball
-DEBUG 2021-07-17 15:46:45.451 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/cfipython
-DEBUG 2021-07-17 15:46:45.451 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/cfipython to tarball
-DEBUG 2021-07-17 15:46:56.908 UTC: 	 Adding data directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/data to tarball
-DEBUG 2021-07-17 15:47:24.295 UTC: 	 Adding data directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/interface to tarball
-DEBUG 2021-07-17 15:47:24.397 UTC: 	 Adding data directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/python/postprocessing/data to tarball
-DEBUG 2021-07-17 15:47:26.765 UTC: 	 Adding file ../../../scripts/haddnano.py to tarball
-DEBUG 2021-07-17 15:47:26.777 UTC: 	 Adding file ../WWG_selector/WWG_postproc.py to tarball
-DEBUG 2021-07-17 15:47:26.778 UTC: 	 Adding file ../WWG_selector/WWG_Module.py to tarball
-DEBUG 2021-07-17 15:47:26.779 UTC: 	 Adding file ../WWG_selector/WWG_keep_and_drop.txt to tarball
-DEBUG 2021-07-17 15:47:26.780 UTC: 	 Adding file ../WWG_selector/WWG_output_branch.txt to tarball
-DEBUG 2021-07-17 15:47:26.781 UTC: 	 Adding file ../WWG_selector/DAS_filesearch.py to tarball
-DEBUG 2021-07-17 15:47:31.710 UTC: 	 Uploading archive /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/495258af-0b26-4c7a-a68e-6910f2c5fffadefault.tgz (94 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
-DEBUG 2021-07-17 15:47:54.940 UTC: 	 Will execute:
-curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=yian/sandboxes/c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogImNyYWJjYWNoZV9wcm9kIn0sIHsia2V5IjogInlpYW4vc2FuZGJveGVzL2MwMmE4ODZhYTQ0Y2E4YThhZjNlZGQ0N2MwMmMzOTNiMTc2MGE2YTRhZGU4MDMyYjE3ODk1Y2UzYjRjZjNkMWMudGFyLmd6In1dLCAiZXhwaXJhdGlvbiI6ICIyMDIxLTA3LTE3VDE2OjQ3OjU0WiJ9" -F "signature=X0tMK6vu5TNGmWe//s5KMBqkzi8=" -F "file=@/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/495258af-0b26-4c7a-a68e-6910f2c5fffadefault.tgz" "https://s3.cern.ch/crabcache_prod"
-DEBUG 2021-07-17 15:47:58.092 UTC: 	 exitcode: 0
+DEBUG 2021-09-11 10:18:01.402 UTC: 	 self.config.JobType.psetName: PSet.py
+INFO 2021-09-11 10:18:01.402 UTC: 	 Importing CMSSW configuration PSet.py
+INFO 2021-09-11 10:18:01.817 UTC: 	 Finished importing CMSSW configuration PSet.py
+DEBUG 2021-09-11 10:18:01.817 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/PSet.py
+DEBUG 2021-09-11 10:18:01.827 UTC: 	 The following EDM output files will be collected: ['tree.root']
+DEBUG 2021-09-11 10:18:01.827 UTC: 	 The following TFile output files will be collected: []
+DEBUG 2021-09-11 10:18:01.827 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2021-09-11 10:18:01.827 UTC: 	 Loading required information from the environment
+DEBUG 2021-09-11 10:18:01.827 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
+DEBUG 2021-09-11 10:18:01.827 UTC: 	 Making tarball in /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/a3e9517f-30fc-432e-a548-48923d42eecddefault.tgz
+DEBUG 2021-09-11 10:18:01.828 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/lib
+DEBUG 2021-09-11 10:18:01.828 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/lib to tarball
+DEBUG 2021-09-11 10:18:01.955 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/biglib
+DEBUG 2021-09-11 10:18:01.955 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/biglib to tarball
+DEBUG 2021-09-11 10:18:01.956 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/module
+DEBUG 2021-09-11 10:18:01.956 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/python
+DEBUG 2021-09-11 10:18:01.956 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/python to tarball
+DEBUG 2021-09-11 10:18:04.426 UTC: 	 Checking directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/cfipython
+DEBUG 2021-09-11 10:18:04.426 UTC: 	 Adding directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/cfipython to tarball
+DEBUG 2021-09-11 10:18:04.527 UTC: 	 Adding data directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/data to tarball
+DEBUG 2021-09-11 10:18:26.260 UTC: 	 Adding data directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/interface to tarball
+DEBUG 2021-09-11 10:18:26.265 UTC: 	 Adding data directory /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/python/postprocessing/data to tarball
+DEBUG 2021-09-11 10:18:28.801 UTC: 	 Adding file ../../../scripts/haddnano.py to tarball
+DEBUG 2021-09-11 10:18:28.802 UTC: 	 Adding file ../WWG_selector/WWG_postproc.py to tarball
+DEBUG 2021-09-11 10:18:28.803 UTC: 	 Adding file ../WWG_selector/WWG_Module.py to tarball
+DEBUG 2021-09-11 10:18:28.803 UTC: 	 Adding file ../WWG_selector/WWG_keep_and_drop.txt to tarball
+DEBUG 2021-09-11 10:18:28.804 UTC: 	 Adding file ../WWG_selector/WWG_output_branch.txt to tarball
+DEBUG 2021-09-11 10:18:28.804 UTC: 	 Adding file ../WWG_selector/DAS_filesearch.py to tarball
+DEBUG 2021-09-11 10:18:33.866 UTC: 	 Uploading archive /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/a3e9517f-30fc-432e-a548-48923d42eecddefault.tgz (94 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2021-09-11 10:18:58.154 UTC: 	 sandbox ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz is already in the S3 store, will not upload again
+DEBUG 2021-09-11 10:18:58.154 UTC: 	 Loading required information from the environment
+DEBUG 2021-09-11 10:18:58.154 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
+DEBUG 2021-09-11 10:18:58.154 UTC: 	 Making tarball in /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz
+DEBUG 2021-09-11 10:18:58.168 UTC: 	 Uploading archive /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz (1 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2021-09-11 10:18:58.328 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=yian/sandboxes/d06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogImNyYWJjYWNoZV9wcm9kIn0sIHsia2V5IjogInlpYW4vc2FuZGJveGVzL2QwNjQ3NDgxNWY5ZjZhMjA5MzFmOWRhN2I0OTlhMDBhNzFmNGM3YmM4MDNlYTBjOGZlOTY1YzY1YmRmNDQ2NWEudGFyLmd6In1dLCAiZXhwaXJhdGlvbiI6ICIyMDIxLTA5LTExVDExOjE4OjU4WiJ9" -F "signature=dvjTr90t3gw1gwjRfzM3gUFpbH8=" -F "file=@/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2021-09-11 10:18:59.417 UTC: 	 exitcode: 0
 stdout: 
 stderr: Note: Unnecessary use of -X or --request, POST is already inferred.
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 2001:1458:d00:1a::24b...
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 2001:1458:d00:14::341...
 * TCP_NODELAY set
-* Connected to s3.cern.ch (2001:1458:d00:1a::24b) port 443 (#0)
+* Connected to s3.cern.ch (2001:1458:d00:14::341) port 443 (#0)
 * ALPN, offering http/1.1
 * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
 * successfully set certificate verify locations:
@@ -187,523 +192,479 @@ stderr: Note: Unnecessary use of -X or --request, POST is already inferred.
 > Host: s3.cern.ch
 > Accept: */*
 > User-Agent: CRAB
-> Content-Length: 99039893
-> Content-Type: multipart/form-data; boundary=------------------------a75dcdd3e8a64c95
-> Expect: 100-continue
-> 
-* Done waiting for 100-continue
-  0 94.4M    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0} [5 bytes data]
-< HTTP/1.1 100 Continue
-} [5 bytes data]
- 34 94.4M    0     0   34 32.5M      0  18.0M  0:00:05  0:00:01  0:00:04 18.0M 90 94.4M    0     0   90 85.5M      0  30.5M  0:00:03  0:00:02  0:00:01 30.4M< HTTP/1.1 204 No Content
-< Accept-Ranges: bytes
-< Bucket: crabcache_prod
-< Date: Sat, 17 Jul 2021 15:47:58 GMT
-< X-Amz-Request-Id: tx0000000000000023f639b-0060f2fbab-1dc2cfde-default
-< 
-100 94.4M    0     0  100 94.4M      0  30.3M  0:00:03  0:00:03 --:--:-- 30.3M
-* Connection #0 to host s3.cern.ch left intact
-
-DEBUG 2021-07-17 15:47:58.093 UTC: 	 sandbox /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/495258af-0b26-4c7a-a68e-6910f2c5fffadefault.tgz successully uploaded to S3
-DEBUG 2021-07-17 15:47:58.093 UTC: 	 Loading required information from the environment
-DEBUG 2021-07-17 15:47:58.093 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20
-DEBUG 2021-07-17 15:47:58.093 UTC: 	 Making tarball in /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz
-DEBUG 2021-07-17 15:47:58.100 UTC: 	 Uploading archive /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz (1 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
-DEBUG 2021-07-17 15:47:58.220 UTC: 	 Will execute:
-curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=yian/sandboxes/d06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogImNyYWJjYWNoZV9wcm9kIn0sIHsia2V5IjogInlpYW4vc2FuZGJveGVzL2QwNjQ3NDgxNWY5ZjZhMjA5MzFmOWRhN2I0OTlhMDBhNzFmNGM3YmM4MDNlYTBjOGZlOTY1YzY1YmRmNDQ2NWEudGFyLmd6In1dLCAiZXhwaXJhdGlvbiI6ICIyMDIxLTA3LTE3VDE2OjQ3OjU4WiJ9" -F "signature=NAQMicncVYDK/CL1Y9y5FNhfgU0=" -F "file=@/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz" "https://s3.cern.ch/crabcache_prod"
-DEBUG 2021-07-17 15:47:59.281 UTC: 	 exitcode: 0
-stdout: 
-stderr: Note: Unnecessary use of -X or --request, POST is already inferred.
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 2001:1458:d00:1a::24b...
-* TCP_NODELAY set
-* Connected to s3.cern.ch (2001:1458:d00:1a::24b) port 443 (#0)
-* ALPN, offering http/1.1
-* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
-* successfully set certificate verify locations:
-  CAfile: /etc/pki/tls/certs/ca-bundle.crt
-  CApath: none
-* TLSv1.2 (OUT), TLS header, Certificate Status (22):
-} [5 bytes data]
-* TLSv1.2 (OUT), TLS handshake, Client hello (1):
-} [512 bytes data]
-* TLSv1.2 (IN), TLS handshake, Server hello (2):
-{ [70 bytes data]
-* TLSv1.2 (IN), TLS handshake, Certificate (11):
-{ [4780 bytes data]
-* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
-{ [333 bytes data]
-* TLSv1.2 (IN), TLS handshake, Server finished (14):
-{ [4 bytes data]
-* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
-} [70 bytes data]
-* TLSv1.2 (OUT), TLS change cipher, Client hello (1):
-} [1 bytes data]
-* TLSv1.2 (OUT), TLS handshake, Finished (20):
-} [16 bytes data]
-* TLSv1.2 (IN), TLS change cipher, Client hello (1):
-{ [1 bytes data]
-* TLSv1.2 (IN), TLS handshake, Finished (20):
-{ [16 bytes data]
-* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
-* ALPN, server accepted to use http/1.1
-* Server certificate:
-*  subject: C=CH; ST=Genève; L=Meyrin; O=Organisation européenne pour la Recherche nucléaire (CERN); CN=*.s3.cern.ch
-*  start date: Mar 10 00:00:00 2021 GMT
-*  expire date: Mar 10 23:59:59 2022 GMT
-*  subjectAltName: host "s3.cern.ch" matched cert's "s3.cern.ch"
-*  issuer: C=GB; ST=Greater Manchester; L=Salford; O=Sectigo Limited; CN=Sectigo RSA Organization Validation Secure Server CA
-*  SSL certificate verify ok.
-} [5 bytes data]
-> POST /crabcache_prod HTTP/1.1
-> Host: s3.cern.ch
-> Accept: */*
-> User-Agent: CRAB
-> Content-Length: 2782
-> Content-Type: multipart/form-data; boundary=------------------------dcd3842539c9cdaa
+> Content-Length: 2773
+> Content-Type: multipart/form-data; boundary=------------------------c5c8a96052b4e448
 > Expect: 100-continue
 > 
 { [5 bytes data]
 < HTTP/1.1 100 Continue
-  0  2782    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0} [5 bytes data]
+  0  2773    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0} [5 bytes data]
 < HTTP/1.1 204 No Content
 < Accept-Ranges: bytes
 < Bucket: crabcache_prod
-< Date: Sat, 17 Jul 2021 15:47:59 GMT
-< X-Amz-Request-Id: tx0000000000000023f88d6-0060f2fbae-1db67078-default
+< Date: Sat, 11 Sep 2021 10:18:59 GMT
+< X-Amz-Request-Id: tx00000000000000b4ef053-00613c8292-1dd26384-default
 < 
-100  2782    0     0  100  2782      0   2690  0:00:01  0:00:01 --:--:--  2690
+100  2773    0     0  100  2773      0   2653  0:00:01  0:00:01 --:--:--  2653
 * Connection #0 to host s3.cern.ch left intact
 
-DEBUG 2021-07-17 15:47:59.281 UTC: 	 sandbox /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz successully uploaded to S3
-DEBUG 2021-07-17 15:47:59.281 UTC: 	 Result uploading input files: c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz 
-INFO 2021-07-17 15:47:59.282 UTC: 	 Sending the request to the server at cmsweb.cern.ch
-DEBUG 2021-07-17 15:47:59.282 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 1, 'savelogsflag': 0, 'useparent': 0, 'scriptexe': 'WWG_crab_script.sh', 'asyncdest': 'T3_CH_CERNBOX', 'algoargs': 1, 'cachefilename': 'c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_6_20', 'edmoutfiles': ['tree.root'], 'userfiles': [], 'primarydataset': '', 'inputdata': '/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'dryrun': 0, 'workflow': 'crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', 'scriptargs': ['isdata=MC', 'year=2018', 'era=A'], 'sitewhitelist': ['T2_US_MIT', 'T2_US_Wisconsin', 'T2_US_Purdue', 'T2_US_UCSD', 'T2_US_Caltech', 'T2_US_Nebraska'], 'nonprodsw': 1, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': 'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', 'cacheurl': u'https://cmsweb.cern.ch/S3/crabcache_prod', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 1, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018'} 
-DEBUG 2021-07-17 15:47:59.283 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=1&savelogsflag=0&useparent=0&scriptexe=WWG_crab_script.sh&asyncdest=T3_CH_CERNBOX&algoargs=1&cachefilename=c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_20&primarydataset=&inputdata=%2FTGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8%2FRunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1%2FNANOAODSIM&dryrun=0&workflow=crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&nonprodsw=1&oneEventMode=0&debugfilename=d06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=1&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&sitewhitelist=T2_US_MIT&sitewhitelist=T2_US_Wisconsin&sitewhitelist=T2_US_Purdue&sitewhitelist=T2_US_UCSD&sitewhitelist=T2_US_Caltech&sitewhitelist=T2_US_Nebraska&edmoutfiles=tree.root&scriptargs=isdata%3DMC&scriptargs=year%3D2018&scriptargs=era%3DA
-DEBUG 2021-07-17 15:47:59.926 UTC: 	 Result: {u'result': [{u'RequestName': u'210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018'}]}
-INFO 2021-07-17 15:47:59.929 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
-INFO 2021-07-17 15:47:59.930 UTC: 	 Task name: 210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:47:59.930 UTC: 	 Project dir: crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:47:59.930 UTC: 	 Please use ' crab status -d crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018 ' to check how the submission process proceeds.
-DEBUG 2021-07-17 15:47:59.930 UTC: 	 About to return
-INFO 2021-07-17 15:47:59.933 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
-DEBUG 2021-07-17 15:51:09.562 UTC: 	 CRAB Client version: v3.210610
-DEBUG 2021-07-17 15:51:09.563 UTC: 	 Running on: Linux lxplus747.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
-DEBUG 2021-07-17 15:51:09.563 UTC: 	 Executing command: 'status'
-DEBUG 2021-07-17 15:51:09.564 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
-DEBUG 2021-07-17 15:51:09.654 UTC: 	 Checking credentials
-DEBUG 2021-07-17 15:51:09.655 UTC: 	 Found proxy file /tmp/x509up_u110046
-DEBUG 2021-07-17 15:51:09.656 UTC: 	 Getting proxy life time left
-DEBUG 2021-07-17 15:51:10.564 UTC: 	 Executing : 
+DEBUG 2021-09-11 10:18:59.417 UTC: 	 sandbox /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/inputs/debugFiles.tgz successully uploaded to S3
+DEBUG 2021-09-11 10:18:59.418 UTC: 	 Result uploading input files: ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz 
+INFO 2021-09-11 10:18:59.418 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2021-09-11 10:18:59.418 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 1, 'savelogsflag': 0, 'useparent': 0, 'scriptexe': 'WWG_crab_script.sh', 'asyncdest': 'T3_CH_CERNBOX', 'algoargs': 1, 'cachefilename': 'ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_6_20', 'edmoutfiles': ['tree.root'], 'userfiles': [], 'primarydataset': '', 'inputdata': '/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'dryrun': 0, 'workflow': 'crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', 'scriptargs': ['isdata=MC', 'year=2018', 'era=A'], 'sitewhitelist': ['T2_US_MIT', 'T2_US_Wisconsin', 'T2_US_Purdue', 'T2_US_UCSD', 'T2_US_Caltech', 'T2_US_Nebraska'], 'nonprodsw': 1, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': 'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', 'cacheurl': u'https://cmsweb.cern.ch/S3/crabcache_prod', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 1, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018'} 
+DEBUG 2021-09-11 10:18:59.419 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=1&savelogsflag=0&useparent=0&scriptexe=WWG_crab_script.sh&asyncdest=T3_CH_CERNBOX&algoargs=1&cachefilename=ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_20&primarydataset=&inputdata=%2FTGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8%2FRunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1%2FNANOAODSIM&dryrun=0&workflow=crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&nonprodsw=1&oneEventMode=0&debugfilename=d06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=1&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&sitewhitelist=T2_US_MIT&sitewhitelist=T2_US_Wisconsin&sitewhitelist=T2_US_Purdue&sitewhitelist=T2_US_UCSD&sitewhitelist=T2_US_Caltech&sitewhitelist=T2_US_Nebraska&edmoutfiles=tree.root&scriptargs=isdata%3DMC&scriptargs=year%3D2018&scriptargs=era%3DA
+DEBUG 2021-09-11 10:18:59.569 UTC: 	 Result: {u'result': [{u'RequestName': u'210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018'}]}
+INFO 2021-09-11 10:18:59.572 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2021-09-11 10:18:59.573 UTC: 	 Task name: 210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-11 10:18:59.573 UTC: 	 Project dir: crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-11 10:18:59.573 UTC: 	 Please use ' crab status -d crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018 ' to check how the submission process proceeds.
+DEBUG 2021-09-11 10:18:59.573 UTC: 	 About to return
+INFO 2021-09-11 10:18:59.576 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
+DEBUG 2021-09-12 11:07:34.776 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-12 11:07:34.776 UTC: 	 Running on: Linux lxplus710.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-12 11:07:34.776 UTC: 	 Executing command: 'status'
+DEBUG 2021-09-12 11:07:34.776 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-09-12 11:07:34.915 UTC: 	 Checking credentials
+DEBUG 2021-09-12 11:07:34.915 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-09-12 11:07:34.915 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-12 11:07:35.620 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
- output : 604526
+ output : 604350
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:51:11.373 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:07:36.327 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
- output : 604524
+ output : 604349
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:51:11.374 UTC: 	 Proxy lifetime 604526 secs is different from voms extension lifetime 604524 secs for proxy: /tmp/x509up_u110046
-DEBUG 2021-07-17 15:51:11.374 UTC: 	 Proxy valid for 167:55:24 hours
-DEBUG 2021-07-17 15:51:11.444 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-DEBUG 2021-07-17 15:51:12.361 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:07:36.327 UTC: 	 Proxy lifetime 604350 secs is different from voms extension lifetime 604349 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-09-12 11:07:36.327 UTC: 	 Proxy valid for 167:52:29 hours
+DEBUG 2021-09-12 11:07:36.411 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-12 11:07:37.024 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -identity
  output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:51:12.369 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:51:12.369 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
-DEBUG 2021-07-17 15:51:12.777 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:07:37.032 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-12 11:07:37.033 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-09-12 11:07:37.438 UTC: 	 Executing : 
  command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
  output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:49:27  (19.8 days)
+  timeleft: 719:54:04  (30.0 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:51:12.778 UTC: 	 Myproxy is valid: 1709367
-DEBUG 2021-07-17 15:51:12.778 UTC: 	 Retrieving username ...
-DEBUG 2021-07-17 15:51:12.778 UTC: 	 Retrieving username from CRIC...
-DEBUG 2021-07-17 15:51:13.578 UTC: 	 username is yian
-DEBUG 2021-07-17 15:51:13.585 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:51:13.586 UTC: 	 using yian_CRAB as credential login name
-DEBUG 2021-07-17 15:51:13.992 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:07:37.439 UTC: 	 Myproxy is valid: 2591644
+DEBUG 2021-09-12 11:07:37.439 UTC: 	 Retrieving username ...
+DEBUG 2021-09-12 11:07:37.439 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-12 11:07:38.138 UTC: 	 username is yian
+DEBUG 2021-09-12 11:07:38.144 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-12 11:07:38.144 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-09-12 11:07:38.549 UTC: 	 Executing : 
  command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
  output : username: yian_CRAB
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:42:02  (19.8 days)
+  timeleft: 719:54:16  (30.0 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:51:13.992 UTC: 	 Myproxy is valid: 1708922
-DEBUG 2021-07-17 15:51:13.992 UTC: 	 Result of myproxy credential check:
-  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 19 days, 18:49:27
-  Credential exists on myproxy: username: yian_CRAB  - validity: 19 days, 18:42:02
-DEBUG 2021-07-17 15:51:13.994 UTC: 	 Command use: status
-DEBUG 2021-07-17 15:51:13.994 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
-DEBUG 2021-07-17 15:51:14.078 UTC: 	 CRABClient version: v3.210610
-DEBUG 2021-07-17 15:51:14.078 UTC: 	 Instance is prod
-DEBUG 2021-07-17 15:51:14.078 UTC: 	 Server base url is cmsweb.cern.ch
-DEBUG 2021-07-17 15:51:14.078 UTC: 	 Command api workflow
-DEBUG 2021-07-17 15:51:14.145 UTC: 	 Got information from server oracle database: {u'result': [u'210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-07-17 15:47:59.900142', u'None', u'2021-07-17 15:49:22.131146', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'68412949', u'filetransfers', u'F', u'188.184.75.95', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
-INFO 2021-07-17 15:51:14.146 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:51:14.146 UTC: 	 Task name:			210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:51:14.146 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0120.cern.ch - crab-prod-tw01
-INFO 2021-07-17 15:51:14.146 UTC: 	 Status on the CRAB server:	SUBMITTED
-INFO 2021-07-17 15:51:14.146 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:51:14.151 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1626533279000&to=now
-DEBUG 2021-07-17 15:51:14.151 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 68412949)
-DEBUG 2021-07-17 15:51:14.151 UTC: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:51:14.336 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:51:14.336 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
-DEBUG 2021-07-17 15:51:14.388 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412951.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412953.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412952.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412955.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412954.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
-INFO 2021-07-17 15:51:14.389 UTC: 	 Status on the scheduler:	SUBMITTED
-INFO 2021-07-17 15:51:14.389 UTC: 	 
-Jobs status:                    idle         		100.0% (5/5)
-INFO 2021-07-17 15:51:14.389 UTC: 	 
+DEBUG 2021-09-12 11:07:38.549 UTC: 	 Myproxy is valid: 2591656
+DEBUG 2021-09-12 11:07:38.549 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 29 days, 23:54:04
+  Credential exists on myproxy: username: yian_CRAB  - validity: 29 days, 23:54:16
+DEBUG 2021-09-12 11:07:38.551 UTC: 	 Command use: status
+DEBUG 2021-09-12 11:07:38.551 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
+DEBUG 2021-09-12 11:07:38.599 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-12 11:07:38.599 UTC: 	 Instance is prod
+DEBUG 2021-09-12 11:07:38.599 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-12 11:07:38.600 UTC: 	 Command api workflow
+DEBUG 2021-09-12 11:07:38.660 UTC: 	 Got information from server oracle database: {u'result': [u'210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-09-11 10:18:59.561252', u'None', u'2021-09-11 10:20:33.328788', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/yian-TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-79132d624dd3520ee2a7d08026bbccfc/USER']", u'[]', u'http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0122.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'74539158', u'filetransfers', u'F', u'188.184.98.213', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-09-12 11:07:38.661 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-12 11:07:38.661 UTC: 	 Task name:			210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-12 11:07:38.661 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+INFO 2021-09-12 11:07:38.661 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-09-12 11:07:38.661 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-12 11:07:38.664 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1631351939000&to=now
+DEBUG 2021-09-12 11:07:38.664 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 74539158)
+DEBUG 2021-09-12 11:07:38.664 UTC: 	 Webdir is located at http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-12 11:07:38.775 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-12 11:07:38.776 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
+DEBUG 2021-09-12 11:07:38.813 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [8.0, 5115.0], 'StartTimes': [1631355709.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539160.0'], 'EndTimes': [1631360824.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [812524], 'TotalUserCpuTimeHistory': [1153], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [80]}, '3': {'Retries': 1, 'WallDurations': [0, 17750.0, 8.0, 32891.0], 'StartTimes': [1631355697.0, 1631375530.0], 'SubmitTimes': [1631355638.0, 1631375322.0], 'JobIds': ['74539161.0', '74545417.0'], 'EndTimes': [1631373447.0, 1631408421.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [794996, 999560], 'TotalUserCpuTimeHistory': [3670, 7619], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [284, 412]}, '2': {'Retries': 0, 'WallDurations': [0, 3258.0], 'StartTimes': [1631355697.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539162.0'], 'EndTimes': [1631358955.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [724916], 'TotalUserCpuTimeHistory': [633], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [51]}, '5': {'Retries': 0, 'WallDurations': [0, 2629.0], 'StartTimes': [1631355696.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539164.0'], 'EndTimes': [1631358325.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805176], 'TotalUserCpuTimeHistory': [2253], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [259]}, '4': {'Retries': 0, 'WallDurations': [8.0, 17025.0, 0, 26466.0], 'StartTimes': [1631355699.0, 1631372920.0], 'SubmitTimes': [1631355638.0, -1], 'JobIds': ['74539163.0', '74539163.0'], 'EndTimes': [1631372724.0, 1631399386.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [837072, 1000000], 'TotalUserCpuTimeHistory': [3618.0, 9894], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [303.0, 973]}}
+INFO 2021-09-12 11:07:38.813 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2021-09-12 11:07:38.813 UTC: 	 
+Jobs status:                    finished     		100.0% (5/5)
+INFO 2021-09-12 11:07:38.813 UTC: 	 
 No publication information (publication has been disabled in the CRAB configuration file)
-INFO 2021-07-17 15:51:14.396 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
-DEBUG 2021-07-17 15:52:37.721 UTC: 	 CRAB Client version: v3.210610
-DEBUG 2021-07-17 15:52:37.722 UTC: 	 Running on: Linux lxplus747.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
-DEBUG 2021-07-17 15:52:37.722 UTC: 	 Executing command: 'status'
-DEBUG 2021-07-17 15:52:37.723 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
-DEBUG 2021-07-17 15:52:37.823 UTC: 	 Checking credentials
-DEBUG 2021-07-17 15:52:37.824 UTC: 	 Found proxy file /tmp/x509up_u110046
-DEBUG 2021-07-17 15:52:37.824 UTC: 	 Getting proxy life time left
-DEBUG 2021-07-17 15:52:38.837 UTC: 	 Executing : 
+INFO 2021-09-12 11:07:38.813 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-09-12 11:07:38.813 UTC: 	 
+Summary of run jobs:
+ * Memory: 793MB min, 976MB max, 848MB ave
+ * Runtime: 0:43:49 min, 9:08:11 max, 3:54:31 ave
+ * CPU eff: 21% min, 96% max, 33% ave
+ * Waste: 9:39:59 (33% of total)
+
+INFO 2021-09-12 11:07:38.823 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
+DEBUG 2021-09-12 11:31:39.322 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-12 11:31:39.322 UTC: 	 Running on: Linux lxplus710.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-12 11:31:39.322 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-09-12 11:31:39.323 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-09-12 11:31:39.396 UTC: 	 Checking credentials
+DEBUG 2021-09-12 11:31:39.396 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-09-12 11:31:39.396 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-12 11:31:40.107 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
- output : 604438
+ output : 602905
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:52:39.644 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:40.713 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
- output : 604436
+ output : 602905
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:52:39.645 UTC: 	 Proxy lifetime 604438 secs is different from voms extension lifetime 604436 secs for proxy: /tmp/x509up_u110046
-DEBUG 2021-07-17 15:52:39.645 UTC: 	 Proxy valid for 167:53:56 hours
-DEBUG 2021-07-17 15:52:39.730 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-DEBUG 2021-07-17 15:52:40.446 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:40.713 UTC: 	 Proxy valid for 167:28:25 hours
+DEBUG 2021-09-12 11:31:40.795 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-12 11:31:41.507 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -identity
  output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:52:40.454 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:52:40.454 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
-DEBUG 2021-07-17 15:52:40.860 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:41.514 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-12 11:31:41.515 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-09-12 11:31:41.919 UTC: 	 Executing : 
  command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
  output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:47:59  (19.8 days)
+  timeleft: 719:30:00  (30.0 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:52:40.861 UTC: 	 Myproxy is valid: 1709279
-DEBUG 2021-07-17 15:52:40.861 UTC: 	 Retrieving username ...
-DEBUG 2021-07-17 15:52:40.861 UTC: 	 Retrieving username from CRIC...
-DEBUG 2021-07-17 15:52:41.683 UTC: 	 username is yian
-DEBUG 2021-07-17 15:52:41.691 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:52:41.691 UTC: 	 using yian_CRAB as credential login name
-DEBUG 2021-07-17 15:52:42.000 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:41.920 UTC: 	 Myproxy is valid: 2590200
+DEBUG 2021-09-12 11:31:41.920 UTC: 	 Retrieving username ...
+DEBUG 2021-09-12 11:31:41.920 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-12 11:31:42.661 UTC: 	 username is yian
+DEBUG 2021-09-12 11:31:42.667 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-12 11:31:42.667 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-09-12 11:31:42.973 UTC: 	 Executing : 
  command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
  output : username: yian_CRAB
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:40:34  (19.8 days)
+  timeleft: 719:30:12  (30.0 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:52:42.000 UTC: 	 Myproxy is valid: 1708834
-DEBUG 2021-07-17 15:52:42.000 UTC: 	 Result of myproxy credential check:
-  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 19 days, 18:47:59
-  Credential exists on myproxy: username: yian_CRAB  - validity: 19 days, 18:40:34
-DEBUG 2021-07-17 15:52:42.002 UTC: 	 Command use: status
-DEBUG 2021-07-17 15:52:42.002 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
-DEBUG 2021-07-17 15:52:42.071 UTC: 	 CRABClient version: v3.210610
-DEBUG 2021-07-17 15:52:42.071 UTC: 	 Instance is prod
-DEBUG 2021-07-17 15:52:42.071 UTC: 	 Server base url is cmsweb.cern.ch
-DEBUG 2021-07-17 15:52:42.071 UTC: 	 Command api workflow
-DEBUG 2021-07-17 15:52:42.143 UTC: 	 Got information from server oracle database: {u'result': [u'210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-07-17 15:47:59.900142', u'None', u'2021-07-17 15:49:22.131146', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'68412949', u'filetransfers', u'F', u'188.184.75.95', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
-INFO 2021-07-17 15:52:42.143 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:52:42.143 UTC: 	 Task name:			210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:52:42.143 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0120.cern.ch - crab-prod-tw01
-INFO 2021-07-17 15:52:42.143 UTC: 	 Status on the CRAB server:	SUBMITTED
-INFO 2021-07-17 15:52:42.144 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:52:42.147 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1626533279000&to=now
-DEBUG 2021-07-17 15:52:42.147 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 68412949)
-DEBUG 2021-07-17 15:52:42.147 UTC: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:52:42.205 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:52:42.205 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
-DEBUG 2021-07-17 15:52:42.248 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412951.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412953.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412952.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412955.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412954.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
-INFO 2021-07-17 15:52:42.250 UTC: 	 Status on the scheduler:	SUBMITTED
-INFO 2021-07-17 15:52:42.271 UTC: 	 
-Jobs status:                    idle         		100.0% (5/5)
-INFO 2021-07-17 15:52:42.271 UTC: 	 
-No publication information (publication has been disabled in the CRAB configuration file)
-INFO 2021-07-17 15:52:42.284 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
-DEBUG 2021-07-17 15:58:37.873 UTC: 	 CRAB Client version: v3.210610
-DEBUG 2021-07-17 15:58:37.873 UTC: 	 Running on: Linux lxplus747.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
-DEBUG 2021-07-17 15:58:37.873 UTC: 	 Executing command: 'status'
-DEBUG 2021-07-17 15:58:37.873 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
-DEBUG 2021-07-17 15:58:37.898 UTC: 	 Checking credentials
-DEBUG 2021-07-17 15:58:37.900 UTC: 	 Found proxy file /tmp/x509up_u110046
-DEBUG 2021-07-17 15:58:37.900 UTC: 	 Getting proxy life time left
-DEBUG 2021-07-17 15:58:38.813 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:42.973 UTC: 	 Myproxy is valid: 2590212
+DEBUG 2021-09-12 11:31:42.973 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 29 days, 23:30:00
+  Credential exists on myproxy: username: yian_CRAB  - validity: 29 days, 23:30:12
+DEBUG 2021-09-12 11:31:43.181 UTC: 	 Command use: resubmit
+DEBUG 2021-09-12 11:31:43.181 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
+DEBUG 2021-09-12 11:31:43.240 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-12 11:31:43.240 UTC: 	 Instance is prod
+DEBUG 2021-09-12 11:31:43.240 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-12 11:31:43.240 UTC: 	 Command api workflow
+DEBUG 2021-09-12 11:31:43.254 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-12 11:31:43.255 UTC: 	 Running on: Linux lxplus710.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-12 11:31:43.255 UTC: 	 Executing command: 'status'
+DEBUG 2021-09-12 11:31:43.255 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-09-12 11:31:43.323 UTC: 	 Checking credentials
+DEBUG 2021-09-12 11:31:43.323 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-09-12 11:31:43.323 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-12 11:31:43.933 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
- output : 604078
+ output : 602902
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:58:39.622 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:44.538 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
- output : 604076
+ output : 602901
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:58:39.622 UTC: 	 Proxy lifetime 604078 secs is different from voms extension lifetime 604076 secs for proxy: /tmp/x509up_u110046
-DEBUG 2021-07-17 15:58:39.622 UTC: 	 Proxy valid for 167:47:56 hours
-DEBUG 2021-07-17 15:58:39.704 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-DEBUG 2021-07-17 15:58:40.618 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:44.538 UTC: 	 Proxy lifetime 602902 secs is different from voms extension lifetime 602901 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-09-12 11:31:44.538 UTC: 	 Proxy valid for 167:28:21 hours
+DEBUG 2021-09-12 11:31:44.648 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-12 11:31:45.361 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -identity
  output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:58:40.626 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:58:40.626 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
-DEBUG 2021-07-17 15:58:41.033 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:45.369 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-12 11:31:45.369 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-09-12 11:31:45.774 UTC: 	 Executing : 
  command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
  output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:41:59  (19.8 days)
+  timeleft: 719:29:56  (30.0 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:58:41.034 UTC: 	 Myproxy is valid: 1708919
-DEBUG 2021-07-17 15:58:41.034 UTC: 	 Retrieving username ...
-DEBUG 2021-07-17 15:58:41.034 UTC: 	 Retrieving username from CRIC...
-DEBUG 2021-07-17 15:58:41.887 UTC: 	 username is yian
-DEBUG 2021-07-17 15:58:41.894 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 15:58:41.894 UTC: 	 using yian_CRAB as credential login name
-DEBUG 2021-07-17 15:58:42.304 UTC: 	 Executing : 
+DEBUG 2021-09-12 11:31:45.774 UTC: 	 Myproxy is valid: 2590196
+DEBUG 2021-09-12 11:31:45.774 UTC: 	 Retrieving username ...
+DEBUG 2021-09-12 11:31:45.774 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-12 11:31:46.517 UTC: 	 username is yian
+DEBUG 2021-09-12 11:31:46.524 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-12 11:31:46.524 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-09-12 11:31:46.828 UTC: 	 Executing : 
  command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
  output : username: yian_CRAB
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:34:33  (19.8 days)
+  timeleft: 719:30:08  (30.0 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 15:58:42.304 UTC: 	 Myproxy is valid: 1708473
-DEBUG 2021-07-17 15:58:42.304 UTC: 	 Result of myproxy credential check:
-  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 19 days, 18:41:59
-  Credential exists on myproxy: username: yian_CRAB  - validity: 19 days, 18:34:33
-DEBUG 2021-07-17 15:58:42.305 UTC: 	 Command use: status
-DEBUG 2021-07-17 15:58:42.306 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
-DEBUG 2021-07-17 15:58:42.373 UTC: 	 CRABClient version: v3.210610
-DEBUG 2021-07-17 15:58:42.373 UTC: 	 Instance is prod
-DEBUG 2021-07-17 15:58:42.373 UTC: 	 Server base url is cmsweb.cern.ch
-DEBUG 2021-07-17 15:58:42.373 UTC: 	 Command api workflow
-DEBUG 2021-07-17 15:58:42.465 UTC: 	 Got information from server oracle database: {u'result': [u'210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-07-17 15:47:59.900142', u'None', u'2021-07-17 15:49:22.131146', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'68412949', u'filetransfers', u'F', u'188.184.75.95', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
-INFO 2021-07-17 15:58:42.465 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:58:42.465 UTC: 	 Task name:			210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:58:42.465 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0120.cern.ch - crab-prod-tw01
-INFO 2021-07-17 15:58:42.465 UTC: 	 Status on the CRAB server:	SUBMITTED
-INFO 2021-07-17 15:58:42.465 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 15:58:42.470 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1626533279000&to=now
-DEBUG 2021-07-17 15:58:42.470 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 68412949)
-DEBUG 2021-07-17 15:58:42.470 UTC: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:58:42.607 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 15:58:42.607 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
-DEBUG 2021-07-17 15:58:42.651 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412951.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412953.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412952.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412955.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412954.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
-INFO 2021-07-17 15:58:42.651 UTC: 	 Status on the scheduler:	SUBMITTED
-INFO 2021-07-17 15:58:42.651 UTC: 	 
-Jobs status:                    idle         		100.0% (5/5)
-INFO 2021-07-17 15:58:42.652 UTC: 	 
+DEBUG 2021-09-12 11:31:46.829 UTC: 	 Myproxy is valid: 2590208
+DEBUG 2021-09-12 11:31:46.829 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 29 days, 23:29:56
+  Credential exists on myproxy: username: yian_CRAB  - validity: 29 days, 23:30:08
+DEBUG 2021-09-12 11:31:46.830 UTC: 	 Command use: status
+DEBUG 2021-09-12 11:31:46.830 UTC: 	 Options use: []
+DEBUG 2021-09-12 11:31:46.895 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-12 11:31:46.895 UTC: 	 Instance is prod
+DEBUG 2021-09-12 11:31:46.895 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-12 11:31:46.895 UTC: 	 Command api workflow
+DEBUG 2021-09-12 11:31:46.975 UTC: 	 Got information from server oracle database: {u'result': [u'210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-09-11 10:18:59.561252', u'None', u'2021-09-11 10:20:33.328788', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/yian-TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-79132d624dd3520ee2a7d08026bbccfc/USER']", u'[]', u'http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0122.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'74539158', u'filetransfers', u'F', u'188.184.98.213', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-09-12 11:31:46.976 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-12 11:31:46.976 UTC: 	 Task name:			210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-12 11:31:46.976 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+INFO 2021-09-12 11:31:46.976 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-09-12 11:31:46.976 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-12 11:31:46.979 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1631351939000&to=now
+DEBUG 2021-09-12 11:31:46.980 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 74539158)
+DEBUG 2021-09-12 11:31:46.980 UTC: 	 Webdir is located at http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-12 11:31:47.084 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-12 11:31:47.084 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
+DEBUG 2021-09-12 11:31:47.123 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [8.0, 5115.0], 'StartTimes': [1631355709.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539160.0'], 'EndTimes': [1631360824.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [812524], 'TotalUserCpuTimeHistory': [1153], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [80]}, '3': {'Retries': 1, 'WallDurations': [0, 17750.0, 8.0, 32891.0], 'StartTimes': [1631355697.0, 1631375530.0], 'SubmitTimes': [1631355638.0, 1631375322.0], 'JobIds': ['74539161.0', '74545417.0'], 'EndTimes': [1631373447.0, 1631408421.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [794996, 999560], 'TotalUserCpuTimeHistory': [3670, 7619], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [284, 412]}, '2': {'Retries': 0, 'WallDurations': [0, 3258.0], 'StartTimes': [1631355697.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539162.0'], 'EndTimes': [1631358955.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [724916], 'TotalUserCpuTimeHistory': [633], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [51]}, '5': {'Retries': 0, 'WallDurations': [0, 2629.0], 'StartTimes': [1631355696.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539164.0'], 'EndTimes': [1631358325.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805176], 'TotalUserCpuTimeHistory': [2253], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [259]}, '4': {'Retries': 0, 'WallDurations': [8.0, 17025.0, 0, 26466.0], 'StartTimes': [1631355699.0, 1631372920.0], 'SubmitTimes': [1631355638.0, -1], 'JobIds': ['74539163.0', '74539163.0'], 'EndTimes': [1631372724.0, 1631399386.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [837072, 1000000], 'TotalUserCpuTimeHistory': [3618.0, 9894], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [303.0, 973]}}
+INFO 2021-09-12 11:31:47.123 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2021-09-12 11:31:47.123 UTC: 	 
+Jobs status:                    finished     		100.0% (5/5)
+INFO 2021-09-12 11:31:47.123 UTC: 	 
 No publication information (publication has been disabled in the CRAB configuration file)
-INFO 2021-07-17 15:58:42.654 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
-DEBUG 2021-07-17 16:16:49.802 UTC: 	 CRAB Client version: v3.210610
-DEBUG 2021-07-17 16:16:49.802 UTC: 	 Running on: Linux lxplus747.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
-DEBUG 2021-07-17 16:16:49.802 UTC: 	 Executing command: 'status'
-DEBUG 2021-07-17 16:16:49.803 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
-DEBUG 2021-07-17 16:16:49.828 UTC: 	 Checking credentials
-DEBUG 2021-07-17 16:16:49.828 UTC: 	 Found proxy file /tmp/x509up_u110046
-DEBUG 2021-07-17 16:16:49.828 UTC: 	 Getting proxy life time left
-DEBUG 2021-07-17 16:16:50.638 UTC: 	 Executing : 
+INFO 2021-09-12 11:31:47.124 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-09-12 11:31:47.124 UTC: 	 
+Summary of run jobs:
+ * Memory: 793MB min, 976MB max, 848MB ave
+ * Runtime: 0:43:49 min, 9:08:11 max, 3:54:31 ave
+ * CPU eff: 21% min, 96% max, 33% ave
+ * Waste: 9:39:59 (33% of total)
+
+DEBUG 2021-09-12 11:31:47.124 UTC: 	 Requesting resubmission of failed jobs in task 210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+ERROR 2021-09-12 11:31:47.124 UTC: 	 Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+ERROR 2021-09-12 11:31:47.124 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.00/bin/crab", line 138, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.00/lib/CRABClient/Commands/resubmit.py", line 61, in __call__
+    self.jobids = self.processJobIds(jobList)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.00/lib/CRABClient/Commands/resubmit.py", line 166, in processJobIds
+    raise ConfigurationException(msg)
+ConfigurationException: Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+DEBUG 2021-09-13 12:56:24.957 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-13 12:56:24.957 UTC: 	 Running on: Linux lxplus7100.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-13 12:56:24.957 UTC: 	 Executing command: 'status'
+DEBUG 2021-09-13 12:56:24.957 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-09-13 12:56:25.017 UTC: 	 Checking credentials
+DEBUG 2021-09-13 12:56:25.017 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-09-13 12:56:25.017 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-13 12:56:25.725 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
- output : 602986
+ output : 604727
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:16:51.348 UTC: 	 Executing : 
+DEBUG 2021-09-13 12:56:26.431 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
- output : 602984
+ output : 604726
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:16:51.348 UTC: 	 Proxy lifetime 602986 secs is different from voms extension lifetime 602984 secs for proxy: /tmp/x509up_u110046
-DEBUG 2021-07-17 16:16:51.348 UTC: 	 Proxy valid for 167:29:44 hours
-DEBUG 2021-07-17 16:16:51.509 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-DEBUG 2021-07-17 16:16:52.222 UTC: 	 Executing : 
+DEBUG 2021-09-13 12:56:26.432 UTC: 	 Proxy lifetime 604727 secs is different from voms extension lifetime 604726 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-09-13 12:56:26.432 UTC: 	 Proxy valid for 167:58:46 hours
+DEBUG 2021-09-13 12:56:26.518 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-13 12:56:27.236 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -identity
  output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:16:52.230 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 16:16:52.230 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
-DEBUG 2021-07-17 16:16:52.638 UTC: 	 Executing : 
+DEBUG 2021-09-13 12:56:27.244 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-13 12:56:27.244 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-09-13 12:56:27.650 UTC: 	 Executing : 
  command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
  output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:23:47  (19.8 days)
+  timeleft: 694:05:14  (28.9 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:16:52.639 UTC: 	 Myproxy is valid: 1707827
-DEBUG 2021-07-17 16:16:52.639 UTC: 	 Retrieving username ...
-DEBUG 2021-07-17 16:16:52.639 UTC: 	 Retrieving username from CRIC...
-DEBUG 2021-07-17 16:16:53.708 UTC: 	 username is yian
-DEBUG 2021-07-17 16:16:53.715 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 16:16:53.715 UTC: 	 using yian_CRAB as credential login name
-DEBUG 2021-07-17 16:16:54.120 UTC: 	 Executing : 
+DEBUG 2021-09-13 12:56:27.651 UTC: 	 Myproxy is valid: 2498714
+DEBUG 2021-09-13 12:56:27.651 UTC: 	 Retrieving username ...
+DEBUG 2021-09-13 12:56:27.651 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-13 12:56:28.426 UTC: 	 username is yian
+DEBUG 2021-09-13 12:56:28.433 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-13 12:56:28.434 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-09-13 12:56:28.839 UTC: 	 Executing : 
  command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
  output : username: yian_CRAB
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:16:21  (19.8 days)
+  timeleft: 694:05:26  (28.9 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:16:54.121 UTC: 	 Myproxy is valid: 1707381
-DEBUG 2021-07-17 16:16:54.121 UTC: 	 Result of myproxy credential check:
-  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 19 days, 18:23:47
-  Credential exists on myproxy: username: yian_CRAB  - validity: 19 days, 18:16:21
-DEBUG 2021-07-17 16:16:54.122 UTC: 	 Command use: status
-DEBUG 2021-07-17 16:16:54.122 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
-DEBUG 2021-07-17 16:16:54.186 UTC: 	 CRABClient version: v3.210610
-DEBUG 2021-07-17 16:16:54.186 UTC: 	 Instance is prod
-DEBUG 2021-07-17 16:16:54.186 UTC: 	 Server base url is cmsweb.cern.ch
-DEBUG 2021-07-17 16:16:54.186 UTC: 	 Command api workflow
-DEBUG 2021-07-17 16:16:54.251 UTC: 	 Got information from server oracle database: {u'result': [u'210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-07-17 15:47:59.900142', u'None', u'2021-07-17 15:49:22.131146', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'68412949', u'filetransfers', u'F', u'188.184.75.95', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
-INFO 2021-07-17 16:16:54.261 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 16:16:54.262 UTC: 	 Task name:			210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 16:16:54.262 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0120.cern.ch - crab-prod-tw01
-INFO 2021-07-17 16:16:54.262 UTC: 	 Status on the CRAB server:	SUBMITTED
-INFO 2021-07-17 16:16:54.262 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 16:16:54.267 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1626533279000&to=now
-DEBUG 2021-07-17 16:16:54.267 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 68412949)
-DEBUG 2021-07-17 16:16:54.267 UTC: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 16:16:54.570 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 16:16:54.571 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
-DEBUG 2021-07-17 16:16:54.614 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [8.0, 63.42199397087097, 910.0], 'StartTimes': [1626537568.0], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412951.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [844860], 'TotalUserCpuTimeHistory': [236.0], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [6.0]}, '3': {'Retries': 0, 'WallDurations': [8.0, 108.42199397087097, 910.0], 'StartTimes': [1626537523.0], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412953.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [889672], 'TotalUserCpuTimeHistory': [197.0], 'SiteHistory': ['Unknown', 'T2_US_Florida', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [4.0]}, '2': {'Retries': 0, 'WallDurations': [8.0, 59.42199397087097, 909.0], 'StartTimes': [1626537572.0], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412952.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [849748], 'TotalUserCpuTimeHistory': [273.0], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [8.0]}, '5': {'Retries': 0, 'WallDurations': [9.0, 108.42199397087097, 910.0], 'StartTimes': [1626537523.0], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412955.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [871328], 'TotalUserCpuTimeHistory': [227.0], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [6.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 105.42199397087097, 911.0], 'StartTimes': [1626537526.0], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412954.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [781884], 'TotalUserCpuTimeHistory': [285.0], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [10.0]}}
-INFO 2021-07-17 16:16:54.615 UTC: 	 Status on the scheduler:	SUBMITTED
-INFO 2021-07-17 16:16:54.615 UTC: 	 
-Jobs status:                    running      		100.0% (5/5)
-INFO 2021-07-17 16:16:54.615 UTC: 	 
+DEBUG 2021-09-13 12:56:28.839 UTC: 	 Myproxy is valid: 2498726
+DEBUG 2021-09-13 12:56:28.840 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 28 days, 22:05:14
+  Credential exists on myproxy: username: yian_CRAB  - validity: 28 days, 22:05:26
+DEBUG 2021-09-13 12:56:28.841 UTC: 	 Command use: status
+DEBUG 2021-09-13 12:56:28.841 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
+DEBUG 2021-09-13 12:56:28.899 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-13 12:56:28.899 UTC: 	 Instance is prod
+DEBUG 2021-09-13 12:56:28.899 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-13 12:56:28.899 UTC: 	 Command api workflow
+DEBUG 2021-09-13 12:56:28.979 UTC: 	 Got information from server oracle database: {u'result': [u'210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-09-11 10:18:59.561252', u'None', u'2021-09-11 10:20:33.328788', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/yian-TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-79132d624dd3520ee2a7d08026bbccfc/USER']", u'[]', u'http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0122.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'74539158', u'filetransfers', u'F', u'188.184.98.213', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-09-13 12:56:28.979 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-13 12:56:28.979 UTC: 	 Task name:			210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-13 12:56:28.979 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+INFO 2021-09-13 12:56:28.979 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-09-13 12:56:28.979 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-13 12:56:28.983 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1631351939000&to=now
+DEBUG 2021-09-13 12:56:28.983 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 74539158)
+DEBUG 2021-09-13 12:56:28.983 UTC: 	 Webdir is located at http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-13 12:56:29.114 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-13 12:56:29.114 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
+DEBUG 2021-09-13 12:56:29.154 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [8.0, 5115.0], 'StartTimes': [1631355709.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539160.0'], 'EndTimes': [1631360824.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [812524], 'TotalUserCpuTimeHistory': [1153], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [80]}, '3': {'Retries': 1, 'WallDurations': [0, 17750.0, 8.0, 32891.0], 'StartTimes': [1631355697.0, 1631375530.0], 'SubmitTimes': [1631355638.0, 1631375322.0], 'JobIds': ['74539161.0', '74545417.0'], 'EndTimes': [1631373447.0, 1631408421.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [794996, 999560], 'TotalUserCpuTimeHistory': [3670, 7619], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [284, 412]}, '2': {'Retries': 0, 'WallDurations': [0, 3258.0], 'StartTimes': [1631355697.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539162.0'], 'EndTimes': [1631358955.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [724916], 'TotalUserCpuTimeHistory': [633], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [51]}, '5': {'Retries': 0, 'WallDurations': [0, 2629.0], 'StartTimes': [1631355696.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539164.0'], 'EndTimes': [1631358325.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805176], 'TotalUserCpuTimeHistory': [2253], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [259]}, '4': {'Retries': 0, 'WallDurations': [8.0, 17025.0, 0, 26466.0], 'StartTimes': [1631355699.0, 1631372920.0], 'SubmitTimes': [1631355638.0, -1], 'JobIds': ['74539163.0', '74539163.0'], 'EndTimes': [1631372724.0, 1631399386.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [837072, 1000000], 'TotalUserCpuTimeHistory': [3618.0, 9894], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [303.0, 973]}}
+INFO 2021-09-13 12:56:29.154 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2021-09-13 12:56:29.154 UTC: 	 
+Jobs status:                    finished     		100.0% (5/5)
+INFO 2021-09-13 12:56:29.154 UTC: 	 
 No publication information (publication has been disabled in the CRAB configuration file)
-INFO 2021-07-17 16:16:54.624 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
-DEBUG 2021-07-17 16:22:30.646 UTC: 	 CRAB Client version: v3.210610
-DEBUG 2021-07-17 16:22:30.646 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.31.1.el7.x86_64 #1 SMP Thu Jun 10 13:32:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
-DEBUG 2021-07-17 16:22:30.647 UTC: 	 Executing command: 'status'
-DEBUG 2021-07-17 16:22:30.647 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
-DEBUG 2021-07-17 16:22:30.657 UTC: 	 Checking credentials
-DEBUG 2021-07-17 16:22:30.658 UTC: 	 Found proxy file /tmp/x509up_u110046
-DEBUG 2021-07-17 16:22:30.658 UTC: 	 Getting proxy life time left
-DEBUG 2021-07-17 16:22:31.265 UTC: 	 Executing : 
+INFO 2021-09-13 12:56:29.155 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-09-13 12:56:29.155 UTC: 	 
+Summary of run jobs:
+ * Memory: 793MB min, 976MB max, 848MB ave
+ * Runtime: 0:43:49 min, 9:08:11 max, 3:54:31 ave
+ * CPU eff: 21% min, 96% max, 33% ave
+ * Waste: 9:39:59 (33% of total)
+
+INFO 2021-09-13 12:56:29.185 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
+DEBUG 2021-09-14 14:37:46.150 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-14 14:37:46.150 UTC: 	 Running on: Linux lxplus738.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-14 14:37:46.150 UTC: 	 Executing command: 'status'
+DEBUG 2021-09-14 14:37:46.150 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-09-14 14:37:46.250 UTC: 	 Checking credentials
+DEBUG 2021-09-14 14:37:46.251 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-09-14 14:37:46.251 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-14 14:37:47.160 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
- output : 602475
+ output : 604734
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:22:31.870 UTC: 	 Executing : 
+DEBUG 2021-09-14 14:37:47.867 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
- output : 602475
+ output : 604734
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:22:31.871 UTC: 	 Proxy valid for 167:21:15 hours
-DEBUG 2021-07-17 16:22:31.957 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-DEBUG 2021-07-17 16:22:32.570 UTC: 	 Executing : 
+DEBUG 2021-09-14 14:37:47.868 UTC: 	 Proxy valid for 167:58:54 hours
+DEBUG 2021-09-14 14:37:47.924 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-14 14:37:48.637 UTC: 	 Executing : 
  command : voms-proxy-info -file /tmp/x509up_u110046 -identity
  output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:22:32.578 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 16:22:32.578 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
-DEBUG 2021-07-17 16:22:32.982 UTC: 	 Executing : 
+DEBUG 2021-09-14 14:37:48.645 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-14 14:37:48.645 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-09-14 14:37:48.950 UTC: 	 Executing : 
  command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
  output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:18:07  (19.8 days)
+  timeleft: 668:23:53  (27.8 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:22:32.983 UTC: 	 Myproxy is valid: 1707487
-DEBUG 2021-07-17 16:22:32.983 UTC: 	 Retrieving username ...
-DEBUG 2021-07-17 16:22:32.983 UTC: 	 Retrieving username from CRIC...
-DEBUG 2021-07-17 16:22:33.862 UTC: 	 username is yian
-DEBUG 2021-07-17 16:22:33.868 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
-DEBUG 2021-07-17 16:22:33.869 UTC: 	 using yian_CRAB as credential login name
-DEBUG 2021-07-17 16:22:34.273 UTC: 	 Executing : 
+DEBUG 2021-09-14 14:37:48.951 UTC: 	 Myproxy is valid: 2406233
+DEBUG 2021-09-14 14:37:48.952 UTC: 	 Retrieving username ...
+DEBUG 2021-09-14 14:37:48.952 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-14 14:37:49.699 UTC: 	 username is yian
+DEBUG 2021-09-14 14:37:49.708 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-14 14:37:49.708 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-09-14 14:37:50.013 UTC: 	 Executing : 
  command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
  output : username: yian_CRAB
 owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
   renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
   trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
-  timeleft: 474:10:41  (19.8 days)
+  timeleft: 668:24:05  (27.9 days)
 
  error: 
  retcode : 0
-DEBUG 2021-07-17 16:22:34.273 UTC: 	 Myproxy is valid: 1707041
-DEBUG 2021-07-17 16:22:34.274 UTC: 	 Result of myproxy credential check:
-  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 19 days, 18:18:07
-  Credential exists on myproxy: username: yian_CRAB  - validity: 19 days, 18:10:41
-DEBUG 2021-07-17 16:22:34.275 UTC: 	 Command use: status
-DEBUG 2021-07-17 16:22:34.275 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/']
-DEBUG 2021-07-17 16:22:34.389 UTC: 	 CRABClient version: v3.210610
-DEBUG 2021-07-17 16:22:34.389 UTC: 	 Instance is prod
-DEBUG 2021-07-17 16:22:34.389 UTC: 	 Server base url is cmsweb.cern.ch
-DEBUG 2021-07-17 16:22:34.389 UTC: 	 Command api workflow
-DEBUG 2021-07-17 16:22:34.510 UTC: 	 Got information from server oracle database: {u'result': [u'210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-07-17 15:47:59.900142', u'None', u'2021-07-17 15:49:22.131146', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'c02a886aa44ca8a8af3edd47c02c393b1760a6a4ade8032b17895ce3b4cf3d1c.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'68412949', u'filetransfers', u'F', u'188.184.75.95', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
-INFO 2021-07-17 16:22:34.511 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 16:22:34.511 UTC: 	 Task name:			210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 16:22:34.511 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0120.cern.ch - crab-prod-tw01
-INFO 2021-07-17 16:22:34.511 UTC: 	 Status on the CRAB server:	SUBMITTED
-INFO 2021-07-17 16:22:34.511 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-INFO 2021-07-17 16:22:34.514 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210717_154759%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1626533279000&to=now
-DEBUG 2021-07-17 16:22:34.514 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 68412949)
-DEBUG 2021-07-17 16:22:34.514 UTC: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 16:22:34.798 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
-DEBUG 2021-07-17 16:22:34.798 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0120/cms1407/210717_154759:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
-DEBUG 2021-07-17 16:22:34.848 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [8.0, 63.42199397087097, 910.0], 'StartTimes': [1626537568.0], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412951.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [844860], 'TotalUserCpuTimeHistory': [236.0], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [6.0]}, '3': {'Retries': 0, 'WallDurations': [8.0, 108.42199397087097, 1210.0], 'StartTimes': [1626537523.0], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412953.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [889912], 'TotalUserCpuTimeHistory': [239.0], 'SiteHistory': ['Unknown', 'T2_US_Florida', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [6.0]}, '2': {'Retries': 0, 'WallDurations': [8.0, 59.42199397087097, 909.0], 'StartTimes': [1626537572.0], 'SubmitTimes': [1626536973.0], 'JobIds': ['68412952.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [849748], 'TotalUserCpuTimeHistory': [273.0], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [8.0]}, '5': {'Retries': 0, 'WallDurations': [9.0, 108.42199397087097, 1211.0], 'StartTimes': [1626537523.0], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412955.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [871504], 'TotalUserCpuTimeHistory': [284.0], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [9.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 105.42199397087097, 1211.0], 'StartTimes': [1626537526.0], 'SubmitTimes': [1626536974.0], 'JobIds': ['68412954.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [781884], 'TotalUserCpuTimeHistory': [371.0], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [16.0]}}
-INFO 2021-07-17 16:22:34.848 UTC: 	 Status on the scheduler:	SUBMITTED
-INFO 2021-07-17 16:22:34.849 UTC: 	 
-Jobs status:                    running      		100.0% (5/5)
-INFO 2021-07-17 16:22:34.849 UTC: 	 
+DEBUG 2021-09-14 14:37:50.014 UTC: 	 Myproxy is valid: 2406245
+DEBUG 2021-09-14 14:37:50.014 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 27 days, 20:23:53
+  Credential exists on myproxy: username: yian_CRAB  - validity: 27 days, 20:24:05
+DEBUG 2021-09-14 14:37:50.015 UTC: 	 Command use: status
+DEBUG 2021-09-14 14:37:50.015 UTC: 	 Options use: ['-d', 'crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018']
+DEBUG 2021-09-14 14:37:50.107 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-14 14:37:50.107 UTC: 	 Instance is prod
+DEBUG 2021-09-14 14:37:50.107 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-14 14:37:50.107 UTC: 	 Command api workflow
+DEBUG 2021-09-14 14:37:50.166 UTC: 	 Got information from server oracle database: {u'result': [u'210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-09-11 10:18:59.561252', u'None', u'2021-09-11 10:20:33.328788', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'ce4024b067767c0af918e51c87b31628855166e163a541c120405109f27fbcb5.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8/yian-TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018-79132d624dd3520ee2a7d08026bbccfc/USER']", u'[]', u'http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0122.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8', u'None', u'd06474815f9f6a20931f9da7b499a00a71f4c7bc803ea0c8fe965c65bdf4465a.tar.gz', u'74539158', u'filetransfers', u'F', u'188.184.98.213', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-09-14 14:37:50.166 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-14 14:37:50.166 UTC: 	 Task name:			210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-14 14:37:50.166 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+INFO 2021-09-14 14:37:50.166 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-09-14 14:37:50.167 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+INFO 2021-09-14 14:37:50.172 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=210911_101859%3Ayian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018&from=1631351939000&to=now
+DEBUG 2021-09-14 14:37:50.172 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 74539158)
+DEBUG 2021-09-14 14:37:50.172 UTC: 	 Webdir is located at http://vocms0122.cern.ch/mon/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-14 14:37:50.283 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018
+DEBUG 2021-09-14 14:37:50.283 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0122/cms1407/210911_101859:yian_crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/status_cache
+DEBUG 2021-09-14 14:37:50.380 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [8.0, 5115.0], 'StartTimes': [1631355709.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539160.0'], 'EndTimes': [1631360824.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [812524], 'TotalUserCpuTimeHistory': [1153], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [80]}, '3': {'Retries': 1, 'WallDurations': [0, 17750.0, 8.0, 32891.0], 'StartTimes': [1631355697.0, 1631375530.0], 'SubmitTimes': [1631355638.0, 1631375322.0], 'JobIds': ['74539161.0', '74545417.0'], 'EndTimes': [1631373447.0, 1631408421.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [794996, 999560], 'TotalUserCpuTimeHistory': [3670, 7619], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'T2_US_Caltech', 'T2_US_Caltech'], 'TotalSysCpuTimeHistory': [284, 412]}, '2': {'Retries': 0, 'WallDurations': [0, 3258.0], 'StartTimes': [1631355697.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539162.0'], 'EndTimes': [1631358955.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [724916], 'TotalUserCpuTimeHistory': [633], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [51]}, '5': {'Retries': 0, 'WallDurations': [0, 2629.0], 'StartTimes': [1631355696.0], 'SubmitTimes': [1631355638.0], 'JobIds': ['74539164.0'], 'EndTimes': [1631358325.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805176], 'TotalUserCpuTimeHistory': [2253], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [259]}, '4': {'Retries': 0, 'WallDurations': [8.0, 17025.0, 0, 26466.0], 'StartTimes': [1631355699.0, 1631372920.0], 'SubmitTimes': [1631355638.0, -1], 'JobIds': ['74539163.0', '74539163.0'], 'EndTimes': [1631372724.0, 1631399386.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [837072, 1000000], 'TotalUserCpuTimeHistory': [3618.0, 9894], 'SiteHistory': ['T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [303.0, 973]}}
+INFO 2021-09-14 14:37:50.380 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2021-09-14 14:37:50.380 UTC: 	 
+Jobs status:                    finished     		100.0% (5/5)
+INFO 2021-09-14 14:37:50.380 UTC: 	 
 No publication information (publication has been disabled in the CRAB configuration file)
-INFO 2021-07-17 16:22:34.858 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log
+INFO 2021-09-14 14:37:50.381 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-09-14 14:37:50.381 UTC: 	 
+Summary of run jobs:
+ * Memory: 793MB min, 976MB max, 848MB ave
+ * Runtime: 0:43:49 min, 9:08:11 max, 3:54:31 ave
+ * CPU eff: 21% min, 96% max, 33% ave
+ * Waste: 9:39:59 (33% of total)
+
+INFO 2021-09-14 14:37:50.413 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_TGJets_TuneCP5_13TeV-amcatnlo-madspin-pythia8_2018/crab.log

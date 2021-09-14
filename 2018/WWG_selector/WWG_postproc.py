@@ -65,11 +65,39 @@ if args.isdata:
        Modules = [countHistogramsModule(),jmeCorrections_ak4_Data(),WWG_Module()]
 else:
        if args.year=='2016':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2016(),PrefCorr_2016()]
+          Modules = [countHistogramsModule(),WWG_Module(),jmeCorrections_ak4_MC(),puWeight_2016(),PrefCorr_2016()]
        if args.year=='2017':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2017(),PrefCorr_2017()]
+          Modules = [countHistogramsModule(),WWG_Module(),jmeCorrections_ak4_MC(),puWeight_2017(),PrefCorr_2017()]
        if args.year=='2018':
           Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2018()]
+
+if args.isdata and args.year=='2018' and args.era=='D':
+
+    print 'special treatment for MuonEG_Run2018D'
+    import FWCore.PythonUtilities.LumiList as LumiList
+    import FWCore.ParameterSet.Config as cms
+
+    lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename="./Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt").getCMSSWString().split(',') )
+    # print lumisToProcess
+
+    runsAndLumis_special = {}
+
+    for l in lumisToProcess:
+        if "-" in l:
+            start, stop = l.split("-")
+            rstart, lstart = start.split(":")
+            rstop, lstop = stop.split(":")
+        else:
+            rstart, lstart = l.split(":")
+            rstop, lstop = l.split(":")
+        if rstart != rstop:
+            raise Exception(
+                "Cannot convert '%s' to runs and lumis json format" % l)
+        if rstart not in runsAndLumis_special:
+            runsAndLumis_special[rstart] = []
+        runsAndLumis_special[rstart].append([int(lstart), int(lstop)])
+
+    jsoninput = runsAndLumis_special
 
 p=PostProcessor(".",infilelist,
                 branchsel="WWG_keep_and_drop.txt",

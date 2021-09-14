@@ -15,7 +15,7 @@ def get_abbre(name,sample_type,year):
     elif sample_type == 'data':
         return name.split('/')[1] + '_' + name.split('/')[2].split('-')[0]
 
-def prepare_crab(name,sample_type,year):
+def prepare_crab(name,sample_type,year,era):
 
     abbre_name = get_abbre(name,sample_type,year) 
     if not os.path.exists('crabcode_' + year):
@@ -36,7 +36,8 @@ def prepare_crab(name,sample_type,year):
         f.write('config.JobType.psetName = "PSet.py"\n')
         f.write('config.JobType.scriptExe = "./WWG_crab_script.sh" \n')
         f.write('config.JobType.inputFiles = ["../../../scripts/haddnano.py","../WWG_selector/WWG_postproc.py","../WWG_selector/WWG_Module.py","../WWG_selector/WWG_keep_and_drop.txt","../WWG_selector/WWG_output_branch.txt","../WWG_selector/DAS_filesearch.py"] #hadd nano will not be needed once nano tools are in cmssw \n')
-        f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '"] \n')
+#	f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '","era=' + era + '"] \n')
+        f.write('config.JobType.scriptArgs = ["isdata=' + sample_type + '","year=' + year + '","era=' + era + '"] \n')
         f.write('config.JobType.sendPythonFolder  = True\n')
         f.write('config.JobType.allowUndistributedCMSSW = True \n\n')
 
@@ -53,11 +54,11 @@ def prepare_crab(name,sample_type,year):
         if sample_type == 'MC':
             pass
         elif year == '2018':
-            f.write('config.Data.lumiMask = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt" \n\n')
+            f.write('config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt" \n\n')
         elif year == '2017':
-            f.write('config.Data.lumiMask = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt" \n\n')
+            f.write('config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt" \n\n')
         elif year == '2016':
-            f.write('config.Data.lumiMask = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt" \n\n')
+            f.write('config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt" \n\n')
 
 #        f.write('config.Data.outLFNDirBase ="/store/user/sdeng/WWG_analysis/' + sample_type + '/' + year + '"\n')
         f.write('config.Data.publication = False\n')
@@ -175,7 +176,7 @@ if __name__=='__main__':
 
     if args.mode == 'prepare':
         for dataset in jsons:
-            prepare_crab(dataset['name'], dataset['type'], str(dataset['year']))
+            prepare_crab(dataset['name'], dataset['type'], str(dataset['year']), dataset['era'])
     
     if args.mode == 'submit':
         for dataset in jsons:

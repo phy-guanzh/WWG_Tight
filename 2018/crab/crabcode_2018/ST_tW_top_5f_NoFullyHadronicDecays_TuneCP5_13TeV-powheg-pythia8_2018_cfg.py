@@ -16,13 +16,10 @@ config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
 
 config.section_("Data")
-config.Data.inputDataset = "/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM" 
-#config.Data.inputDBS = "phys03"
+config.Data.inputDataset = "/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM" 
 config.Data.inputDBS = "global"
 # config.Data.splitting = "LumiBased"
 config.Data.splitting = "FileBased"
-#config.Data.splitting = "EventAwareLumiBased" 
-#config.Data.splitting = "Automatic" 
 config.Data.unitsPerJob = 1
 config.Data.publication = False
 config.Data.ignoreLocality = True

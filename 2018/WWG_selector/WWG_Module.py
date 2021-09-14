@@ -67,9 +67,6 @@ class WWG_Producer(Module):
         self.out.branch("gen_weight","F")
         self.out.branch("npu",  "I");
         self.out.branch("ntruepu",  "F");
-        self.out.branch("n_pos", "I")
-        self.out.branch("n_minus", "I")
-        self.out.branch("n_num", "I")
         self.out.branch("MET_pass","I")
         self.out.branch("npvs","I")
         self.out.branch("n_bjets","I")
@@ -91,19 +88,9 @@ class WWG_Producer(Module):
         self.out.fillBranch("run",event.run)
 #       print event.event,event.luminosityBlock,event.run
         if hasattr(event,'Generator_weight'):
-            if event.Generator_weight > 0 :
-                n_pos=1
-                n_minus=0
-            else:
-                n_minus=1
-                n_pos=0
             self.out.fillBranch("gen_weight",event.Generator_weight)
-            self.out.fillBranch("n_pos",n_pos)
-            self.out.fillBranch("n_minus",n_minus)
         else:    
             self.out.fillBranch("gen_weight",0)
-            self.out.fillBranch("n_pos",0)
-            self.out.fillBranch("n_minus",0)
 
         electrons = Collection(event, "Electron")
         muons = Collection(event, "Muon")
@@ -166,6 +153,7 @@ class WWG_Producer(Module):
 #       if len(tight_electrons)+len(tight_muons)+len(loose_but_not_tight_electrons)+len(loose_but_not_tight_muons) != 2:#reject event if there are not exactly two leptons
 #	   self.out.fillBranch("pass_selection",0)
 #	   return True
+
         self.out.fillBranch("n_leptons",len(tight_electrons)+len(tight_muons)+len(loose_but_not_tight_electrons)+len(loose_but_not_tight_muons))
         self.out.fillBranch("n_loose_ele", loose_electron_pass)
         self.out.fillBranch("n_loose_mu", loose_muon_pass)
@@ -254,7 +242,6 @@ class WWG_Producer(Module):
 #       if  len(photons_select)<1:
 #            self.out.fillBranch("pass_selection",0)
 #            return True
-
 
         isprompt_mask = (1 << 0) #isPrompt used for lepton
         isdirectprompttaudecayproduct_mask = (1 << 5) #isDirectPromptTauDecayProduct used for photon
@@ -421,10 +408,12 @@ class WWG_Producer(Module):
                    njets20+=1
                if jets[i].pt > 15:
                    njets15+=1
+
 #        print len(jets),("njets",njets)
 #        if njets >=2 :
 #            self.out.fillBranch("pass_selection",0)
 #            return True
+
         if hasattr(event,'Pileup_nPU'):    
             self.out.fillBranch("npu",event.Pileup_nPU)
         else:

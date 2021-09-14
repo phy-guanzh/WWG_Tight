@@ -16,13 +16,10 @@ config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
 
 config.section_("Data")
-config.Data.inputDataset = "/EGamma/Run2018D-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD" 
-#config.Data.inputDBS = "phys03"
+config.Data.inputDataset = "/EGamma/Run2018D-UL2018_MiniAODv1_NanoAODv2-v2/NANOAOD" 
 config.Data.inputDBS = "global"
 # config.Data.splitting = "LumiBased"
 config.Data.splitting = "FileBased"
-#config.Data.splitting = "EventAwareLumiBased" 
-#config.Data.splitting = "Automatic" 
 config.Data.unitsPerJob = 1
 config.Data.lumiMask = "/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt" 
 
