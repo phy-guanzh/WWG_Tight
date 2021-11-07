@@ -23,7 +23,7 @@ config.Data.unitsPerJob = 1
 config.Data.publication = False
 config.Data.ignoreLocality = True
 config.Data.allowNonValidInputDataset = True
-config.Data.outLFNDirBase = '/eos/cms/store/user/yian/crab_output/'
+#config.Data.outLFNDirBase = '/eos/cms/store/user/yian/crab_output/'
 config.Data.outputPrimaryDataset = 'WWg_signal'
 
 config.section_("Site")

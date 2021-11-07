@@ -127,7 +127,7 @@ NtRp54
 (dp55
 S'inputDataset'
 p56
-S'/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-Pilot_106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM'
+S'/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM'
 p57
 sS'allowNonValidInputDataset'
 p58
@@ -260,7 +260,7 @@ S'prod'
 p102
 sS'RequestName'
 p103
-V210914_144721:yian_crab_DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8_2018
+V211022_115456:yian_crab_DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8_2018
 p104
 sS'voRole'
 p105

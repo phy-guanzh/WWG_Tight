@@ -32,5 +32,5 @@ config.Data.allowNonValidInputDataset = True
 config.Data.outputDatasetTag = "DoubleMuon_Run2017E" 
 
 config.section_("Site")
-config.Site.storageSite = "T3_CH_CERNBOX"
+config.Site.storageSite = "T2_CH_CERN"
 config.Site.whitelist = ["T2_US_MIT","T2_US_Wisconsin","T2_US_Purdue","T2_US_UCSD","T2_US_Caltech","T2_US_Nebraska"] 

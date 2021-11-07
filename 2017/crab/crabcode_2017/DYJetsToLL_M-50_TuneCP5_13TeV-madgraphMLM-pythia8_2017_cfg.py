@@ -31,5 +31,4 @@ config.Data.outputDatasetTag = "DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia
 
 config.section_("Site")
 config.Site.storageSite = "T2_CH_CERN"
-#config.Site.storageSite = "T3_CH_CERNBOX"
 config.Site.whitelist = ["T2_US_MIT","T2_US_Wisconsin","T2_US_Purdue","T2_US_UCSD","T2_US_Caltech","T2_US_Nebraska"] 

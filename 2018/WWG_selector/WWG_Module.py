@@ -48,6 +48,7 @@ class WWG_Producer(Module):
         self.out.branch("photonet",  "F")
         self.out.branch("photoneta",  "F")
         self.out.branch("photonphi",  "F")
+        self.out.branch("photonchiso",  "F")
         self.out.branch("drl1a",  "F")
         self.out.branch("drl2a",  "F")
         self.out.branch("photon_isprompt", "I")
@@ -357,6 +358,7 @@ class WWG_Producer(Module):
            #(photon_selection==2 || photon_selection==3 || photon_selection==4 || photon_selection ==5 )->build fake photon enriched sample 
 	   self.out.fillBranch("drl1a",deltaR(photons[photon_index].eta,photons[photon_index].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi))
 	   self.out.fillBranch("drl2a",deltaR(photons[photon_index].eta,photons[photon_index].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi))
+           self.out.fillBranch("photonchiso",photons[photon_index].pfRelIso03_chg)
 	   self.out.fillBranch("photonet",photons[photon_index].pt)
            self.out.fillBranch("photoneta",photons[photon_index].eta)
            self.out.fillBranch("photonphi",photons[photon_index].phi)
