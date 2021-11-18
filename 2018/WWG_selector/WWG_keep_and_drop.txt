@@ -4,19 +4,8 @@ keep run
 keep luminosityBlock
 keep event
 keep Generator_weight
-keep nGenJet
-keep GenJet_eta
-keep GenJet_phi
-keep GenJet_mass
-keep GenJet_pt
-keep GenPart_eta
-keep GenPart_phi
-keep GenPart_mass
-keep GenPart_pt
-keep GenPart_pdgId
-keep GenPart_statusFlags
-keep GenPart_status
-keep GenPart_genPartIdxMother
+keep nGen*
+keep Gen*
 keep MET_pt
 keep MET_phi
 keep RawMET_pt
@@ -78,3 +67,4 @@ keep *jet*
 keep HLT*
 keep LHE*Weight
 keep nLHE*Weight
+keep Flag_*
