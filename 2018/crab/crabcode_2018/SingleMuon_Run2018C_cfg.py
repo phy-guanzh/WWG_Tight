@@ -16,7 +16,7 @@ config.JobType.sendPythonFolder  = True
 config.JobType.allowUndistributedCMSSW = True 
 
 config.section_("Data")
-config.Data.inputDataset = "/SingleMuon/Run2018C-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD" 
+config.Data.inputDataset = "/SingleMuon/Run2018C-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD" 
 config.Data.inputDBS = "global"
 # config.Data.splitting = "LumiBased"
 config.Data.splitting = "FileBased"

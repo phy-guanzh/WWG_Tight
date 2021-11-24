@@ -127,7 +127,7 @@ NtRp54
 (dp55
 S'inputDataset'
 p56
-S'/EGamma/Run2018D-UL2018_MiniAODv1_NanoAODv2-v2/NANOAOD'
+S'/EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD'
 p57
 sS'allowNonValidInputDataset'
 p58
@@ -265,7 +265,7 @@ S'prod'
 p104
 sS'RequestName'
 p105
-V211022_115354:yian_crab_EGamma_Run2018D
+V211122_090128:yian_crab_EGamma_Run2018D
 p106
 sS'voRole'
 p107

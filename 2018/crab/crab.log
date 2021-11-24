@@ -1797,3 +1797,45 @@ Traceback (most recent call last):
     raise ConfigurationException(msg)
 ConfigurationException: [91mError[0m: crabcode_2018/MuonEG_Run2018D_cfg.py is not a valid CRAB project directory.
 INFO 2021-11-16 14:32:21.848 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-11-23 08:55:07.531 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-23 08:55:07.531 UTC: 	 Running on: Linux lxplus736.cern.ch 3.10.0-1160.42.2.el7.x86_64 #1 SMP Tue Sep 7 14:49:57 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-23 08:55:07.531 UTC: 	 Executing command: 'submit'
+DEBUG 2021-11-23 08:55:07.531 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-11-23 11:37:56.968 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-23 11:37:56.968 UTC: 	 Running on: Linux lxplus736.cern.ch 3.10.0-1160.42.2.el7.x86_64 #1 SMP Tue Sep 7 14:49:57 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-23 11:37:56.968 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-11-23 11:37:56.968 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-11-23 11:37:56.970 UTC: 	 Error: crab2018/crab_tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8_2018 is not a valid CRAB project directory.
+ERROR 2021-11-23 11:37:56.970 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab_tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8_2018 is not a valid CRAB project directory.
+INFO 2021-11-23 11:37:56.984 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-11-23 11:37:57.370 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-23 11:37:57.370 UTC: 	 Running on: Linux lxplus736.cern.ch 3.10.0-1160.42.2.el7.x86_64 #1 SMP Tue Sep 7 14:49:57 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-23 11:37:57.370 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-11-23 11:37:57.371 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+ERROR 2021-11-23 11:37:57.372 UTC: 	 Error: crab2018/crab_TTJets_TuneCP5_13TeV-amcatnloFXFX-pythia8_2018 is not a valid CRAB project directory.
+ERROR 2021-11-23 11:37:57.372 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210825.02/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab2018/crab_TTJets_TuneCP5_13TeV-amcatnloFXFX-pythia8_2018 is not a valid CRAB project directory.
+INFO 2021-11-23 11:37:57.374 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log

@@ -419,11 +419,11 @@ class WWG_Producer(Module):
             if  not pass_dr_cut == True:
 	        continue
 
-            if jets[i].btagDeepB > 0.5847:  # medium DeepCSVM, remove jets from b
+            if jets[i].btagDeepB > 0.6001:  # medium DeepCSVM, remove jets from b
                n_bjets_medium +=1
                if jets[i].pt > 20 :
                   n_bjets20_medium +=1
-            if jets[i].btagDeepB > 0.1918:  # Loose DeepCSVM, remove jets from b
+            if jets[i].btagDeepB > 0.2027:  # Loose DeepCSVM, remove jets from b
                n_bjets_loose +=1
                if jets[i].pt > 20:
                   n_bjets20_loose +=1
