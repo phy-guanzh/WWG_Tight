@@ -344,3 +344,379 @@ Summary of run jobs:
  * Waste: 13:25:20 (21% of total)
 
 INFO 2021-11-24 10:51:34.622 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/crab.log
+DEBUG 2021-11-24 13:22:04.390 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-24 13:22:04.391 UTC: 	 Running on: Linux lxplus745.cern.ch 3.10.0-1160.45.1.el7.x86_64 #1 SMP Wed Oct 13 17:20:51 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-24 13:22:04.391 UTC: 	 Executing command: 'status'
+DEBUG 2021-11-24 13:22:04.391 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-11-24 13:22:04.466 UTC: 	 Checking credentials
+DEBUG 2021-11-24 13:22:04.466 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-11-24 13:22:04.467 UTC: 	 Getting proxy life time left
+DEBUG 2021-11-24 13:22:05.375 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
+ output : 602028
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-24 13:22:06.186 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
+ output : 602027
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-24 13:22:06.187 UTC: 	 Proxy lifetime 602028 secs is different from voms extension lifetime 602027 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-11-24 13:22:06.187 UTC: 	 Proxy valid for 167:13:47 hours
+DEBUG 2021-11-24 13:22:06.258 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2021-11-24 13:22:07.076 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-24 13:22:07.089 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-24 13:22:07.089 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-11-24 13:22:07.496 UTC: 	 Executing : 
+ command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
+ output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 691:34:31  (28.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-24 13:22:07.497 UTC: 	 Myproxy is valid: 2489671
+DEBUG 2021-11-24 13:22:07.497 UTC: 	 Retrieving username ...
+DEBUG 2021-11-24 13:22:07.498 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-11-24 13:22:08.288 UTC: 	 username is yian
+DEBUG 2021-11-24 13:22:08.296 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-24 13:22:08.296 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-11-24 13:22:08.701 UTC: 	 Executing : 
+ command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
+ output : username: yian_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 691:33:23  (28.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-24 13:22:08.701 UTC: 	 Myproxy is valid: 2489603
+DEBUG 2021-11-24 13:22:08.701 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 28 days, 19:34:31
+  Credential exists on myproxy: username: yian_CRAB  - validity: 28 days, 19:33:23
+DEBUG 2021-11-24 13:22:08.703 UTC: 	 Command use: status
+DEBUG 2021-11-24 13:22:08.703 UTC: 	 Options use: ['-d', 'crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018']
+DEBUG 2021-11-24 13:22:08.830 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-11-24 13:22:08.830 UTC: 	 Instance is prod
+DEBUG 2021-11-24 13:22:08.830 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-11-24 13:22:08.830 UTC: 	 Command api workflow
+DEBUG 2021-11-24 13:22:09.007 UTC: 	 Got information from server oracle database: {u'result': [u'211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-11-23 16:27:02.053604', u'None', u'2021-11-23 16:27:42.335076', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'5cb43ae7a39e084a4abb5f03e2a041f373b9dc4be328f66aa406ab63ad76b54a.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/yian-ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-1ea93bf7cfbb24e247bd0f4bd1955225/USER']", u'[]', u'http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0196.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8', u'None', u'd73fead4d829e29da92f66bf87e22c709cf54d61cd1a510f9ab462a5402dc210.tar.gz', u'71876712', u'filetransfers', u'F', u'137.138.120.6', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-11-24 13:22:09.007 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-24 13:22:09.007 UTC: 	 Task name:			211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-24 13:22:09.007 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0196.cern.ch - crab-prod-tw01
+INFO 2021-11-24 13:22:09.007 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-11-24 13:22:09.008 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-24 13:22:09.022 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018&from=1637681222000&to=now
+DEBUG 2021-11-24 13:22:09.022 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 71876712)
+DEBUG 2021-11-24 13:22:09.022 UTC: 	 Webdir is located at http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-24 13:22:09.100 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-24 13:22:09.100 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/status_cache
+DEBUG 2021-11-24 13:22:09.156 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 215.19743394851685, 20113.0, 6316.0], 'StartTimes': [1637699427.0, 1637719548.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876725.0', '71876725.0'], 'EndTimes': [1637719540.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1505444, 1750000], 'TotalUserCpuTimeHistory': [3620.0, 2092.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [131.0, 107.0]}, '10': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 5289.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876724.0'], 'EndTimes': [1637704717.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1513724], 'TotalUserCpuTimeHistory': [4924], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [246]}, '13': {'Retries': 0, 'WallDurations': [8.0, 215.19743394851685, 12902.0, 0, 13684.0], 'StartTimes': [1637699427.0, 1637714203.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876727.0', '71876727.0'], 'EndTimes': [1637712329.0, 1637727887.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1448308, 1674920], 'TotalUserCpuTimeHistory': [1386.0, 9431], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [70.0, 990]}, '12': {'Retries': 1, 'WallDurations': [9.0, 216.19743394851685, 57551.0, 8.0, 79.6332778930664, 609.0], 'StartTimes': [1637699426.0, 1637759187.0], 'SubmitTimes': [1637684873.0, 1637758852.0], 'JobIds': ['71876726.0', '71895682.0'], 'EndTimes': [1637756977.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1656648, 193828], 'TotalUserCpuTimeHistory': [13088, 10.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [792, 0.0]}, '15': {'Retries': 0, 'WallDurations': [8.0, 201.19743394851685, 5692.0, 0, 4804.0], 'StartTimes': [1637699441.0, 1637705372.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876729.0', '71876729.0'], 'EndTimes': [1637705133.0, 1637710176.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1395284, 1500000], 'TotalUserCpuTimeHistory': [1377.0, 2338], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [32.0, 105]}, '14': {'Retries': 0, 'WallDurations': [10.0, 216.19743394851685, 41292.0], 'StartTimes': [1637699426.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876728.0'], 'EndTimes': [1637740718.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1622700], 'TotalUserCpuTimeHistory': [12212], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [757]}, '1': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 1174.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876718.0'], 'EndTimes': [1637700603.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1431848], 'TotalUserCpuTimeHistory': [1090], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [24]}, '3': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 9568.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876715.0'], 'EndTimes': [1637708996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1397196], 'TotalUserCpuTimeHistory': [2443], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [72]}, '2': {'Retries': 0, 'WallDurations': [9.0, 196.35999393463135, 7398.0], 'StartTimes': [1637699746.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876717.0'], 'EndTimes': [1637707144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1478572], 'TotalUserCpuTimeHistory': [1511], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [77]}, '5': {'Retries': 1, 'WallDurations': [8.0, 215.19743394851685, 48048.0, 9.0, 17.506346940994263, 5418.0], 'StartTimes': [1637699427.0, 1637754430.0], 'SubmitTimes': [1637684872.0, 1637749352.0], 'JobIds': ['71876721.0', '71894164.0'], 'EndTimes': [1637747475.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1649756, 1492984], 'TotalUserCpuTimeHistory': [11783, 1304.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [472, 79.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 26226.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876716.0'], 'EndTimes': [1637725655.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1588864], 'TotalUserCpuTimeHistory': [5273], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [276]}, '7': {'Retries': 1, 'WallDurations': [9.0, 211.19743394851685, 50018.0, 8.0, 23.506346940994263, 5416.0], 'StartTimes': [1637699431.0, 1637754424.0], 'SubmitTimes': [1637684867.0, 1637751323.0], 'JobIds': ['71876719.0', '71894600.0'], 'EndTimes': [1637749449.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1655916, 1430016], 'TotalUserCpuTimeHistory': [5616, 1425.0], 'SiteHistory': ['Unknown', 'T2_US_UCSD', 'T2_US_UCSD', 'Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [753, 37.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 214.19743394851685, 12923.0, 0, 177.93584895133972], 'StartTimes': [1637699428.0, 1637714218.0], 'SubmitTimes': [1637684867.0, -1], 'JobIds': ['71876720.0', '71876720.0'], 'EndTimes': [1637712351.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1551352, 0], 'TotalUserCpuTimeHistory': [2610.0, 0.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [115.0, 0.0]}, '9': {'Retries': 0, 'WallDurations': [9.0, 211.19743394851685, 11355.0], 'StartTimes': [1637699431.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876723.0'], 'EndTimes': [1637710786.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1442116], 'TotalUserCpuTimeHistory': [3152], 'SiteHistory': ['Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [133]}, '8': {'Retries': 0, 'WallDurations': [8.0, 216.19743394851685, 27307.0, 0, 9969.0], 'StartTimes': [1637699426.0, 1637727665.0], 'SubmitTimes': [1637684872.0, -1], 'JobIds': ['71876722.0', '71876722.0'], 'EndTimes': [1637726733.0, 1637737634.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551784, 1750000], 'TotalUserCpuTimeHistory': [3690.0, 11977], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [136.0, 926]}}
+INFO 2021-11-24 13:22:09.156 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2021-11-24 13:22:09.156 UTC: 	 
+Jobs status:                    finished     		 66.7% (10/15)
+INFO 2021-11-24 13:22:09.157 UTC: 	 				running      		 33.3% ( 5/15)
+INFO 2021-11-24 13:22:09.157 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2021-11-24 13:22:09.157 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-11-24 13:22:09.157 UTC: 	 
+Summary of run jobs:
+ * Memory: 0MB min, 1708MB max, 1504MB ave
+ * Runtime: 0:02:57 min, 11:28:12 max, 3:37:55 ave
+ * CPU eff: 21% min, 129% max, 44% ave
+ * Waste: 13:21:40 (27% of total)
+
+INFO 2021-11-24 13:22:09.168 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/crab.log
+DEBUG 2021-11-25 03:15:06.151 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-25 03:15:06.151 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.45.1.el7.x86_64 #1 SMP Wed Oct 13 17:20:51 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-25 03:15:06.151 UTC: 	 Executing command: 'status'
+DEBUG 2021-11-25 03:15:06.152 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-11-25 03:15:06.302 UTC: 	 Checking credentials
+DEBUG 2021-11-25 03:15:06.302 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-11-25 03:15:06.302 UTC: 	 Getting proxy life time left
+DEBUG 2021-11-25 03:15:06.907 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
+ output : 604751
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 03:15:07.513 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
+ output : 604749
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 03:15:07.514 UTC: 	 Proxy lifetime 604751 secs is different from voms extension lifetime 604749 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-11-25 03:15:07.514 UTC: 	 Proxy valid for 167:59:09 hours
+DEBUG 2021-11-25 03:15:07.566 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2021-11-25 03:15:08.286 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 03:15:08.294 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-25 03:15:08.294 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-11-25 03:15:08.599 UTC: 	 Executing : 
+ command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
+ output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 677:41:30  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 03:15:08.600 UTC: 	 Myproxy is valid: 2439690
+DEBUG 2021-11-25 03:15:08.600 UTC: 	 Retrieving username ...
+DEBUG 2021-11-25 03:15:08.600 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-11-25 03:15:09.362 UTC: 	 username is yian
+DEBUG 2021-11-25 03:15:09.369 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-25 03:15:09.369 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-11-25 03:15:09.674 UTC: 	 Executing : 
+ command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
+ output : username: yian_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 677:40:22  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 03:15:09.674 UTC: 	 Myproxy is valid: 2439622
+DEBUG 2021-11-25 03:15:09.674 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 28 days, 5:41:30
+  Credential exists on myproxy: username: yian_CRAB  - validity: 28 days, 5:40:22
+DEBUG 2021-11-25 03:15:09.676 UTC: 	 Command use: status
+DEBUG 2021-11-25 03:15:09.676 UTC: 	 Options use: ['-d', 'crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018']
+DEBUG 2021-11-25 03:15:09.798 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-11-25 03:15:09.798 UTC: 	 Instance is prod
+DEBUG 2021-11-25 03:15:09.798 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-11-25 03:15:09.798 UTC: 	 Command api workflow
+DEBUG 2021-11-25 03:15:09.961 UTC: 	 Got information from server oracle database: {u'result': [u'211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-11-23 16:27:02.053604', u'None', u'2021-11-23 16:27:42.335076', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'5cb43ae7a39e084a4abb5f03e2a041f373b9dc4be328f66aa406ab63ad76b54a.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/yian-ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-1ea93bf7cfbb24e247bd0f4bd1955225/USER']", u'[]', u'http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0196.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8', u'None', u'd73fead4d829e29da92f66bf87e22c709cf54d61cd1a510f9ab462a5402dc210.tar.gz', u'71876712', u'filetransfers', u'F', u'137.138.120.6', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-11-25 03:15:09.962 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 03:15:09.962 UTC: 	 Task name:			211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 03:15:09.962 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0196.cern.ch - crab-prod-tw01
+INFO 2021-11-25 03:15:09.962 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-11-25 03:15:09.962 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 03:15:09.965 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018&from=1637681222000&to=now
+DEBUG 2021-11-25 03:15:09.966 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 71876712)
+DEBUG 2021-11-25 03:15:09.966 UTC: 	 Webdir is located at http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-25 03:15:10.022 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-25 03:15:10.022 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/status_cache
+DEBUG 2021-11-25 03:15:10.064 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 215.19743394851685, 20113.0, 44719.0], 'StartTimes': [1637699427.0, 1637719548.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876725.0', '71876725.0'], 'EndTimes': [1637719540.0, 1637764267.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1505444, 1750000], 'TotalUserCpuTimeHistory': [3620.0, 13585], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [131.0, 974]}, '10': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 5289.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876724.0'], 'EndTimes': [1637704717.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1513724], 'TotalUserCpuTimeHistory': [4924], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [246]}, '13': {'Retries': 0, 'WallDurations': [8.0, 215.19743394851685, 12902.0, 0, 13684.0], 'StartTimes': [1637699427.0, 1637714203.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876727.0', '71876727.0'], 'EndTimes': [1637712329.0, 1637727887.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1448308, 1674920], 'TotalUserCpuTimeHistory': [1386.0, 9431], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [70.0, 990]}, '12': {'Retries': 1, 'WallDurations': [9.0, 216.19743394851685, 57551.0, 8.0, 79.6332778930664, 49297.0], 'StartTimes': [1637699426.0, 1637759187.0], 'SubmitTimes': [1637684873.0, 1637758852.0], 'JobIds': ['71876726.0', '71895682.0'], 'EndTimes': [1637756977.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1656648, 1513476], 'TotalUserCpuTimeHistory': [13088, 3940.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [792, 415.0]}, '15': {'Retries': 0, 'WallDurations': [8.0, 201.19743394851685, 5692.0, 0, 4804.0], 'StartTimes': [1637699441.0, 1637705372.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876729.0', '71876729.0'], 'EndTimes': [1637705133.0, 1637710176.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1395284, 1500000], 'TotalUserCpuTimeHistory': [1377.0, 2338], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [32.0, 105]}, '14': {'Retries': 0, 'WallDurations': [10.0, 216.19743394851685, 41292.0], 'StartTimes': [1637699426.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876728.0'], 'EndTimes': [1637740718.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1622700], 'TotalUserCpuTimeHistory': [12212], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [757]}, '1': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 1174.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876718.0'], 'EndTimes': [1637700603.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1431848], 'TotalUserCpuTimeHistory': [1090], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [24]}, '3': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 9568.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876715.0'], 'EndTimes': [1637708996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1397196], 'TotalUserCpuTimeHistory': [2443], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [72]}, '2': {'Retries': 0, 'WallDurations': [9.0, 196.35999393463135, 7398.0], 'StartTimes': [1637699746.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876717.0'], 'EndTimes': [1637707144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1478572], 'TotalUserCpuTimeHistory': [1511], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [77]}, '5': {'Retries': 1, 'WallDurations': [8.0, 215.19743394851685, 48048.0, 9.0, 17.506346940994263, 55311.0], 'StartTimes': [1637699427.0, 1637754430.0], 'SubmitTimes': [1637684872.0, 1637749352.0], 'JobIds': ['71876721.0', '71894164.0'], 'EndTimes': [1637747475.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1649756, 1504984], 'TotalUserCpuTimeHistory': [11783, 6465.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [472, 745.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 26226.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876716.0'], 'EndTimes': [1637725655.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1588864], 'TotalUserCpuTimeHistory': [5273], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [276]}, '7': {'Retries': 1, 'WallDurations': [9.0, 211.19743394851685, 50018.0, 8.0, 23.506346940994263, 32417.0], 'StartTimes': [1637699431.0, 1637754424.0], 'SubmitTimes': [1637684867.0, 1637751323.0], 'JobIds': ['71876719.0', '71894600.0'], 'EndTimes': [1637749449.0, 1637786841.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1655916, 1545640], 'TotalUserCpuTimeHistory': [5616, 6225], 'SiteHistory': ['Unknown', 'T2_US_UCSD', 'T2_US_UCSD', 'Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [753, 247]}, '6': {'Retries': 0, 'WallDurations': [10.0, 214.19743394851685, 12923.0, 0, 73836.0], 'StartTimes': [1637699428.0, 1637714218.0], 'SubmitTimes': [1637684867.0, -1], 'JobIds': ['71876720.0', '71876720.0'], 'EndTimes': [1637712351.0, 1637788054.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551352, 0], 'TotalUserCpuTimeHistory': [2610.0, 15157], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [115.0, 1085]}, '9': {'Retries': 0, 'WallDurations': [9.0, 211.19743394851685, 11355.0], 'StartTimes': [1637699431.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876723.0'], 'EndTimes': [1637710786.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1442116], 'TotalUserCpuTimeHistory': [3152], 'SiteHistory': ['Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [133]}, '8': {'Retries': 0, 'WallDurations': [8.0, 216.19743394851685, 27307.0, 0, 9969.0], 'StartTimes': [1637699426.0, 1637727665.0], 'SubmitTimes': [1637684872.0, -1], 'JobIds': ['71876722.0', '71876722.0'], 'EndTimes': [1637726733.0, 1637737634.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551784, 1750000], 'TotalUserCpuTimeHistory': [3690.0, 11977], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [136.0, 926]}}
+INFO 2021-11-25 03:15:10.064 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2021-11-25 03:15:10.064 UTC: 	 
+Jobs status:                    finished     		 86.7% (13/15)
+INFO 2021-11-25 03:15:10.064 UTC: 	 				running      		 13.3% ( 2/15)
+INFO 2021-11-25 03:15:10.064 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2021-11-25 03:15:10.065 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-11-25 03:15:10.065 UTC: 	 
+Summary of run jobs:
+ * Memory: 1398MB min, 1708MB max, 1404MB ave
+ * Runtime: 0:19:34 min, 20:30:36 max, 6:01:11 ave
+ * CPU eff: 20% min, 129% max, 34% ave
+ * Waste: 36:37:34 (32% of total)
+
+INFO 2021-11-25 03:15:10.498 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/crab.log
+DEBUG 2021-11-25 04:02:50.525 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-25 04:02:50.526 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.45.1.el7.x86_64 #1 SMP Wed Oct 13 17:20:51 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-25 04:02:50.526 UTC: 	 Executing command: 'status'
+DEBUG 2021-11-25 04:02:50.526 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-11-25 04:02:50.626 UTC: 	 Checking credentials
+DEBUG 2021-11-25 04:02:50.627 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-11-25 04:02:50.627 UTC: 	 Getting proxy life time left
+DEBUG 2021-11-25 04:02:51.336 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
+ output : 601886
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 04:02:51.942 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
+ output : 601885
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 04:02:51.942 UTC: 	 Proxy lifetime 601886 secs is different from voms extension lifetime 601885 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-11-25 04:02:51.942 UTC: 	 Proxy valid for 167:11:25 hours
+DEBUG 2021-11-25 04:02:52.026 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2021-11-25 04:02:52.638 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 04:02:52.645 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-25 04:02:52.646 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-11-25 04:02:53.050 UTC: 	 Executing : 
+ command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
+ output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 676:53:46  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 04:02:53.051 UTC: 	 Myproxy is valid: 2436826
+DEBUG 2021-11-25 04:02:53.051 UTC: 	 Retrieving username ...
+DEBUG 2021-11-25 04:02:53.051 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-11-25 04:02:53.748 UTC: 	 username is yian
+DEBUG 2021-11-25 04:02:53.754 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-25 04:02:53.754 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-11-25 04:02:54.058 UTC: 	 Executing : 
+ command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
+ output : username: yian_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 676:52:37  (28.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 04:02:54.058 UTC: 	 Myproxy is valid: 2436757
+DEBUG 2021-11-25 04:02:54.059 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 28 days, 4:53:46
+  Credential exists on myproxy: username: yian_CRAB  - validity: 28 days, 4:52:37
+DEBUG 2021-11-25 04:02:54.060 UTC: 	 Command use: status
+DEBUG 2021-11-25 04:02:54.060 UTC: 	 Options use: ['-d', 'crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018']
+DEBUG 2021-11-25 04:02:54.144 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-11-25 04:02:54.144 UTC: 	 Instance is prod
+DEBUG 2021-11-25 04:02:54.144 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-11-25 04:02:54.144 UTC: 	 Command api workflow
+DEBUG 2021-11-25 04:02:54.221 UTC: 	 Got information from server oracle database: {u'result': [u'211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-11-23 16:27:02.053604', u'None', u'2021-11-23 16:27:42.335076', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'5cb43ae7a39e084a4abb5f03e2a041f373b9dc4be328f66aa406ab63ad76b54a.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/yian-ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-1ea93bf7cfbb24e247bd0f4bd1955225/USER']", u'[]', u'http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0196.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8', u'None', u'd73fead4d829e29da92f66bf87e22c709cf54d61cd1a510f9ab462a5402dc210.tar.gz', u'71876712', u'filetransfers', u'F', u'137.138.120.6', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-11-25 04:02:54.221 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 04:02:54.222 UTC: 	 Task name:			211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 04:02:54.222 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0196.cern.ch - crab-prod-tw01
+INFO 2021-11-25 04:02:54.222 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-11-25 04:02:54.222 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 04:02:54.225 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018&from=1637681222000&to=now
+DEBUG 2021-11-25 04:02:54.225 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 71876712)
+DEBUG 2021-11-25 04:02:54.225 UTC: 	 Webdir is located at http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-25 04:02:54.323 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-25 04:02:54.323 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/status_cache
+DEBUG 2021-11-25 04:02:54.360 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 215.19743394851685, 20113.0, 44719.0], 'StartTimes': [1637699427.0, 1637719548.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876725.0', '71876725.0'], 'EndTimes': [1637719540.0, 1637764267.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1505444, 1750000], 'TotalUserCpuTimeHistory': [3620.0, 13585], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [131.0, 974]}, '10': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 5289.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876724.0'], 'EndTimes': [1637704717.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1513724], 'TotalUserCpuTimeHistory': [4924], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [246]}, '13': {'Retries': 0, 'WallDurations': [8.0, 215.19743394851685, 12902.0, 0, 13684.0], 'StartTimes': [1637699427.0, 1637714203.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876727.0', '71876727.0'], 'EndTimes': [1637712329.0, 1637727887.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1448308, 1674920], 'TotalUserCpuTimeHistory': [1386.0, 9431], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [70.0, 990]}, '12': {'Retries': 1, 'WallDurations': [9.0, 216.19743394851685, 57551.0, 8.0, 79.6332778930664, 52302.0], 'StartTimes': [1637699426.0, 1637759187.0], 'SubmitTimes': [1637684873.0, 1637758852.0], 'JobIds': ['71876726.0', '71895682.0'], 'EndTimes': [1637756977.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1656648, 1513476], 'TotalUserCpuTimeHistory': [13088, 4165.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [792, 439.0]}, '15': {'Retries': 0, 'WallDurations': [8.0, 201.19743394851685, 5692.0, 0, 4804.0], 'StartTimes': [1637699441.0, 1637705372.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876729.0', '71876729.0'], 'EndTimes': [1637705133.0, 1637710176.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1395284, 1500000], 'TotalUserCpuTimeHistory': [1377.0, 2338], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [32.0, 105]}, '14': {'Retries': 0, 'WallDurations': [10.0, 216.19743394851685, 41292.0], 'StartTimes': [1637699426.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876728.0'], 'EndTimes': [1637740718.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1622700], 'TotalUserCpuTimeHistory': [12212], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [757]}, '1': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 1174.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876718.0'], 'EndTimes': [1637700603.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1431848], 'TotalUserCpuTimeHistory': [1090], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [24]}, '3': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 9568.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876715.0'], 'EndTimes': [1637708996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1397196], 'TotalUserCpuTimeHistory': [2443], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [72]}, '2': {'Retries': 0, 'WallDurations': [9.0, 196.35999393463135, 7398.0], 'StartTimes': [1637699746.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876717.0'], 'EndTimes': [1637707144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1478572], 'TotalUserCpuTimeHistory': [1511], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [77]}, '5': {'Retries': 1, 'WallDurations': [8.0, 215.19743394851685, 48048.0, 9.0, 17.506346940994263, 57414.0], 'StartTimes': [1637699427.0, 1637754430.0], 'SubmitTimes': [1637684872.0, 1637749352.0], 'JobIds': ['71876721.0', '71894164.0'], 'EndTimes': [1637747475.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1649756, 1504984], 'TotalUserCpuTimeHistory': [11783, 6709.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [472, 781.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 26226.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876716.0'], 'EndTimes': [1637725655.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1588864], 'TotalUserCpuTimeHistory': [5273], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [276]}, '7': {'Retries': 1, 'WallDurations': [9.0, 211.19743394851685, 50018.0, 8.0, 23.506346940994263, 32417.0], 'StartTimes': [1637699431.0, 1637754424.0], 'SubmitTimes': [1637684867.0, 1637751323.0], 'JobIds': ['71876719.0', '71894600.0'], 'EndTimes': [1637749449.0, 1637786841.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1655916, 1545640], 'TotalUserCpuTimeHistory': [5616, 6225], 'SiteHistory': ['Unknown', 'T2_US_UCSD', 'T2_US_UCSD', 'Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [753, 247]}, '6': {'Retries': 0, 'WallDurations': [10.0, 214.19743394851685, 12923.0, 0, 73836.0], 'StartTimes': [1637699428.0, 1637714218.0], 'SubmitTimes': [1637684867.0, -1], 'JobIds': ['71876720.0', '71876720.0'], 'EndTimes': [1637712351.0, 1637788054.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551352, 0], 'TotalUserCpuTimeHistory': [2610.0, 15157], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [115.0, 1085]}, '9': {'Retries': 0, 'WallDurations': [9.0, 211.19743394851685, 11355.0], 'StartTimes': [1637699431.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876723.0'], 'EndTimes': [1637710786.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1442116], 'TotalUserCpuTimeHistory': [3152], 'SiteHistory': ['Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [133]}, '8': {'Retries': 0, 'WallDurations': [8.0, 216.19743394851685, 27307.0, 0, 9969.0], 'StartTimes': [1637699426.0, 1637727665.0], 'SubmitTimes': [1637684872.0, -1], 'JobIds': ['71876722.0', '71876722.0'], 'EndTimes': [1637726733.0, 1637737634.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551784, 1750000], 'TotalUserCpuTimeHistory': [3690.0, 11977], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [136.0, 926]}}
+INFO 2021-11-25 04:02:54.360 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2021-11-25 04:02:54.360 UTC: 	 
+Jobs status:                    finished     		 86.7% (13/15)
+INFO 2021-11-25 04:02:54.360 UTC: 	 				running      		 13.3% ( 2/15)
+INFO 2021-11-25 04:02:54.360 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2021-11-25 04:02:54.361 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-11-25 04:02:54.361 UTC: 	 
+Summary of run jobs:
+ * Memory: 1398MB min, 1708MB max, 1404MB ave
+ * Runtime: 0:19:34 min, 20:30:36 max, 6:01:11 ave
+ * CPU eff: 20% min, 129% max, 34% ave
+ * Waste: 36:37:34 (32% of total)
+
+INFO 2021-11-25 04:02:54.370 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/crab.log
+DEBUG 2021-11-25 06:12:59.614 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-25 06:12:59.615 UTC: 	 Running on: Linux lxplus795.cern.ch 3.10.0-1160.45.1.el7.x86_64 #1 SMP Wed Oct 13 17:20:51 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-25 06:12:59.615 UTC: 	 Executing command: 'status'
+DEBUG 2021-11-25 06:12:59.615 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
+DEBUG 2021-11-25 06:12:59.707 UTC: 	 Checking credentials
+DEBUG 2021-11-25 06:12:59.708 UTC: 	 Found proxy file /tmp/x509up_u110046
+DEBUG 2021-11-25 06:12:59.708 UTC: 	 Getting proxy life time left
+DEBUG 2021-11-25 06:13:00.414 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -timeleft
+ output : 619125
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 06:13:01.121 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -actimeleft
+ output : 619123
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 06:13:01.121 UTC: 	 Proxy lifetime 619125 secs is different from voms extension lifetime 619123 secs for proxy: /tmp/x509up_u110046
+DEBUG 2021-11-25 06:13:01.121 UTC: 	 Proxy valid for 171:58:43 hours
+DEBUG 2021-11-25 06:13:01.241 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2021-11-25 06:13:01.954 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u110046 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 06:13:01.961 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-25 06:13:01.961 UTC: 	 using b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b as credential login name
+DEBUG 2021-11-25 06:13:02.365 UTC: 	 Executing : 
+ command : myproxy-info -l b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b -s myproxy.cern.ch
+ output : username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 674:43:36  (28.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 06:13:02.366 UTC: 	 Myproxy is valid: 2429016
+DEBUG 2021-11-25 06:13:02.367 UTC: 	 Retrieving username ...
+DEBUG 2021-11-25 06:13:02.367 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-11-25 06:13:03.264 UTC: 	 username is yian
+DEBUG 2021-11-25 06:13:03.270 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-11-25 06:13:03.270 UTC: 	 using yian_CRAB as credential login name
+DEBUG 2021-11-25 06:13:03.574 UTC: 	 Executing : 
+ command : myproxy-info -l yian_CRAB -s myproxy.cern.ch
+ output : username: yian_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 674:42:28  (28.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-11-25 06:13:03.574 UTC: 	 Myproxy is valid: 2428948
+DEBUG 2021-11-25 06:13:03.575 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: b52ac606a6f7097e9b4b8f05a3a67cc69f8f291b  - validity: 28 days, 2:43:36
+  Credential exists on myproxy: username: yian_CRAB  - validity: 28 days, 2:42:28
+DEBUG 2021-11-25 06:13:03.576 UTC: 	 Command use: status
+DEBUG 2021-11-25 06:13:03.576 UTC: 	 Options use: ['-d', 'crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018']
+DEBUG 2021-11-25 06:13:03.639 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-11-25 06:13:03.639 UTC: 	 Instance is prod
+DEBUG 2021-11-25 06:13:03.639 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-11-25 06:13:03.639 UTC: 	 Command api workflow
+DEBUG 2021-11-25 06:13:03.706 UTC: 	 Got information from server oracle database: {u'result': [u'211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2021-11-23 16:27:02.053604', u'None', u'2021-11-23 16:27:42.335076', u'None', u'CMSSW_10_6_20', u'slc7_amd64_gcc820', u'/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM', u'T', u'0', u"[u'T2_US_UCSD', u'T2_US_Wisconsin', u'T2_US_MIT', u'T2_US_Caltech', u'T2_US_Purdue', u'T2_US_Nebraska']", u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'5cb43ae7a39e084a4abb5f03e2a041f373b9dc4be328f66aa406ab63ad76b54a.tar.gz', u'https://cmsweb.cern.ch/S3/crabcache_prod', u'yian', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=yian/CN=826694/CN=Ying An', u'cms', u'None', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-00000000000000000000000000000000', u'F', u'T3_CH_CERNBOX', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u'[]', u"[b'tree.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u"['/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/yian-ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018-1ea93bf7cfbb24e247bd0f4bd1955225/USER']", u'[]', u'http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018', u'WWG_crab_script.sh', u"[b'isdata=MC', b'year=2018', b'era=A']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', u'crab3@vocms0196.cern.ch', u'F', u'[]', u'T', u'/store/user/yian/', u'T', u'None', u'F', u'None', u'ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8', u'None', u'd73fead4d829e29da92f66bf87e22c709cf54d61cd1a510f9ab462a5402dc210.tar.gz', u'71876712', u'filetransfers', u'F', u'137.138.120.6', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2021-11-25 06:13:03.706 UTC: 	 CRAB project directory:		/afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 06:13:03.706 UTC: 	 Task name:			211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 06:13:03.707 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0196.cern.ch - crab-prod-tw01
+INFO 2021-11-25 06:13:03.707 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2021-11-25 06:13:03.707 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+INFO 2021-11-25 06:13:03.710 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=yian&var-task=211123_162702%3Ayian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018&from=1637681222000&to=now
+DEBUG 2021-11-25 06:13:03.710 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 71876712)
+DEBUG 2021-11-25 06:13:03.710 UTC: 	 Webdir is located at http://vocms0196.cern.ch/mon/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-25 06:13:03.828 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018
+DEBUG 2021-11-25 06:13:03.828 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0196/cms1407/211123_162702:yian_crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/status_cache
+DEBUG 2021-11-25 06:13:03.872 UTC: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 215.19743394851685, 20113.0, 44719.0], 'StartTimes': [1637699427.0, 1637719548.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876725.0', '71876725.0'], 'EndTimes': [1637719540.0, 1637764267.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1505444, 1750000], 'TotalUserCpuTimeHistory': [3620.0, 13585], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [131.0, 974]}, '10': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 5289.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876724.0'], 'EndTimes': [1637704717.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1513724], 'TotalUserCpuTimeHistory': [4924], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [246]}, '13': {'Retries': 0, 'WallDurations': [8.0, 215.19743394851685, 12902.0, 0, 13684.0], 'StartTimes': [1637699427.0, 1637714203.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876727.0', '71876727.0'], 'EndTimes': [1637712329.0, 1637727887.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1448308, 1674920], 'TotalUserCpuTimeHistory': [1386.0, 9431], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [70.0, 990]}, '12': {'Retries': 1, 'WallDurations': [9.0, 216.19743394851685, 57551.0, 8.0, 79.6332778930664, 61315.0], 'StartTimes': [1637699426.0, 1637759187.0], 'SubmitTimes': [1637684873.0, 1637758852.0], 'JobIds': ['71876726.0', '71895682.0'], 'EndTimes': [1637756977.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1656648, 1513476], 'TotalUserCpuTimeHistory': [13088, 4739.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [792, 504.0]}, '15': {'Retries': 0, 'WallDurations': [8.0, 201.19743394851685, 5692.0, 0, 4804.0], 'StartTimes': [1637699441.0, 1637705372.0], 'SubmitTimes': [1637684873.0, -1], 'JobIds': ['71876729.0', '71876729.0'], 'EndTimes': [1637705133.0, 1637710176.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1395284, 1500000], 'TotalUserCpuTimeHistory': [1377.0, 2338], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [32.0, 105]}, '14': {'Retries': 0, 'WallDurations': [10.0, 216.19743394851685, 41292.0], 'StartTimes': [1637699426.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876728.0'], 'EndTimes': [1637740718.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1622700], 'TotalUserCpuTimeHistory': [12212], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [757]}, '1': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 1174.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876718.0'], 'EndTimes': [1637700603.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1431848], 'TotalUserCpuTimeHistory': [1090], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [24]}, '3': {'Retries': 0, 'WallDurations': [9.0, 214.19743394851685, 9568.0], 'StartTimes': [1637699428.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876715.0'], 'EndTimes': [1637708996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1397196], 'TotalUserCpuTimeHistory': [2443], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [72]}, '2': {'Retries': 0, 'WallDurations': [9.0, 196.35999393463135, 7398.0], 'StartTimes': [1637699746.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876717.0'], 'EndTimes': [1637707144.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1478572], 'TotalUserCpuTimeHistory': [1511], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [77]}, '5': {'Retries': 1, 'WallDurations': [8.0, 215.19743394851685, 48048.0, 9.0, 17.506346940994263, 66129.0], 'StartTimes': [1637699427.0, 1637754430.0], 'SubmitTimes': [1637684872.0, 1637749352.0], 'JobIds': ['71876721.0', '71894164.0'], 'EndTimes': [1637747475.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [1649756, 1505872], 'TotalUserCpuTimeHistory': [11783, 7654.0], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [472, 910.0]}, '4': {'Retries': 0, 'WallDurations': [9.0, 213.19743394851685, 26226.0], 'StartTimes': [1637699429.0], 'SubmitTimes': [1637684867.0], 'JobIds': ['71876716.0'], 'EndTimes': [1637725655.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1588864], 'TotalUserCpuTimeHistory': [5273], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [276]}, '7': {'Retries': 1, 'WallDurations': [9.0, 211.19743394851685, 50018.0, 8.0, 23.506346940994263, 32417.0], 'StartTimes': [1637699431.0, 1637754424.0], 'SubmitTimes': [1637684867.0, 1637751323.0], 'JobIds': ['71876719.0', '71894600.0'], 'EndTimes': [1637749449.0, 1637786841.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1655916, 1545640], 'TotalUserCpuTimeHistory': [5616, 6225], 'SiteHistory': ['Unknown', 'T2_US_UCSD', 'T2_US_UCSD', 'Unknown', 'T2_US_MIT', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [753, 247]}, '6': {'Retries': 0, 'WallDurations': [10.0, 214.19743394851685, 12923.0, 0, 73836.0], 'StartTimes': [1637699428.0, 1637714218.0], 'SubmitTimes': [1637684867.0, -1], 'JobIds': ['71876720.0', '71876720.0'], 'EndTimes': [1637712351.0, 1637788054.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551352, 0], 'TotalUserCpuTimeHistory': [2610.0, 15157], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_UCSD'], 'TotalSysCpuTimeHistory': [115.0, 1085]}, '9': {'Retries': 0, 'WallDurations': [9.0, 211.19743394851685, 11355.0], 'StartTimes': [1637699431.0], 'SubmitTimes': [1637684873.0], 'JobIds': ['71876723.0'], 'EndTimes': [1637710786.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1442116], 'TotalUserCpuTimeHistory': [3152], 'SiteHistory': ['Unknown', 'T2_US_Purdue', 'T2_US_Purdue'], 'TotalSysCpuTimeHistory': [133]}, '8': {'Retries': 0, 'WallDurations': [8.0, 216.19743394851685, 27307.0, 0, 9969.0], 'StartTimes': [1637699426.0, 1637727665.0], 'SubmitTimes': [1637684872.0, -1], 'JobIds': ['71876722.0', '71876722.0'], 'EndTimes': [1637726733.0, 1637737634.0], 'Restarts': 1, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [1551784, 1750000], 'TotalUserCpuTimeHistory': [3690.0, 11977], 'SiteHistory': ['Unknown', 'T2_US_MIT', 'T2_US_MIT', 'Unknown', 'T2_US_Nebraska'], 'TotalSysCpuTimeHistory': [136.0, 926]}}
+INFO 2021-11-25 06:13:03.872 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2021-11-25 06:13:03.873 UTC: 	 
+Jobs status:                    finished     		 86.7% (13/15)
+INFO 2021-11-25 06:13:03.873 UTC: 	 				running      		 13.3% ( 2/15)
+INFO 2021-11-25 06:13:03.873 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2021-11-25 06:13:03.873 UTC: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2021-11-25 06:13:03.873 UTC: 	 
+Summary of run jobs:
+ * Memory: 1398MB min, 1708MB max, 1404MB ave
+ * Runtime: 0:19:34 min, 20:30:36 max, 6:01:11 ave
+ * CPU eff: 20% min, 129% max, 34% ave
+ * Waste: 36:37:34 (32% of total)
+
+INFO 2021-11-25 06:13:03.908 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab2018/crab_ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8_2018/crab.log

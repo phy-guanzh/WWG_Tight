@@ -32,18 +32,20 @@ from PhysicsTools.NanoAODTools.postprocessing.modules.common.PrefireCorr import 
 
 if args.year=='2016':
    PrefCorr_2016 = lambda: PrefCorr("L1prefiring_jetpt_2016BtoH.root","L1prefiring_jetpt_2016BtoH","L1prefiring_photonpt_2016BtoH.root","L1prefiring_photonpt_2016BtoH")
-   jmeCorrections_ak4_MC = createJMECorrector(True,2016,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   jmeCorrections_ak4_MC = createJMECorrector(True,2016,"B","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
    jmeCorrections_ak4_Data = createJMECorrector(False,2016,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
-   btagSF = lambda: btagSFProducer("2016",'deepcsv')
+   btagSF = lambda: btagSFProducer("Legacy2016",'deepcsv')
+
 if args.year=='2017':
    PrefCorr_2017 = lambda: PrefCorr("L1prefiring_jetpt_2017BtoF.root","L1prefiring_jetpt_2017BtoF","L1prefiring_photonpt_2017BtoF.root","L1prefiring_photonpt_2017BtoF")
-   jmeCorrections_ak4_MC = createJMECorrector(True,2017,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
+   jmeCorrections_ak4_MC = createJMECorrector(True,2017,"B","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
    jmeCorrections_ak4_Data = createJMECorrector(False,2017,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
-   btagSF = lambda: btagSFProducer("2017",'deepcsv')
+   btagSF = lambda: btagSFProducer("UL2017",'deepcsv')
+
 if args.year=='2018':
    jmeCorrections_ak4_MC = createJMECorrector(True,2018,"A","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
    jmeCorrections_ak4_Data = createJMECorrector(False,2018,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
-   btagSF = lambda: btagSFProducer("2018",'deepcsv')
+   btagSF = lambda: btagSFProducer("UL2018",'deepcsv')
 
 # classify input files
 if args.infile:
@@ -65,9 +67,9 @@ if args.isdata:
        Modules = [countHistogramsModule(),jmeCorrections_ak4_Data(),WWG_Module()]
 else:
        if args.year=='2016':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2016(),PrefCorr_2016()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2016(),PrefCorr_2016()]
        if args.year=='2017':
-          Modules = [countHistogramsModule(),WWG_Module(),puWeight_2017(),PrefCorr_2017()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2017(),PrefCorr_2017()]
        if args.year=='2018':
           Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2018()]
 

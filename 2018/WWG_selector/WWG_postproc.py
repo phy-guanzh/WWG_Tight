@@ -65,9 +65,9 @@ if args.isdata:
        Modules = [countHistogramsModule(),jmeCorrections_ak4_Data(),WWG_Module()]
 else:
        if args.year=='2016':
-          Modules = [countHistogramsModule(),WWG_Module(),jmeCorrections_ak4_MC(),puWeight_2016(),PrefCorr_2016()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2016(),PrefCorr_2016()]
        if args.year=='2017':
-          Modules = [countHistogramsModule(),WWG_Module(),jmeCorrections_ak4_MC(),puWeight_2017(),PrefCorr_2017()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2017(),PrefCorr_2017()]
        if args.year=='2018':
           Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWG_Module(),puWeight_2018()]
 
