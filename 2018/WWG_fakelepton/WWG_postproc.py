@@ -33,7 +33,7 @@ if args.year=='2016':
    PrefCorr_2016 = lambda: PrefCorr("L1prefiring_jetpt_2016BtoH.root","L1prefiring_jetpt_2016BtoH","L1prefiring_photonpt_2016BtoH.root","L1prefiring_photonpt_2016BtoH")
    jmeCorrections_ak4_MC = createJMECorrector(True,2016,"B","Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
    jmeCorrections_ak4_Data = createJMECorrector(False,2016,args.era,"Total","AK4PFchs",False,"PuppiMET",True,False,True,True)
-   btagSF = lambda: btagSFProducer("2016",'deepcsv')
+   btagSF = lambda: btagSFProducer("Legacy2016",'deepcsv')
 
 if args.year=='2017':
    PrefCorr_2017 = lambda: PrefCorr("L1prefiring_jetpt_2017BtoF.root","L1prefiring_jetpt_2017BtoF","L1prefiring_photonpt_2017BtoF.root","L1prefiring_photonpt_2017BtoF")
@@ -63,14 +63,14 @@ else:
     fwkjobreport = True
 
 if args.isdata:
-       Modules = [countHistogramsModule(),WWGfakelepton_Module()]
+       Modules = [countHistogramsModule(),jmeCorrections_ak4_Data(),WWGfakelepton_Module()]
 else:
        if args.year=='2016':
-          Modules = [countHistogramsModule(),WWGfakelepton_Module(),puWeight_2016(),PrefCorr_2016()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWGfakelepton_Module(),puWeight_2016(),PrefCorr_2016()]
        if args.year=='2017':                              
-          Modules = [countHistogramsModule(),WWGfakelepton_Module(),puWeight_2017(),PrefCorr_2017()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWGfakelepton_Module(),puWeight_2017(),PrefCorr_2017()]
        if args.year=='2018':
-          Modules = [countHistogramsModule(),WWGfakelepton_Module(),puWeight_2018()]
+          Modules = [countHistogramsModule(),jmeCorrections_ak4_MC(),btagSF(),WWGfakelepton_Module(),puWeight_2018()]
 
 p=PostProcessor(".",infilelist,
                 branchsel="WWG_keep_and_drop.txt",

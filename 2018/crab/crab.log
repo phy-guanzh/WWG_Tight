@@ -1901,3 +1901,7 @@ Traceback (most recent call last):
     raise ConfigurationException(msg)
 ConfigurationException: [91mError[0m: crab2018/crab_MuonEG_Run2018D/D is not a valid CRAB project directory.
 INFO 2021-11-25 05:46:30.770 UTC: 	 Log file is /afs/cern.ch/work/y/yian/work/GZ/CMSSW_10_6_20/src/PhysicsTools/NanoAODTools/WWG/2018/crab/crab.log
+DEBUG 2021-11-25 06:35:38.292 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-11-25 06:35:38.292 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.45.1.el7.x86_64 #1 SMP Wed Oct 13 17:20:51 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-11-25 06:35:38.292 UTC: 	 Executing command: 'submit'
+DEBUG 2021-11-25 06:35:38.292 UTC: 	 Found CRAB cache file /afs/cern.ch/user/y/yian/.crab3
