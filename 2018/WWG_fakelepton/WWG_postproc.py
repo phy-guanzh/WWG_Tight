@@ -46,7 +46,7 @@ else:
     fwkjobreport = True
 
 if args.isdata:
-       Modules = [countHistogramsModule(),jmeCorrections_ak4_Data(),WWGfakelepton_Module()]
+       Modules = [countHistogramsModule(),WWGfakelepton_Module()]
 else:
        if args.year=='2016':
           Modules = [countHistogramsModule(),WWGfakelepton_Module(),puWeight_UL2016()]
