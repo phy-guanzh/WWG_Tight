@@ -64,6 +64,9 @@ keep Puppi*
 keep *Jet*
 keep *MET*
 keep *jet*
+keep *Weight*
+keep *Pre*
+keep *mva*
 keep HLT*
 keep LHE*Weight
 keep nLHE*Weight

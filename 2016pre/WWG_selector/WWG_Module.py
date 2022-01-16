@@ -88,6 +88,25 @@ class WWG_Producer(Module):
         self.out.branch("njets30_tightId","I")
         self.out.branch("njets20_tightId","I")
         self.out.branch("njets15_tightId","I")
+        self.out.branch("n_bjets_loose_pc","I")
+        self.out.branch("n_bjets_medium_pc","I")
+        self.out.branch("n_bjets20_loose_pc","I")
+        self.out.branch("n_bjets20_medium_pc","I")
+        self.out.branch("n_bjets_loose_tightId_pc","I")
+        self.out.branch("n_bjets_medium_tightId_pc","I")
+        self.out.branch("n_bjets20_loose_tightId_pc","I")
+        self.out.branch("n_bjets20_medium_tightId_pc","I")
+        self.out.branch("njets50_pc","I")
+        self.out.branch("njets40_pc","I")
+        self.out.branch("njets30_pc","I")
+        self.out.branch("njets20_pc","I")
+        self.out.branch("njets15_pc","I")
+        self.out.branch("njets50_tightId_pc","I")
+        self.out.branch("njets40_tightId_pc","I")
+        self.out.branch("njets30_tightId_pc","I")
+        self.out.branch("njets20_tightId_pc","I")
+        self.out.branch("njets15_tightId_pc","I")
+
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
 	pass
@@ -130,11 +149,11 @@ class WWG_Producer(Module):
                 continue
             if abs(muons[i].eta) > 2.4:
                 continue
-            if muons[i].tightId == True and muons[i].pfRelIso04_all < 0.15:
+            if muons[i].mvaTTH >0.85 and muons[i].pfRelIso04_all < 0.15:
                 tight_muons.append(i)
                 muons_select.append(i)
                 muon_pass += 1
-	    elif muons[i].tightId == True and muons[i].pfRelIso04_all < 0.25:
+	    elif muons[i].mvaTTH>0.85 and muons[i].pfRelIso04_all < 0.25:
                  loose_but_not_tight_muons.append(i)
                  muons_select.append(i)
                  muon_pass += 1
@@ -150,15 +169,15 @@ class WWG_Producer(Module):
             if abs(electrons[i].eta + electrons[i].deltaEtaSC) > 2.5:
                 continue
             if (abs(electrons[i].eta + electrons[i].deltaEtaSC) < 1.479 and abs(electrons[i].dz) < 0.1 and abs(electrons[i].dxy) < 0.05) or (abs(electrons[i].eta + electrons[i].deltaEtaSC) > 1.479 and abs(electrons[i].dz) < 0.2 and abs(electrons[i].dxy) < 0.1):
-                if electrons[i].cutBased >= 3:
+                if electrons[i].mvaFall17V2Iso_WP80:
                     tight_electrons.append(i)
 		    electrons_select.append(i)
                     electron_pass += 1
-		elif electrons[i].cutBased >= 1:
+		elif electrons[i].mvaFall17V2Iso_WPL:
                     loose_but_not_tight_electrons.append(i)
 		    electrons_select.append(i)
                     electron_pass += 1
-                if electrons[i].cutBased >= 1:
+                if electrons[i].mvaFall17V2Iso_WPL:
                     loose_electron_pass += 1
 
 #       print 'the number of leptons: ',len(tight_electrons)+len(tight_muons)
@@ -406,6 +425,25 @@ class WWG_Producer(Module):
         n_bjets20_loose_tightId = 0
         n_bjets20_medium_tightId = 0
 
+        njets50_pc = 0
+        njets40_pc = 0
+        njets30_pc = 0
+        njets20_pc = 0
+        njets15_pc = 0
+        njets50_tightId_pc = 0
+        njets40_tightId_pc = 0
+        njets30_tightId_pc = 0
+        njets20_tightId_pc = 0
+        njets15_tightId_pc = 0
+        n_bjets_loose_pc = 0
+        n_bjets_medium_pc = 0
+        n_bjets20_loose_pc = 0
+        n_bjets20_medium_pc = 0
+        n_bjets_loose_tightId_pc = 0
+        n_bjets_medium_tightId_pc = 0
+        n_bjets20_loose_tightId_pc = 0
+        n_bjets20_medium_tightId_pc = 0
+
         for i in range(0,len(jets)):
             if abs(jets[i].eta) > 4.7:
                continue
@@ -416,8 +454,8 @@ class WWG_Producer(Module):
             if deltaR(jets[i].eta,jets[i].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
                    pass_dr_cut = False
 
-            if  not pass_dr_cut == True:
-	        continue
+            #    if  not pass_dr_cut == True:
+	    #        continue
 
             if jets[i].btagDeepB > 0.6001:  # medium DeepCSVM, remove jets from b
                n_bjets_medium +=1
@@ -462,6 +500,61 @@ class WWG_Producer(Module):
                if jets[i].pt > 15:
                    njets15_tightId+=1
 
+        for i in range(0,len(jets)):
+            if abs(jets[i].eta) > 4.7:
+               continue
+            if photon_pass>0:
+	       pass_dr_cut = deltaR(jets[i].eta,jets[i].phi,photons[photon_index].eta,photons[photon_index].phi) > 0.5
+            if deltaR(jets[i].eta,jets[i].phi,electrons[electrons_select[0]].eta,electrons[electrons_select[0]].phi) < 0.5:
+                   pass_dr_cut = False
+            if deltaR(jets[i].eta,jets[i].phi,muons[muons_select[0]].eta,muons[muons_select[0]].phi) < 0.5:
+                   pass_dr_cut = False
+
+            if  not pass_dr_cut == True:
+	        continue
+
+            if jets[i].btagDeepB > 0.6001:  # medium DeepCSVM, remove jets from b
+               n_bjets_medium_pc +=1
+               if jets[i].pt > 20 :
+                  n_bjets20_medium_pc +=1
+            if jets[i].btagDeepB > 0.2027:  # Loose DeepCSVM, remove jets from b
+               n_bjets_loose_pc +=1
+               if jets[i].pt > 20:
+                  n_bjets20_loose_pc +=1
+
+            if jets[i].pt > 50:
+                njets50_pc+=1
+            if jets[i].pt > 40:
+                njets40_pc+=1
+            if jets[i].pt > 30:
+                njets30_pc+=1
+            if jets[i].pt > 20:
+                njets20_pc+=1
+            if jets[i].pt > 15:
+                njets15_pc+=1
+
+            if jets[i].jetId >> 1 & 1:
+               jets_select.append(i)
+
+               if jets[i].btagDeepB > 0.6001:
+	          n_bjets_medium_tightId_pc +=1
+                  if jets[i].pt > 20 :
+                     n_bjets20_medium_tightId_pc +=1
+               if jets[i].btagDeepB > 0.2027 :
+	          n_bjets_loose_tightId_pc +=1
+                  if jets[i].pt > 20 :
+                     n_bjets20_loose_tightId_pc +=1
+
+               if jets[i].pt > 50:
+                   njets50_tightId_pc +=1
+               if jets[i].pt > 40:
+                   njets40_tightId_pc +=1
+               if jets[i].pt > 30:
+                   njets30_tightId_pc +=1
+               if jets[i].pt > 20:
+                   njets20_tightId_pc +=1
+               if jets[i].pt > 15:
+                   njets15_tightId_pc +=1
 
         if hasattr(event,'Pileup_nPU'):    
             self.out.fillBranch("npu",event.Pileup_nPU)
@@ -494,6 +587,25 @@ class WWG_Producer(Module):
         self.out.fillBranch("n_bjets20_medium",n_bjets20_medium)
         self.out.fillBranch("n_bjets20_loose_tightId", n_bjets20_loose_tightId)
         self.out.fillBranch("n_bjets20_medium_tightId",n_bjets20_medium_tightId)
+        self.out.fillBranch("njets50_pc",njets50_pc)
+        self.out.fillBranch("njets40_pc",njets40_pc)
+        self.out.fillBranch("njets30_pc",njets30_pc)
+        self.out.fillBranch("njets20_pc",njets20_pc)
+        self.out.fillBranch("njets15_pc",njets15_pc)
+        self.out.fillBranch("njets50_tightId_pc",njets50_tightId_pc)
+        self.out.fillBranch("njets40_tightId_pc",njets40_tightId_pc)
+        self.out.fillBranch("njets30_tightId_pc",njets30_tightId_pc)
+        self.out.fillBranch("njets20_tightId_pc",njets20_tightId_pc)
+        self.out.fillBranch("njets15_tightId_pc",njets15_tightId_pc)
+        self.out.fillBranch("n_bjets_loose_pc", n_bjets_loose_pc)
+        self.out.fillBranch("n_bjets_medium_pc",n_bjets_medium_pc)
+        self.out.fillBranch("n_bjets_loose_tightId_pc", n_bjets_loose_tightId_pc)
+        self.out.fillBranch("n_bjets_medium_tightId_pc",n_bjets_medium_tightId_pc)
+        self.out.fillBranch("n_bjets20_loose_pc", n_bjets20_loose_pc)
+        self.out.fillBranch("n_bjets20_medium_pc",n_bjets20_medium_pc)
+        self.out.fillBranch("n_bjets20_loose_tightId_pc", n_bjets20_loose_tightId_pc)
+        self.out.fillBranch("n_bjets20_medium_tightId_pc",n_bjets20_medium_tightId_pc)
+        self.out.fillBranch("npvs",event.PV_npvs)
         self.out.fillBranch("npvs",event.PV_npvs)
         self.out.fillBranch("met",event.MET_pt)
         self.out.fillBranch("metup",sqrt(pow(event.MET_pt*cos(event.MET_phi) + event.MET_MetUnclustEnUpDeltaX,2) + pow(event.MET_pt*sin(event.MET_phi) + event.MET_MetUnclustEnUpDeltaY,2)))

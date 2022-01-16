@@ -67,4 +67,6 @@ keep *jet*
 keep HLT*
 keep LHE*Weight
 keep nLHE*Weight
+keep *Weight*
+keep *L1PreFir*
 keep Flag_*

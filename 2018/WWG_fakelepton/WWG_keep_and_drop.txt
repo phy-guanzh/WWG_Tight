@@ -72,6 +72,9 @@ keep Pileup_nPU
 keep Pileup_nTrueInt
 keep PV_npvs*
 keep *Jet*
+keep *mva*
+keep *Flag*
+keep *Weight*
 keep *MET*
 keep *jet*
 keep HLT*

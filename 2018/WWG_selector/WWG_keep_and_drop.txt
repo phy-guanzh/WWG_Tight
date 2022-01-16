@@ -64,7 +64,10 @@ keep Puppi*
 keep *Jet*
 keep *MET*
 keep *jet*
+keep *mva*
 keep HLT*
 keep LHE*Weight
 keep nLHE*Weight
+keep *Weight*
+keep *L1PreFir*
 keep Flag_*
