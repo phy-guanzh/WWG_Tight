@@ -16,6 +16,7 @@ for example:
 ```bash
 voms-proxy-init -voms cms -valid 192:00
 cd 2018
+mkdir log
 submit_condor submit_wwgamma_signal18_NLO.jdl
 ```
 
