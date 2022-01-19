@@ -24,8 +24,8 @@ Introduction slides:
 ## <span id="Download-and-setup"> Download and setup </span> 
 
 ```bash
-cmsrel CMSSW_10_6_20
-cd CMSSW_10_6_20/src
+cmsrel CMSSW_10_6_29
+cd CMSSW_10_6_29/src
 cmsenv
 git clone https://github.com/cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
 cd PhysicsTools/NanoAODTools
