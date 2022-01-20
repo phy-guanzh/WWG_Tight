@@ -29,6 +29,9 @@ one submit can generate 600,000 events for a year.
 --------------
 ## Hgamma Samples Production
 
+Hgamma use LHE file as input so the chian change to :
+pLHE >> LHEGEN >> SIM >> DIGI >> HLT >> RECO >> MINIAODv2 >> NANOAODv9
+
 one Hgamma process has 4 kinds of samples: uu~/dd~/ss~/cc~
 every submit can generate 500,000 events for a year.
 
@@ -41,6 +44,22 @@ mkdir log
 submit_condor submit_signal.jdl
 ```
 --------------
+## aQGC Samples Production
+aQGC gridpack has many reweight value, and sometime the weights are not matched with cmssw code:
+https://github.com/cms-sw/cmssw/blob/master/PhysicsTools/NanoAOD/plugins/GenWeightsTableProducer.cc
+
+solution:
+when generate sandbox, can change scripts before:
+https://resisted-salmon-6b4.notion.site/Add-re-weighting-weights-for-NanoAOD-production-3474b7b7ba3748fdaace8eb9585abeb5
+
+```bash
+cd aQGC
+voms-proxy-init -voms cms -valid 192:00
+cd 2018
+mkdir log
+submit_condor submit_signal.jdl
+```
+one submit can generate 600,000 events
 
 haddnano.py can be used to combine all events into one R00T file
 
